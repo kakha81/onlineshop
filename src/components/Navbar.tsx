@@ -1,6 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import React from "react";
 import styled from "styled-components";
@@ -14,6 +15,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Left = styled.div`
@@ -66,6 +70,7 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
+        {/* <MenuIcon /> */}
         <Left>
           <Language>EN</Language>
           <SearchContainer>
