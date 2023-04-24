@@ -20,7 +20,7 @@ export const sliderItems: SliderItem[] = [
     {
         id: 2,
         img: require('./Images/2.png'),
-        title: "SUMMER SALE",
+        title: "AUTUMN COLLECTION",
         desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
         bg:"#f5fafd",
        
@@ -28,7 +28,7 @@ export const sliderItems: SliderItem[] = [
     {
         id: 3,
         img: require('./Images/3.png'),
-        title: "SUMMER SALE",
+        title: "WINTER COLLECTION",
         desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
         bg:"#f5fafd",
        
