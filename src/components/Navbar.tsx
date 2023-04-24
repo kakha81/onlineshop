@@ -3,7 +3,6 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -70,7 +69,8 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
-        {/* <MenuIcon /> */}
+        <MenuIcon />
+
         <Left>
           <Language>EN</Language>
           <SearchContainer>
