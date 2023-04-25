@@ -8,6 +8,8 @@ interface SliderItem {
 }
 
 
+
+
 export const sliderItems: SliderItem[] = [
     {
         id: 1,
@@ -33,4 +35,49 @@ export const sliderItems: SliderItem[] = [
         bg:"#f5fafd",
        
     },
-]
+];
+
+interface categories {
+    id: number;
+    img: string;
+    title: string;
+}
+
+
+export const categories = [
+    {
+        id: 1,
+        img: require('./Images/2.png'),
+        title: "SHIRT STYLE",
+    },
+    {
+        id: 2,
+        img: require('./Images/3.png'),
+        title: "LOUNGEWEAR LOVE",
+    },
+    {
+        id: 3,
+        img: require('./Images/4.png'),
+        title: "LIGHT JACKETS",
+    },
+];
+
+interface popularProducts {
+    id: number;
+    img: string;
+};
+
+export const popularProducts = [
+    {
+        id: 1,
+        img: require('./Images/2.png'),
+    },
+    {
+        id: 2,
+        img: require('./Images/3.png'),
+    },
+    {
+        id: 3,
+        img: require('./Images/4.png'), 
+    },
+];

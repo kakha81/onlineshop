@@ -51,6 +51,7 @@ const Wrapper = styled.div<sliderProps>`
   height: 100px;
   height: 100vh;
   display: flex;
+  transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
