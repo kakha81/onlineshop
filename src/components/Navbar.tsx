@@ -2,11 +2,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
-
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
+  ${mobile({ backgroundColor: "red" })}
 `;
 
 const Wrapper = styled.div`
