@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/onlineshop/static/js/main.dd6f6814.js",
+    "main.js": "/onlineshop/static/js/main.85c16d98.js",
     "static/media/1.png": "/onlineshop/static/media/1.4b0d3a23e03af4af9dc2.png",
     "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
     "index.html": "/onlineshop/index.html",
-    "main.dd6f6814.js.map": "/onlineshop/static/js/main.dd6f6814.js.map"
+    "main.85c16d98.js.map": "/onlineshop/static/js/main.85c16d98.js.map"
   },
   "entrypoints": [
-    "static/js/main.dd6f6814.js"
+    "static/js/main.85c16d98.js"
   ]
 }
