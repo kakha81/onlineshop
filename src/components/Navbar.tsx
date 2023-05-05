@@ -56,7 +56,7 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-size: 1em;
   font-weight: bold;
-  ${mobile({ fontSize: "16px" })}
+  ${mobile({ fontSize: "0.5em" })}
 `;
 
 const Right = styled.div`
@@ -71,7 +71,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  ${mobile({ fontSize: "0.5em", fontWeight: "900", marginLeft: "10px" })}
 `;
 
 const Navbar = () => {
