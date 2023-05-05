@@ -10,44 +10,53 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
-  ${mobile({ flexDirection: "column" })}
+  flex-direction: column;
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 1.5em;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Desc = styled.p`
-  margin: 20px 0px;
+  margin: 1.5em 0em;
 `;
 
 const SocialContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   color: #${(props) => props.color};
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 5%;
 `;
 
 const Center = styled.div`
   flex: 1;
-  padding: 20px;
+  padding: 1.5em;
   ${mobile({ display: "none" })}
 `;
 
-const Title = styled.h3`
-  margin-bottom: 30px;
+const Title = styled.h2`
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const List = styled.ul`
@@ -60,17 +69,17 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
 `;
 
 const Right = styled.div`
   flex: 1;
-  padding: 20px;
+  padding: 1.2em;
   ${mobile({ backgroundColor: "lightgray" })}
 `;
 
 const ContactItem = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 1.2em;
   display: flex;
   align-items: center;
 `;
@@ -91,16 +100,16 @@ const Footer = () => {
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
-            <FacebookIcon />
+            <FacebookIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
           <SocialIcon color="E4405F">
-            <InstagramIcon />
+            <InstagramIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
           <SocialIcon color="55ACEE">
-            <TwitterIcon />
+            <TwitterIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
           <SocialIcon color="E60023">
-            <PinterestIcon />
+            <PinterestIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -121,15 +130,15 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <FmdGoodIcon style={{ marginRight: "10px" }} />
+          <FmdGoodIcon style={{ marginRight: "5%" }} />
           21 district, Rustavi, 3700
         </ContactItem>
         <ContactItem>
-          <PhoneIcon style={{ marginRight: "10px" }} />
+          <PhoneIcon style={{ marginRight: "5%" }} />
           (0341) 255145
         </ContactItem>
         <ContactItem>
-          <MailOutlineIcon style={{ marginRight: "10px" }} />
+          <MailOutlineIcon style={{ marginRight: "5%" }} />
           mosakrebeli@gmail.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />

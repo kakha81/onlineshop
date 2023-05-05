@@ -9,41 +9,38 @@ import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
-  padding: 50px;
+  padding: 0.5em;
   display: flex;
-  ${mobile({ padding: "10px", flexDirection: "column" })}
+  flex-direction: column;
 `;
 const ImgContainer = styled.div`
   flex: 1;
 `;
 const Image = styled.img`
-  width: 100%;
-  height: 25vh;
+  width: 90%;
+  height: 40vh;
   object-fit: cover;
-  ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 0px 50px;
-  ${mobile({ padding: "10px" })}
+  padding: 1em;
 `;
 const Title = styled.h1`
-  font-weight: 200;
+  font-weight: 800;
 `;
 const Desc = styled.p`
-  margin: 20px 0px;
+  margin: 1em 0em;
 `;
 const Price = styled.span`
-  font-weight: 100;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 2em;
 `;
 
 const FilterContainer = styled.div`
-  width: 50%;
-  margin: 30px 0px;
+  width: 100%;
+  margin: 2em 0em;
   display: flex;
   justify-content: space-between;
-  ${mobile({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -52,32 +49,34 @@ const Filter = styled.div`
 `;
 
 const FilterTitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
+  font-size: 1.2em;
+  font-weight: 500;
 `;
 
 const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.2em;
+  height: 1.2em;
   border-radius: 50%;
   background-color: ${(props) => props.color};
-  margin: 0px 5px;
+  margin: 0em 0.5em;
   cursor: pointer;
 `;
 
 const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
+  margin-left: 0.5em;
+  padding: 0.5em;
+  font-weight: 900;
 `;
 
-const FilterSizeOption = styled.option``;
+const FilterSizeOption = styled.option`
+  font-weight: 900;
+`;
 
 const AddContainer = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -87,22 +86,23 @@ const AmountContainer = styled.div`
 `;
 
 const Amount = styled.span`
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  border: 1px solid teal;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  border: 0.1em solid teal;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px 5px;
+  margin: 0em 0.5em;
 `;
 
 const Button = styled.button`
-  padding: 15px;
-  border: 1px solid teal;
+  padding: 1em;
+  border: 0.1em solid teal;
+  border-radius: 1em;
   background-color: white;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 900;
 
   &:hover {
     background-color: #f8f4f4;

@@ -4,33 +4,32 @@ import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
-import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Title = styled.h1`
-  margin: 20px;
+  margin: 1.2em;
 `;
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 const Filter = styled.div`
-  margin: 20px;
-  ${mobile({ width: "0px 20px", display: "flex", flexDirection: "column" })}
+  width: 0em 1.2em;
+  display: flex;
+  flex-direction: column;
+  margin: 1.2em;
 `;
 
 const FilterText = styled.span`
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 600;
-  margin-right: 20px;
-  ${mobile({ marginRight: "0px" })}
+  margin-right: 0em;
 `;
 
 const Select = styled.select`
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 600;
-  margin-right: 20px;
-  ${mobile({ margin: "10px 0px" })}
+  margin: 0.5em 0em;
 `;
 const Option = styled.option``;
 

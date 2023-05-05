@@ -2,25 +2,22 @@ import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import styled from "styled-components";
-import {
-  mobile,
-  // tablet,
-  // minScreen,
-  // midScreen,
-  // maxScreen
-} from "../responsive";
+import // mobile,
+// tablet,
+// minScreen,
+// midScreen,
+// maxScreen
+"../responsive";
 
 const Container = styled.div`
-  height: 60px;
-  ${mobile({ height: "50px" })};
+  height: 50px;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
@@ -30,48 +27,47 @@ const Left = styled.div`
 `;
 
 const Language = styled.span`
+  display: none;
   font-size: 14px;
   cursor: pointer;
-  ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
+  border: 0.1em solid lightgrey;
   display: flex;
   align-items: center;
-  margin-left: 25px;
-  padding: 5px;
+  margin-left: 10%;
+  padding: 0px;
 `;
 
 const Input = styled.input`
   border: none;
-  ${mobile({ width: "50px" })}
+  width: 100%;
 `;
 
 const Center = styled.div`
   flex: 1;
   text-align: center;
+  margin-left: 2em;
 `;
 
 const Logo = styled.h1`
-  font-size: 1em;
-  font-weight: bold;
-  ${mobile({ fontSize: "0.5em" })}
+  font-size: 0.8em;
+  font-weight: 900;
 `;
 
 const Right = styled.div`
-  flex: 1;
+  flex: 2;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  ${mobile({ flex: 2, justifyContent: "center" })}
+  justify-content: center;
 `;
 
 const MenuItem = styled.div`
-  font-size: 14px;
+  font-size: 0.5em;
+  font-weight: 900;
   cursor: pointer;
-  margin-left: 25px;
-  ${mobile({ fontSize: "0.5em", fontWeight: "900", marginLeft: "10px" })}
+  margin-left: 10%;
 `;
 
 const Navbar = () => {
@@ -82,7 +78,7 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Search" />
-            <SearchIcon style={{ color: "grey", fontSize: 16 }} />
+            <SearchIcon style={{ color: "grey", fontSize: "16px" }} />
           </SearchContainer>
         </Left>
         <Center>

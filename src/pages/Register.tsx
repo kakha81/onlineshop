@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -16,26 +15,28 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 40%;
-  padding: 20px;
+  width: 75%;
+  padding: 1.2em;
+  margin-right: 1.2em;
   background-color: white;
-  ${mobile({ width: "75%", marginRight: "1.2em" })}
 `;
 const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 1.5em;
+  font-weight: 900;
 `;
 
 const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 20px 10px 0px 0px;
-  padding: 10px;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.5em 0em;
+  padding: 0.8em;
 `;
 
 const Agreement = styled.span`
@@ -45,11 +46,14 @@ const Agreement = styled.span`
 
 const Button = styled.button`
   width: 40%;
+  font-size: 1em;
+  font-weight: 900;
   border: none;
-  padding: 15px 20px;
+  padding: 1em 1.2em;
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin-bottom: 1em;
 `;
 
 const Register = () => {
