@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
-import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
-import { useState } from "react";
-import { sliderItems } from "../data";
-import { mobile } from "../responsive";
+import styled from 'styled-components';
+import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
+import { useState } from 'react';
+import { sliderItems } from '../data';
 
 enum SlideIndex {
   FIRST = 0,
@@ -12,7 +11,7 @@ enum SlideIndex {
 }
 
 interface ArrowProps {
-  direction: "left" | "right";
+  direction: 'left' | 'right';
 }
 interface sliderProps {
   slideIndex: SlideIndex;
@@ -22,18 +21,19 @@ interface SlideProps {
 }
 
 const Container = styled.div`
+  /* display: none; */
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   position: relative;
   overflow: hidden;
-  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div<ArrowProps>`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
+  width: 3em;
+  height: 3em;
+  color: teal;
+  background-color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -41,16 +41,22 @@ const Arrow = styled.div<ArrowProps>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
+  left: ${(props) => props.direction === 'left' && '0.5em'};
+  right: ${(props) => props.direction === 'right' && '0.5em'};
   margin: auto;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 2;
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    color: white;
+    background-color: teal;
+    opacity: 0.7;
+  }
 `;
 
 const Wrapper = styled.div<sliderProps>`
-  height: 100px;
+  height: 6em;
   height: 100vh;
   display: flex;
   transition: all 1.5s ease;
@@ -59,8 +65,9 @@ const Wrapper = styled.div<sliderProps>`
 
 const Slide = styled.div<SlideProps>`
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: #${(props) => props.bg};
 `;
@@ -71,35 +78,44 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 50vh;
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 50px;
+  height: 80%;
+  padding: 0.5em;
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 1.5em;
 `;
 const Desc = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
+  margin: 1em 0em;
+  font-size: 0.8em;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 0.05em;
 `;
 const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1em;
+  color: teal;
+  background-color: white;
+  border: 0.1em solid teal;
   cursor: pointer;
+  border-radius: 2em;
+  transition: 0.1s all ease-in;
+  &:hover {
+    color: white;
+    background-color: teal;
+  }
 `;
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState<SlideIndex>(SlideIndex.FIRST);
 
-  const handleClick = (direction: "left" | "right") => {
-    if (direction === "left") {
+  const handleClick = (direction: 'left' | 'right') => {
+    if (direction === 'left') {
       setSlideIndex((prev) =>
         prev === SlideIndex.FIRST ? SlideIndex.THIRD : prev - 1
       );
@@ -112,8 +128,8 @@ const Slider = () => {
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlinedIcon />
+      <Arrow direction='left' onClick={() => handleClick('left')}>
+        <KeyboardArrowLeftOutlinedIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -129,8 +145,8 @@ const Slider = () => {
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlinedIcon />
+      <Arrow direction='right' onClick={() => handleClick('right')}>
+        <KeyboardArrowRightOutlinedIcon />
       </Arrow>
     </Container>
   );

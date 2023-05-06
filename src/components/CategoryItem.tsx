@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { mobile } from "../responsive";
+import styled from 'styled-components';
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
   flex: 1;
-  margin: 3px;
-  height: 70vh;
+  margin: 1em;
   position: relative;
 `;
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
-  ${mobile({ height: "20vh" })};
+  margin: 0.5em auto;
 `;
 const Info = styled.div`
   position: absolute;
@@ -21,20 +21,28 @@ const Info = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  border: 0.1em solid teal;
+  border-radius: 1em;
 `;
+
 const Title = styled.h1`
-  color: white;
-  margin-bottom: 20px;
+  color: teal;
+  margin-bottom: 7em;
 `;
 const Button = styled.button`
   border: none;
-  padding: 10px;
-  background-color: white;
-  color: gray;
+  padding: 0.7em;
+  background-color: teal;
+  color: white;
   cursor: pointer;
   font-weight: 600;
+  border-radius: 1em;
+  transition: 0.2s all ease-in;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 type CategoryItemProps = {
