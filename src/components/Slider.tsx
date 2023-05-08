@@ -54,7 +54,6 @@ const Arrow = styled.div<ArrowProps>`
 `;
 
 const Wrapper = styled.div<sliderProps>`
-  height: 6em;
   height: 100vh;
   display: flex;
   transition: all 1.5s ease;
@@ -62,7 +61,7 @@ const Wrapper = styled.div<sliderProps>`
 `;
 
 const Slide = styled.div<SlideProps>`
-  width: 100%;
+  width: 100vw;
   height: 5vh;
   display: flex;
   flex-direction: column;
@@ -81,7 +80,8 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   height: 50%;
-  margin-left: 3em;
+  margin-left: 2em;
+  margin-bottom: 2em;
 `;
 
 const Title = styled.h1`

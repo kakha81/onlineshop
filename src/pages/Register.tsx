@@ -1,26 +1,30 @@
 import styled from "styled-components";
 
+const coverImg: string = require("../Images/cover.jpg");
+
 const Container = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.4)
-    ),
-    url("https://www.pixelstalk.net/wp-content/uploads/images6/Cool-Shoe-Backgrounds-Free-Download.jpg");
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const Wrapper = styled.div`
-  width: 75%;
-  padding: 1.2em;
-  margin-right: 1.2em;
-  background-color: white;
+const Image = styled.img`
+  width: 100%;
 `;
+
+const Wrapper = styled.div`
+  position: absolute;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+`;
+
 const Title = styled.h1`
+  align-self: center;
   font-size: 1.5em;
   font-weight: 900;
 `;
@@ -28,11 +32,12 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Input = styled.input`
   flex: 1;
-  min-width: 40%;
+  width: 15em;
   font-size: 1em;
   font-weight: 700;
   margin: 0.5em 0em;
@@ -40,25 +45,26 @@ const Input = styled.input`
 `;
 
 const Agreement = styled.span`
-  font-size: 12px;
-  margin: 20px 0px;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 1.2em 0em;
 `;
 
 const Button = styled.button`
-  width: 40%;
   font-size: 1em;
   font-weight: 900;
   border: none;
   padding: 1em 1.2em;
+  border-radius: 2em;
   background-color: teal;
   color: white;
   cursor: pointer;
-  margin-bottom: 1em;
 `;
 
 const Register = () => {
   return (
     <Container>
+      <Image src={coverImg} />
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>

@@ -47,17 +47,17 @@ interface categories {
 export const categories = [
     {
         id: 1,
-        img: require('./Images/2.png'),
+        img: require('./Images/1.png'),
         title: "SHIRT STYLE",
     },
     {
         id: 2,
-        img: require('./Images/3.png'),
+        img: require('./Images/2.png'),
         title: "LOUNGEWEAR LOVE",
     },
     {
         id: 3,
-        img: require('./Images/4.png'),
+        img: require('./Images/3.png'),
         title: "LIGHT JACKETS",
     },
 ];
@@ -70,14 +70,14 @@ interface popularProducts {
 export const popularProducts = [
     {
         id: 1,
-        img: require('./Images/2.png'),
+        img: require('./Images/1.png'),
     },
     {
         id: 2,
-        img: require('./Images/3.png'),
+        img: require('./Images/2.png'),
     },
     {
         id: 3,
-        img: require('./Images/4.png'), 
+        img: require('./Images/3.png'), 
     },
 ];

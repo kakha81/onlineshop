@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 300;
+  font-weight: 500;
   text-align: center;
 `;
 
@@ -51,6 +51,7 @@ const Bottom = styled.div`
 
 const Info = styled.div`
   flex: 3;
+  flex-wrap: wrap;
 `;
 
 const Product = styled.div`
@@ -120,41 +121,51 @@ const Hr = styled.hr`
 `;
 
 const Summary = styled.div`
-  flex: 1;
+  width: 18em;
+  margin: auto;
+  padding: 1.2em;
   border: 0.5px solid lightgray;
   border-radius: 0.5em;
-  padding: 1.2em;
-  height: 50vh;
 `;
 
-const SummaryTitle = styled.h1`
-  font-weight: 200;
+const SummaryTitleContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
+const SummaryTitle = styled.h3`
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const SummaryItem = styled.div`
-  margin: 2em 0em;
+  margin: 1em auto;
   display: flex;
   justify-content: space-between;
   font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "1.5"};
+  font-size: ${(props) => props.type === "total" && "1.5em"};
 `;
 
 const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
-  width: 80%;
-  border-radius: 1em;
-  padding: 0.5em;
-  margin-left: 10%;
-  background-color: black;
-  color: white;
-  font-weight: 600;
+const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const Button = styled.button`
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  border-radius: 2em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+  background-color: black;
 `;
 
 const Cart = () => {
@@ -227,7 +238,9 @@ const Cart = () => {
             </Product>
           </Info>
           <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryTitleContainer>
+              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            </SummaryTitleContainer>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
@@ -244,7 +257,9 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            <ButtonContainer>
+              <Button>CHECKOUT NOW</Button>
+            </ButtonContainer>
           </Summary>
         </Bottom>
       </Wrapper>

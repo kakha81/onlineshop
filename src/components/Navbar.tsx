@@ -53,22 +53,22 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: 900;
 `;
 
 const Right = styled.div`
-  flex: 2;
+  flex: 3;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 const MenuItem = styled.div`
   font-size: 0.7em;
   font-weight: 900;
   cursor: pointer;
-  margin-left: 5%;
+  margin-right: 5%;
 `;
 
 const Navbar = () => {

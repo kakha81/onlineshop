@@ -1,24 +1,27 @@
 import styled from "styled-components";
 
+const coverImg: string = require("../Images/cover.jpg");
+
 const Container = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.4)
-    ),
-    url("https://www.pixelstalk.net/wp-content/uploads/images6/Cool-Shoe-Backgrounds-Free-Download.jpg");
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
+const Image = styled.img`
+  width: 100%;
+`;
+
 const Wrapper = styled.div`
-  width: 75%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   padding: 1.2em;
   margin-right: 1.2em;
-  background-color: white;
+  background-color: transparent;
 `;
 
 const Title = styled.h1`
@@ -46,6 +49,7 @@ const Button = styled.button`
   font-weight: 900;
   border: none;
   padding: 1em 1.2em;
+  border-radius: 2em;
   background-color: teal;
   color: white;
   cursor: pointer;
@@ -55,6 +59,7 @@ const Button = styled.button`
 const Link = styled.a`
   margin: 0.5em 0em;
   font-size: 1em;
+  font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
 `;
@@ -62,6 +67,7 @@ const Link = styled.a`
 const Login = () => {
   return (
     <Container>
+      <Image src={coverImg} />
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>

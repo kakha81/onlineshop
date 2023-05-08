@@ -95,7 +95,8 @@ const BankImg = styled.div`
 `;
 
 const PaymentImg = styled.img`
-  width: 30%;
+  max-width: 5em;
+  margin-right: 1em;
 `;
 
 const Footer = () => {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -29,11 +29,12 @@ const Info = styled.div`
 
 const Title = styled.h1`
   color: teal;
-  margin-bottom: 7em;
+  margin-bottom: 5em;
 `;
 const Button = styled.button`
   border: none;
   padding: 0.7em;
+  margin-bottom: 1em;
   background-color: teal;
   color: white;
   cursor: pointer;
