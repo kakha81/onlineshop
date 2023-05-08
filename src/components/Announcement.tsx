@@ -1,13 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
-  height: 2em;
+  height: 2rem;
+  width: 100%;
   background-color: teal;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
 `;
 

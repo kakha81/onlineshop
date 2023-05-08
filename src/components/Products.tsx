@@ -3,7 +3,7 @@ import { popularProducts } from "../data";
 import Product from "./Product";
 
 const Container = styled.div`
-  padding: 20px;
+  margin: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

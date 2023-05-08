@@ -10,11 +10,11 @@ import // mobile,
 "../responsive";
 
 const Container = styled.div`
-  height: 50px;
+  height: 3em;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 0px;
+  padding: 0.5em 0em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,8 +27,8 @@ const Left = styled.div`
 `;
 
 const Language = styled.span`
-  display: none;
-  font-size: 14px;
+  font-size: 1em;
+  font-weight: 900;
   cursor: pointer;
 `;
 
@@ -36,8 +36,9 @@ const SearchContainer = styled.div`
   border: 0.1em solid lightgrey;
   display: flex;
   align-items: center;
-  margin-left: 10%;
-  padding: 0px;
+  margin-left: 5%;
+  padding: 0em;
+  width: 8em;
 `;
 
 const Input = styled.input`
@@ -48,7 +49,7 @@ const Input = styled.input`
 const Center = styled.div`
   flex: 1;
   text-align: center;
-  margin-left: 2em;
+  margin-left: 1em;
 `;
 
 const Logo = styled.h1`
@@ -64,10 +65,10 @@ const Right = styled.div`
 `;
 
 const MenuItem = styled.div`
-  font-size: 0.5em;
+  font-size: 0.7em;
   font-weight: 900;
   cursor: pointer;
-  margin-left: 10%;
+  margin-left: 5%;
 `;
 
 const Navbar = () => {
@@ -78,7 +79,7 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Search" />
-            <SearchIcon style={{ color: "grey", fontSize: "16px" }} />
+            <SearchIcon style={{ color: "grey", fontSize: "1em" }} />
           </SearchContainer>
         </Left>
         <Center>

@@ -6,11 +6,15 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import { mobile } from "../responsive";
+
+const bankOfGeorgia: string = require("../Images/bank/bankOfGeorgia.jpg");
+const libertyBank: string = require("../Images/bank/libertyBank.png");
+const tbcBank: string = require("../Images/bank/tbcBank.jpeg");
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 1em;
 `;
 const Left = styled.div`
   flex: 1;
@@ -47,9 +51,9 @@ const SocialIcon = styled.div`
 `;
 
 const Center = styled.div`
+  display: none;
   flex: 1;
   padding: 1.5em;
-  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h2`
@@ -74,8 +78,8 @@ const ListItem = styled.li`
 
 const Right = styled.div`
   flex: 1;
+  background-color: lightgray;
   padding: 1.2em;
-  ${mobile({ backgroundColor: "lightgray" })}
 `;
 
 const ContactItem = styled.div`
@@ -83,9 +87,15 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
 `;
+const BankImg = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+`;
 
-const Payment = styled.img`
-  width: 100%;
+const PaymentImg = styled.img`
+  width: 30%;
 `;
 
 const Footer = () => {
@@ -141,7 +151,11 @@ const Footer = () => {
           <MailOutlineIcon style={{ marginRight: "5%" }} />
           mosakrebeli@gmail.com
         </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <BankImg>
+          <PaymentImg src={bankOfGeorgia} />
+          <PaymentImg src={libertyBank} />
+          <PaymentImg src={tbcBank} />
+        </BankImg>
       </Right>
     </Container>
   );

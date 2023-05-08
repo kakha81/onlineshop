@@ -5,7 +5,6 @@ import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div`

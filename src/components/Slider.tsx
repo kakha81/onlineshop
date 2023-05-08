@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
-import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
-import { useState } from 'react';
-import { sliderItems } from '../data';
+import styled from "styled-components";
+import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
+import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+import { useState } from "react";
+import { sliderItems } from "../data";
 
 enum SlideIndex {
   FIRST = 0,
@@ -11,7 +11,7 @@ enum SlideIndex {
 }
 
 interface ArrowProps {
-  direction: 'left' | 'right';
+  direction: "left" | "right";
 }
 interface sliderProps {
   slideIndex: SlideIndex;
@@ -33,7 +33,7 @@ const Arrow = styled.div<ArrowProps>`
   width: 3em;
   height: 3em;
   color: teal;
-  background-color: white;
+  background-color: transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -41,17 +41,15 @@ const Arrow = styled.div<ArrowProps>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === 'left' && '0.5em'};
-  right: ${(props) => props.direction === 'right' && '0.5em'};
+  left: ${(props) => props.direction === "left" && "0.5em"};
+  right: ${(props) => props.direction === "right" && "0.5em"};
   margin: auto;
   cursor: pointer;
   opacity: 1;
   z-index: 2;
   transition: 0.3s all ease-in-out;
   &:hover {
-    color: white;
-    background-color: teal;
-    opacity: 0.7;
+    transform: scale(2);
   }
 `;
 
@@ -64,17 +62,16 @@ const Wrapper = styled.div<sliderProps>`
 `;
 
 const Slide = styled.div<SlideProps>`
-  width: 100vw;
-  height: 10vh;
+  width: 100%;
+  height: 5vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
-  height: 100%;
   flex: 1;
+  height: 50%;
 `;
 
 const Image = styled.img`
@@ -83,19 +80,15 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
   flex: 1;
-  height: 80%;
-  padding: 0.5em;
+  height: 50%;
+  margin-left: 3em;
 `;
 
 const Title = styled.h1`
   font-size: 1.5em;
+  color: teal;
 `;
-const Desc = styled.p`
-  margin: 1em 0em;
-  font-size: 0.8em;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-`;
+
 const Button = styled.button`
   padding: 0.5em;
   font-size: 1em;
@@ -114,8 +107,8 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState<SlideIndex>(SlideIndex.FIRST);
 
-  const handleClick = (direction: 'left' | 'right') => {
-    if (direction === 'left') {
+  const handleClick = (direction: "left" | "right") => {
+    if (direction === "left") {
       setSlideIndex((prev) =>
         prev === SlideIndex.FIRST ? SlideIndex.THIRD : prev - 1
       );
@@ -128,7 +121,7 @@ const Slider = () => {
 
   return (
     <Container>
-      <Arrow direction='left' onClick={() => handleClick('left')}>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <KeyboardArrowLeftOutlinedIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
@@ -139,13 +132,12 @@ const Slider = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
               <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction='right' onClick={() => handleClick('right')}>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <KeyboardArrowRightOutlinedIcon />
       </Arrow>
     </Container>

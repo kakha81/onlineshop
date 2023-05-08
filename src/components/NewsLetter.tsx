@@ -5,6 +5,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60vh;
+  margin: 1em;
   background-color: #fcf5f5;
   display: flex;
   align-items: center;
@@ -13,20 +14,20 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
-  margin-bottom: 20px;
+  font-size: 4em;
+  margin-bottom: 1.2em;
 `;
 
 const Desc = styled.div`
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 1.2em;
   ${mobile({ textAlign: "center" })}
 `;
 
 const InputContainer = styled.div`
-  width: 50%;
-  height: 40px;
+  width: 80%;
+  height: 2.5em;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -37,7 +38,7 @@ const InputContainer = styled.div`
 const Input = styled.input`
   border: none;
   flex: 8;
-  padding-left: 20px;
+  padding-left: 1.2em;
   font-size: 1.5em;
 `;
 
