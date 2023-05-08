@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/onlineshop/static/js/main.13556f0e.js",
+    "main.js": "/onlineshop/static/js/main.bfffc58f.js",
     "static/media/1.png": "/onlineshop/static/media/1.4b0d3a23e03af4af9dc2.png",
     "static/media/tbcBank.jpeg": "/onlineshop/static/media/tbcBank.ca449e8f6219d0b594b9.jpeg",
     "static/media/4.png": "/onlineshop/static/media/4.d6e2520c78e93a52b825.png",
     "static/media/bankOfGeorgia.jpg": "/onlineshop/static/media/bankOfGeorgia.0deef25728dd11fee2f2.jpg",
     "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
     "index.html": "/onlineshop/index.html",
-    "main.13556f0e.js.map": "/onlineshop/static/js/main.13556f0e.js.map"
+    "main.bfffc58f.js.map": "/onlineshop/static/js/main.bfffc58f.js.map"
   },
   "entrypoints": [
-    "static/js/main.13556f0e.js"
+    "static/js/main.bfffc58f.js"
   ]
 }
