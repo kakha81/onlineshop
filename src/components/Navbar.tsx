@@ -41,7 +41,7 @@ const Flag = styled.img<FlagProps>`
   width: 2em;
   margin-right: 0.3em;
   cursor: pointer;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0.3)};
+  opacity: ${({ isActive }) => (isActive ? 1 : 0.4)};
   transform: scale(${({ isActive }) => (isActive ? 1.1 : 1)});
   transition: 0.3s all ease-in-out;
 `;
