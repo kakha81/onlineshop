@@ -3,12 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import styled from 'styled-components';
-import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
 
-const UsFlag = require('../Images/flags/united-states-flag.png');
-const GeoFlag = require('../Images/flags/georgian-flag.png');
-
-interface NavbarProps {}
+interface burgerMenu {}
 
 const Container = styled.div`
   height: 3em;
@@ -17,45 +13,60 @@ const Container = styled.div`
 const Wrapper = styled.div`
   position: relative;
   padding: 0.5em 0em;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  ${tablet({ display: 'flex' })};
-  ${minScreen({ display: 'flex' })};
-  ${midScreen({ display: 'flex' })};
-  ${maxScreen({ display: 'flex' })};
 `;
 
 const Left = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-`;
-
-const FlagsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
-interface FlagProps {
-  isActive: boolean;
+const MenuLabel = styled.label`
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+  margin-top: 0.5em;
+`;
+
+interface IconProps {
+  clicked: boolean;
 }
 
-const Flag = styled.img<FlagProps>`
+const Icon = styled.span<IconProps>`
+  position: relative;
+  background-color: ${(props) => (props.clicked ? 'transparent' : 'teal')};
   width: 2em;
-  margin-right: 0.3em;
-  cursor: pointer;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0.3)};
-  transform: scale(${({ isActive }) => (isActive ? 1.1 : 1)});
-  transition: 0.3s all ease-in-out;
+  height: 6px;
+  display: inline-block;
+  transition: 0.3s all ease;
+  &::before,
+  &::after {
+    content: '';
+    background-color: teal;
+    width: 2em;
+    height: 6px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    transition: 0.3s all ease;
+  }
+  &::before {
+    top: ${(props) => (props.clicked ? '0' : '-0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(135deg)' : 'rotate(0)')};
+  }
+  &::after {
+    top: ${(props) => (props.clicked ? '0' : '0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(-135deg)' : 'rotate(0)')};
+  }
 `;
 
 const SearchContainer = styled.div`
   border: 0.1em solid lightgrey;
   display: flex;
-  align-items: center;
-  width: 7em;
+  width: 8em;
 `;
 
 const Input = styled.input`
@@ -86,24 +97,16 @@ const MenuItem = styled.div`
   margin-right: 0.8em;
 `;
 
-const Navbar: FC<NavbarProps> = () => {
-  const [activeFlag, setActiveFlag] = useState<'us' | 'geo'>('us');
+const BurgerMenu: FC<burgerMenu> = () => {
+  const [click, setClick] = useState<boolean>(false);
+  const handleClick = () => setClick(!click);
   return (
     <Container>
       <Wrapper>
         <Left>
-          <FlagsContainer>
-            <Flag
-              src={UsFlag}
-              isActive={activeFlag === 'us'}
-              onClick={() => setActiveFlag('us')}
-            />
-            <Flag
-              src={GeoFlag}
-              isActive={activeFlag === 'geo'}
-              onClick={() => setActiveFlag('geo')}
-            />
-          </FlagsContainer>
+          <MenuLabel htmlFor='navi-toggle' onClick={handleClick}>
+            <Icon clicked={click}>&nbsp;</Icon>
+          </MenuLabel>
           <SearchContainer>
             <Input placeholder='Search' />
             <SearchIcon style={{ color: 'grey', fontSize: '1em' }} />
@@ -126,4 +129,4 @@ const Navbar: FC<NavbarProps> = () => {
   );
 };
 
-export default Navbar;
+export default BurgerMenu;
