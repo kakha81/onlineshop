@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Announcement from "../components/Announcement";
-import NewsLetter from "../components/NewsLetter";
-import Footer from "../components/Footer";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
+import styled from 'styled-components';
+import Navbar from '../components/Navbar';
+import Announcement from '../components/Announcement';
+import NewsLetter from '../components/NewsLetter';
+import Footer from '../components/Footer';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+const imageSrc: string = require('../Images/1.png');
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -14,10 +15,11 @@ const Wrapper = styled.div`
 `;
 const ImgContainer = styled.div`
   flex: 1;
+  max-width: 100%;
 `;
 const Image = styled.img`
-  width: 90%;
-  height: 40vh;
+  width: 60vw;
+  /* height: 40vh; */
   object-fit: cover;
 `;
 const InfoContainer = styled.div`
@@ -108,8 +110,6 @@ const Button = styled.button`
   }
 `;
 
-const imageSrc: string = require("../Images/1.png");
-
 const Product = () => {
   return (
     <Container>
@@ -130,11 +130,10 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              <FilterColor color='black' />
+              <FilterColor color='darkblue' />
+              <FilterColor color='gray' />
             </Filter>
-
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>

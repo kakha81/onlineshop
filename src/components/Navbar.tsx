@@ -1,44 +1,56 @@
-import SearchIcon from "@mui/icons-material/Search";
-import Badge from "@mui/material/Badge";
-import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
-import styled from "styled-components";
-import // mobile,
-// tablet,
-// minScreen,
-// midScreen,
-// maxScreen
-"../responsive";
+import { FC, useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import Badge from '@mui/material/Badge';
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
+import styled from 'styled-components';
+
+const UsFlag = require('../Images/flags/united-states-flag.png');
+const GeoFlag = require('../Images/flags/georgian-flag.png');
+
+interface NavbarProps {}
 
 const Container = styled.div`
   height: 3em;
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   padding: 0.5em 0em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: left;
 `;
 
-const Language = styled.span`
-  font-size: 1em;
-  font-weight: 900;
+const FlagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+interface FlagProps {
+  isActive: boolean;
+}
+
+const Flag = styled.img<FlagProps>`
+  width: 2em;
+  margin-right: 0.3em;
   cursor: pointer;
+  opacity: ${({ isActive }) => (isActive ? 1 : 0.3)};
+  transform: scale(${({ isActive }) => (isActive ? 1.1 : 1)});
+  transition: 0.3s all ease-in-out;
 `;
 
 const SearchContainer = styled.div`
   border: 0.1em solid lightgrey;
   display: flex;
   align-items: center;
-  margin-left: 5%;
-  padding: 0em;
-  width: 8em;
+  width: 7em;
 `;
 
 const Input = styled.input`
@@ -47,9 +59,7 @@ const Input = styled.input`
 `;
 
 const Center = styled.div`
-  flex: 1;
-  text-align: center;
-  margin-left: 1em;
+  position: absolute;
 `;
 
 const Logo = styled.h1`
@@ -58,28 +68,40 @@ const Logo = styled.h1`
 `;
 
 const Right = styled.div`
-  flex: 3;
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: right;
 `;
 
 const MenuItem = styled.div`
   font-size: 0.7em;
   font-weight: 900;
   cursor: pointer;
-  margin-right: 5%;
+  margin-right: 0.8em;
 `;
 
-const Navbar = () => {
+const Navbar: FC<NavbarProps> = () => {
+  const [activeFlag, setActiveFlag] = useState<'us' | 'geo'>('us');
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          <FlagsContainer>
+            <Flag
+              src={UsFlag}
+              isActive={activeFlag === 'us'}
+              onClick={() => setActiveFlag('us')}
+            />
+            <Flag
+              src={GeoFlag}
+              isActive={activeFlag === 'geo'}
+              onClick={() => setActiveFlag('geo')}
+            />
+          </FlagsContainer>
           <SearchContainer>
-            <Input placeholder="Search" />
-            <SearchIcon style={{ color: "grey", fontSize: "1em" }} />
+            <Input placeholder='Search' />
+            <SearchIcon style={{ color: 'grey', fontSize: '1em' }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -89,7 +111,7 @@ const Navbar = () => {
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={2} color="primary">
+            <Badge badgeContent={2} color='primary'>
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
