@@ -1,12 +1,12 @@
-import { FC, useState } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import Badge from '@mui/material/Badge';
-import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
-import styled from 'styled-components';
-import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
+import { FC, useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import Badge from "@mui/material/Badge";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import styled from "styled-components";
+import { tablet, minScreen, midScreen, maxScreen } from "../responsive";
 
-const UsFlag = require('../Images/flags/united-states-flag.png');
-const GeoFlag = require('../Images/flags/georgian-flag.png');
+const UsFlag = require("../Images/flags/united-states-flag.png");
+const GeoFlag = require("../Images/flags/georgian-flag.png");
 
 interface NavbarProps {}
 
@@ -20,10 +20,10 @@ const Wrapper = styled.div`
   display: none;
   align-items: center;
   justify-content: center;
-  ${tablet({ display: 'flex' })};
-  ${minScreen({ display: 'flex' })};
-  ${midScreen({ display: 'flex' })};
-  ${maxScreen({ display: 'flex' })};
+  ${tablet({ display: "flex" })};
+  ${minScreen({ display: "flex" })};
+  ${midScreen({ display: "flex" })};
+  ${maxScreen({ display: "flex" })};
 `;
 
 const Left = styled.div`
@@ -87,7 +87,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar: FC<NavbarProps> = () => {
-  const [activeFlag, setActiveFlag] = useState<'us' | 'geo'>('us');
+  const [activeFlag, setActiveFlag] = useState<"us" | "geo">("us");
   return (
     <Container>
       <Wrapper>
@@ -95,18 +95,18 @@ const Navbar: FC<NavbarProps> = () => {
           <FlagsContainer>
             <Flag
               src={UsFlag}
-              isActive={activeFlag === 'us'}
-              onClick={() => setActiveFlag('us')}
+              isActive={activeFlag === "us"}
+              onClick={() => setActiveFlag("us")}
             />
             <Flag
               src={GeoFlag}
-              isActive={activeFlag === 'geo'}
-              onClick={() => setActiveFlag('geo')}
+              isActive={activeFlag === "geo"}
+              onClick={() => setActiveFlag("geo")}
             />
           </FlagsContainer>
           <SearchContainer>
-            <Input placeholder='Search' />
-            <SearchIcon style={{ color: 'grey', fontSize: '1em' }} />
+            <Input placeholder="Search" />
+            <SearchIcon style={{ color: "grey", fontSize: "1em" }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -116,7 +116,7 @@ const Navbar: FC<NavbarProps> = () => {
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={2} color='primary'>
+            <Badge badgeContent={2} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>

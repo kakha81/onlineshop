@@ -1,8 +1,7 @@
-import { FC, useState } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import Badge from '@mui/material/Badge';
-import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
-import styled from 'styled-components';
+import { FC, useState } from "react";
+import Badge from "@mui/material/Badge";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import styled from "styled-components";
 
 interface burgerMenu {}
 
@@ -27,7 +26,6 @@ const Left = styled.div`
 const MenuLabel = styled.label`
   cursor: pointer;
   width: 3em;
-  height: 3em;
   margin-top: 0.5em;
 `;
 
@@ -35,16 +33,20 @@ interface IconProps {
   clicked: boolean;
 }
 
+interface SideNavProps {
+  clicked: boolean;
+}
+
 const Icon = styled.span<IconProps>`
   position: relative;
-  background-color: ${(props) => (props.clicked ? 'transparent' : 'teal')};
+  background-color: ${(props) => (props.clicked ? "transparent" : "teal")};
   width: 2em;
   height: 6px;
   display: inline-block;
   transition: 0.3s all ease;
   &::before,
   &::after {
-    content: '';
+    content: "";
     background-color: teal;
     width: 2em;
     height: 6px;
@@ -54,24 +56,13 @@ const Icon = styled.span<IconProps>`
     transition: 0.3s all ease;
   }
   &::before {
-    top: ${(props) => (props.clicked ? '0' : '-0.8rem')};
-    transform: ${(props) => (props.clicked ? 'rotate(135deg)' : 'rotate(0)')};
+    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
   &::after {
-    top: ${(props) => (props.clicked ? '0' : '0.8rem')};
-    transform: ${(props) => (props.clicked ? 'rotate(-135deg)' : 'rotate(0)')};
+    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
-`;
-
-const SearchContainer = styled.div`
-  border: 0.1em solid lightgrey;
-  display: flex;
-  width: 8em;
-`;
-
-const Input = styled.input`
-  border: none;
-  width: 100%;
 `;
 
 const Center = styled.div`
@@ -87,7 +78,7 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
 `;
 
 const MenuItem = styled.div`
@@ -95,6 +86,28 @@ const MenuItem = styled.div`
   font-weight: 900;
   cursor: pointer;
   margin-right: 0.8em;
+`;
+const SideNav = styled.div<SideNavProps>`
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: teal;
+  transform: translateX(${(props) => (props.clicked ? "0%" : "-100%")});
+  transition: all 0.5s ease-in-out;
+`;
+
+const MenuContainer = styled.ul`
+  position: fixed;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ListItem = styled.li`
+  color: white;
+  height: 4em;
+  font-size: 2em;
+  margin-top: 1em;
 `;
 
 const BurgerMenu: FC<burgerMenu> = () => {
@@ -104,13 +117,9 @@ const BurgerMenu: FC<burgerMenu> = () => {
     <Container>
       <Wrapper>
         <Left>
-          <MenuLabel htmlFor='navi-toggle' onClick={handleClick}>
+          <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
             <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
-          <SearchContainer>
-            <Input placeholder='Search' />
-            <SearchIcon style={{ color: 'grey', fontSize: '1em' }} />
-          </SearchContainer>
         </Left>
         <Center>
           <Logo>ONLINE SHOP</Logo>
@@ -119,12 +128,20 @@ const BurgerMenu: FC<burgerMenu> = () => {
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={2} color='primary'>
+            <Badge badgeContent={2} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
         </Right>
       </Wrapper>
+      <SideNav clicked={click}>
+        <MenuContainer>
+          <ListItem>HOME</ListItem>
+          <ListItem>PRODUCTS</ListItem>
+          <ListItem>MY BASKET</ListItem>
+          <ListItem>CONTACT</ListItem>
+        </MenuContainer>
+      </SideNav>
     </Container>
   );
 };
