@@ -44,8 +44,8 @@ const MenuLabel = styled.label`
   cursor: pointer;
   width: 3em;
   margin-top: 0.5em;
-  /* ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })}; */
+  ${midScreen({ display: "none" })};
+  ${maxScreen({ display: "none" })};
 `;
 
 const Icon = styled.span<IconProps>`
