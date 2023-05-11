@@ -9,7 +9,7 @@ const UsFlag = require("../Images/flags/united-states-flag.png");
 const GeoFlag = require("../Images/flags/georgian-flag.png");
 
 interface NavbarProps {}
-interface burgerMenu {}
+
 interface IconProps {
   clicked: boolean;
 }
@@ -22,7 +22,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  position: relative;
   padding: 0.5em 0em;
   display: flex;
   align-items: center;
@@ -133,14 +132,17 @@ const MenuItem = styled.div`
   margin-right: 0.8em;
 `;
 const SideNav = styled.div<SideNavProps>`
-  position: absolute;
-  width: 50%;
+  position: fixed;
+  width: 15em;
   height: 100%;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
   background-color: teal;
   transform: translateX(${(props) => (props.clicked ? "0%" : "-100%")});
   transition: all 0.5s ease-in-out;
   ${midScreen({ display: "none" })};
   ${maxScreen({ display: "none" })};
+  z-index: 1000;
 `;
 
 const MenuContainer = styled.ul`
@@ -152,9 +154,11 @@ const MenuContainer = styled.ul`
 
 const ListItem = styled.li`
   color: white;
-  height: 4em;
-  font-size: 2em;
-  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-top: 2em;
+  margin-left: 2em;
+  cursor: pointer;
 `;
 
 const Navbar: FC<NavbarProps> = () => {

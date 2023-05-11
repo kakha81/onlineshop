@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
@@ -171,7 +170,6 @@ const Button = styled.button`
 const Cart = () => {
   return (
     <Container>
-      <Announcement />
       <Navbar />
       <Wrapper>
         <Title>YOUR BAG</Title>

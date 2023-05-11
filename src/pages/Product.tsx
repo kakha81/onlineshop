@@ -1,11 +1,10 @@
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import Announcement from '../components/Announcement';
-import NewsLetter from '../components/NewsLetter';
-import Footer from '../components/Footer';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-const imageSrc: string = require('../Images/1.png');
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import NewsLetter from "../components/NewsLetter";
+import Footer from "../components/Footer";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+const imageSrc: string = require("../Images/1.png");
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -114,7 +113,6 @@ const Product = () => {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Wrapper>
         <ImgContainer>
           <Image src={imageSrc} />
@@ -130,9 +128,9 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color='black' />
-              <FilterColor color='darkblue' />
-              <FilterColor color='gray' />
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="gray" />
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
