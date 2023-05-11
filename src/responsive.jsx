@@ -1,8 +1,8 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 
 export const tablet = (props) => {
   return css`
-    @media only screen and (min-width: 549px) and (max-width: 767px) {
+    @media only screen and (min-width: 349px) and (max-width: 767px) {
       ${props}
     }
   `;
