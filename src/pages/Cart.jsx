@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
+import styled from 'styled-components';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import MenuContent from '../components/MenuContent';
 
 const Container = styled.div``;
 
@@ -26,10 +27,10 @@ const TopButton = styled.button`
   padding: 0.5em;
   font-weight: 600;
   cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
+  border: ${(props) => props.type === 'filled' && 'none'};
   background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
+    props.type === 'filled' ? 'black' : 'transparent'};
+  color: ${(props) => props.type === 'filled' && 'white'};
 `;
 
 const TopTexts = styled.div`
@@ -142,8 +143,8 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "1.5em"};
+  font-weight: ${(props) => props.type === 'total' && '500'};
+  font-size: ${(props) => props.type === 'total' && '1.5em'};
 `;
 
 const SummaryItemText = styled.span``;
@@ -164,13 +165,19 @@ const Button = styled.button`
   font-size: 0.8em;
   font-weight: 600;
   color: white;
-  background-color: black;
+  background-color: teal;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  &:active {
+    transform: scale(1.05);
+  }
 `;
 
 const Cart = () => {
   return (
     <Container>
       <Navbar />
+      <MenuContent />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -179,13 +186,13 @@ const Cart = () => {
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist(0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton type='filled'>CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
             <Product>
               <ProductDetail>
-                <Image src={require("../Images/1.png")} />
+                <Image src={require('../Images/1.png')} />
                 <Details>
                   <ProductName>
                     <b>Product:</b>ADIDAS
@@ -193,7 +200,7 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b>6464161651
                   </ProductId>
-                  <ProductColor color="orange" />
+                  <ProductColor color='orange' />
                   <ProductSize>
                     <b>Size:</b>37.5
                   </ProductSize>
@@ -211,7 +218,7 @@ const Cart = () => {
             <Hr />
             <Product>
               <ProductDetail>
-                <Image src={require("../Images/2.png")} />
+                <Image src={require('../Images/2.png')} />
                 <Details>
                   <ProductName>
                     <b>Product:</b>NIKE
@@ -219,7 +226,7 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b>456415145
                   </ProductId>
-                  <ProductColor color="gray" />
+                  <ProductColor color='gray' />
                   <ProductSize>
                     <b>Size:</b>32.5
                   </ProductSize>
@@ -251,7 +258,7 @@ const Cart = () => {
               <SummaryItemText>Shipping Discount</SummaryItemText>
               <SummaryItemPrice>$ -5.90</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem type="total">
+            <SummaryItem type='total'>
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>

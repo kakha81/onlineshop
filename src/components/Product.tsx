@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
-import SearchIcon from "@mui/icons-material/Search";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import styled from 'styled-components';
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 const Info = styled.div`
   position: absolute;
@@ -18,7 +18,6 @@ const Info = styled.div`
   transition: all 0.3s ease;
   cursor: pointer;
 `;
-
 const Container = styled.div`
   position: relative;
   flex: 1;

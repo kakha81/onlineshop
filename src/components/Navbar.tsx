@@ -1,12 +1,12 @@
-import { FC, useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import Badge from "@mui/material/Badge";
-import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
-import styled from "styled-components";
-import { tablet, minScreen, midScreen, maxScreen } from "../responsive";
+import { FC, useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import Badge from '@mui/material/Badge';
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
+import styled from 'styled-components';
+import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
 
-const UsFlag = require("../Images/flags/united-states-flag.png");
-const GeoFlag = require("../Images/flags/georgian-flag.png");
+const UsFlag = require('../Images/flags/united-states-flag.png');
+const GeoFlag = require('../Images/flags/georgian-flag.png');
 
 interface NavbarProps {}
 
@@ -19,6 +19,7 @@ interface SideNavProps {
 
 const Container = styled.div`
   height: 3em;
+  background-color: teal;
 `;
 
 const Wrapper = styled.div`
@@ -26,62 +27,61 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${tablet({ flexDirection: "row" })};
-  ${minScreen({ flexDirection: "row" })};
+  ${tablet({ flexDirection: 'row' })};
+  ${minScreen({ flexDirection: 'row' })};
 `;
 
 const Left = styled.div`
   display: flex;
   align-items: center;
-  ${tablet({ flexDirection: "row" })};
-  ${minScreen({ flexDirection: "row" })};
-  ${midScreen({ justifyContent: "left" })};
-  ${maxScreen({ justifyContent: "left" })};
+  ${tablet({ flexDirection: 'row' })};
+  ${minScreen({ flexDirection: 'row' })};
+  ${midScreen({ justifyContent: 'left' })};
+  ${maxScreen({ justifyContent: 'left' })};
 `;
 
 const MenuLabel = styled.label`
   cursor: pointer;
   width: 3em;
   margin-top: 0.5em;
-  ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })};
+  ${minScreen({ display: 'none' })};
+  ${midScreen({ display: 'none' })};
+  ${maxScreen({ display: 'none' })};
 `;
 
 const Icon = styled.span<IconProps>`
-  /* ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })}; */
   position: relative;
-  background-color: ${(props) => (props.clicked ? "transparent" : "teal")};
+  background-color: ${(props) => (props.clicked ? 'transparent' : 'white')};
   width: 2em;
-  height: 6px;
+  height: 3px;
+  margin: 0.3em;
   display: inline-block;
   transition: 0.3s all ease;
   &::before,
   &::after {
-    content: "";
-    background-color: teal;
+    content: '';
+    background-color: white;
     width: 2em;
-    height: 6px;
+    height: 3px;
     display: inline-block;
     position: absolute;
     left: 0;
     transition: 0.3s all ease;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '-0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(135deg)' : 'rotate(0)')};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(-135deg)' : 'rotate(0)')};
   }
 `;
 
 const FlagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  ${tablet({ display: "none" })};
-  ${minScreen({ display: "none" })};
+  ${tablet({ display: 'none' })};
 `;
 
 interface FlagProps {
@@ -98,15 +98,21 @@ const Flag = styled.img<FlagProps>`
 `;
 
 const SearchContainer = styled.div`
-  border: 0.1em solid lightgrey;
+  border: 0.1em solid teal;
   display: flex;
   align-items: center;
-  width: 7em;
+  margin-left: 0.2em;
+  width: 9em;
+  ${tablet({ width: '9em' })};
+  ${minScreen({ width: '15em' })};
+  ${midScreen({ width: '20em' })};
+  ${maxScreen({ width: '20em' })};
 `;
 
 const Input = styled.input`
   border: none;
   width: 100%;
+  padding: 0.2em 0.5em;
 `;
 
 const Center = styled.div`
@@ -114,8 +120,12 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-size: 0.7em;
-  font-weight: 900;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: white;
+  ${minScreen({ fontSize: '1em' })};
+  ${midScreen({ fontSize: '1.5em' })};
+  ${maxScreen({ fontSize: '1.7em' })};
 `;
 
 const Right = styled.div`
@@ -123,6 +133,8 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: white;
+  margin-right: 0.5em;
 `;
 
 const MenuItem = styled.div`
@@ -135,13 +147,11 @@ const SideNav = styled.div<SideNavProps>`
   position: fixed;
   width: 15em;
   height: 100%;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
   background-color: teal;
-  transform: translateX(${(props) => (props.clicked ? "0%" : "-100%")});
+  transform: translateX(${(props) => (props.clicked ? '0%' : '-100%')});
   transition: all 0.5s ease-in-out;
-  ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })};
+  ${midScreen({ display: 'none' })};
+  ${maxScreen({ display: 'none' })};
   z-index: 1000;
 `;
 
@@ -157,36 +167,47 @@ const ListItem = styled.li`
   font-size: 1.5em;
   font-weight: 900;
   margin-top: 2em;
-  margin-left: 2em;
+  margin-left: 1em;
+  border-bottom: 4px solid teal;
+  transition: 0.5s all ease-out;
   cursor: pointer;
+  &:hover {
+    border-bottom: 4px solid white;
+  }
 `;
 
 const Navbar: FC<NavbarProps> = () => {
-  const [activeFlag, setActiveFlag] = useState<"us" | "geo">("us");
+  const [activeFlag, setActiveFlag] = useState<'us' | 'geo'>('us');
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => setClick(!click);
   return (
     <Container>
       <Wrapper>
         <Left>
-          <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
+          <MenuLabel htmlFor='navi-toggle' onClick={handleClick}>
             <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
           <FlagsContainer>
             <Flag
               src={UsFlag}
-              isActive={activeFlag === "us"}
-              onClick={() => setActiveFlag("us")}
+              isActive={activeFlag === 'us'}
+              onClick={() => setActiveFlag('us')}
             />
             <Flag
               src={GeoFlag}
-              isActive={activeFlag === "geo"}
-              onClick={() => setActiveFlag("geo")}
+              isActive={activeFlag === 'geo'}
+              onClick={() => setActiveFlag('geo')}
             />
           </FlagsContainer>
           <SearchContainer>
-            <Input placeholder="Search" />
-            <SearchIcon style={{ color: "grey", fontSize: "1em" }} />
+            <Input placeholder='SEARCH' />
+            <SearchIcon
+              style={{
+                color: 'white',
+                fontSize: '1.5em',
+                paddingLeft: '0.2em',
+              }}
+            />
           </SearchContainer>
         </Left>
         <Center>
@@ -196,7 +217,7 @@ const Navbar: FC<NavbarProps> = () => {
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={2} color="primary">
+            <Badge badgeContent={1} color='warning'>
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>

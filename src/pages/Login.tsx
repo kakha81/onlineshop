@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-const coverImg: string = require("../Images/cover.jpg");
+const coverImg: string = require('../Images/cover.jpg');
 
 const Container = styled.div`
   position: relative;
@@ -56,12 +57,17 @@ const Button = styled.button`
   margin-bottom: 1em;
 `;
 
-const Link = styled.a`
+const DirectLink = styled.a`
   margin: 0.5em 0em;
   font-size: 1em;
   font-weight: 600;
   text-decoration: underline;
+  opacity: 0.7;
   cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Login = () => {
@@ -71,11 +77,13 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Input placeholder='email' />
+          <Input placeholder='password' />
+          <Link to='/Home'>
+            <Button>LOGIN</Button>
+          </Link>
+          <DirectLink>DO NOT YOU REMEMBER THE PASSWORD?</DirectLink>
+          <DirectLink>CREATE A NEW ACCOUNT</DirectLink>
         </Form>
       </Wrapper>
     </Container>

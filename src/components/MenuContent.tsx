@@ -1,0 +1,40 @@
+import styled from 'styled-components';
+import { tablet } from '../responsive';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+  ${tablet({ display: 'none' })};
+`;
+const MenuContainer = styled.li`
+  list-style: none;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+  padding: 0.2em;
+  color: white;
+  border-bottom: 4px solid teal;
+  transition: 0.5s all ease-out;
+  cursor: pointer;
+  &:active {
+    font-weight: 600;
+  }
+  &:hover {
+    border-bottom: 4px solid white;
+  }
+`;
+
+const MenuContent = () => {
+  return (
+    <Container>
+      <MenuContainer>HOME</MenuContainer>
+      <MenuContainer>PRODUCTS</MenuContainer>
+      <MenuContainer>MY BASKET</MenuContainer>
+      <MenuContainer>CONTACT</MenuContainer>
+    </Container>
+  );
+};
+
+export default MenuContent;

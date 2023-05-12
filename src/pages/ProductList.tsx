@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Products from "../components/Products";
-import NewsLetter from "../components/NewsLetter";
-import Footer from "../components/Footer";
+import styled from 'styled-components';
+import Navbar from '../components/Navbar';
+import Products from '../components/Products';
+import NewsLetter from '../components/NewsLetter';
+import Footer from '../components/Footer';
+import MenuContent from '../components/MenuContent';
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -36,6 +37,7 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar />
+      <MenuContent />
       <Title>Dresses</Title>
       <FilterContainer>
         <Filter>

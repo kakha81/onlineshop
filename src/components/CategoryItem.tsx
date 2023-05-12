@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   flex: 1;
   margin: 1em;
-  position: relative;
 `;
 const Image = styled.img`
-  width: 80%;
-  height: 80%;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   margin: 0.5em auto;
 `;
