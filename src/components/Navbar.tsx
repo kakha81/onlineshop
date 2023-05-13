@@ -216,16 +216,16 @@ const Navbar: FC<NavbarProps> = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo onClick={() => navigate('/Home')}>ONLINE SHOP</Logo>
+          <Logo onClick={() => navigate('/home')}>ONLINE SHOP</Logo>
         </Center>
         <Right>
-          <MenuItem onClick={() => navigate('/Register')}>REGISTER</MenuItem>
-          <MenuItem onClick={() => navigate('/Login')}>SIGN IN</MenuItem>
+          <MenuItem onClick={() => navigate('/register')}>REGISTER</MenuItem>
+          <MenuItem onClick={() => navigate('/')}>SIGN IN</MenuItem>
           <MenuItem>
             <Badge
               badgeContent={1}
               color='warning'
-              onClick={() => navigate('/Cart')}
+              onClick={() => navigate('/cart')}
             >
               <ShoppingCartOutlined />
             </Badge>
@@ -234,9 +234,9 @@ const Navbar: FC<NavbarProps> = () => {
       </Wrapper>
       <SideNav clicked={click}>
         <MenuContainer>
-          <ListItem onClick={() => navigate('/Home')}>HOME</ListItem>
-          <ListItem onClick={() => navigate('/Product')}>PRODUCTS</ListItem>
-          <ListItem onClick={() => navigate('/Cart')}>MY BASKET</ListItem>
+          <ListItem onClick={() => navigate('/home')}>HOME</ListItem>
+          <ListItem onClick={() => navigate('/product')}>PRODUCTS</ListItem>
+          <ListItem onClick={() => navigate('/cart')}>MY BASKET</ListItem>
           <ListItem>CONTACT</ListItem>
         </MenuContainer>
       </SideNav>

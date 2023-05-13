@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -81,9 +80,7 @@ const Login = () => {
         <Form>
           <Input placeholder='email' />
           <Input placeholder='password' />
-          <Link to='/Home'>
-            <Button onClick={() => navigate('./Home')}>LOGIN</Button>
-          </Link>
+          <Button onClick={() => navigate('/home')}>LOGIN</Button>
           <DirectLink>DO NOT YOU REMEMBER THE PASSWORD?</DirectLink>
           <DirectLink>CREATE A NEW ACCOUNT</DirectLink>
         </Form>
