@@ -8,16 +8,14 @@ import Cart from './pages/Cart';
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/productlist' element={<ProductList />} />
-        <Route path='/product' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/productlist' element={<ProductList />} />
+      <Route path='/product' element={<Product />} />
+      <Route path='/cart' element={<Cart />} />
+      <Route path='/register' element={<Register />} />
+    </Routes>
   );
 };
 
