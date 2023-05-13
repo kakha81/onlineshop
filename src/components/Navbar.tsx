@@ -4,6 +4,7 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import styled from 'styled-components';
 import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
+import { useNavigate } from 'react-router-dom';
 
 const UsFlag = require('../Images/flags/united-states-flag.png');
 const GeoFlag = require('../Images/flags/georgian-flag.png');
@@ -123,6 +124,7 @@ const Logo = styled.h1`
   font-size: 0.8em;
   font-weight: 600;
   color: white;
+  cursor: pointer;
   ${minScreen({ fontSize: '1em' })};
   ${midScreen({ fontSize: '1.5em' })};
   ${maxScreen({ fontSize: '1.7em' })};
@@ -180,6 +182,9 @@ const Navbar: FC<NavbarProps> = () => {
   const [activeFlag, setActiveFlag] = useState<'us' | 'geo'>('us');
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => setClick(!click);
+
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Wrapper>
@@ -211,13 +216,17 @@ const Navbar: FC<NavbarProps> = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>ONLINE SHOP</Logo>
+          <Logo onClick={() => navigate('/Home')}>ONLINE SHOP</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem onClick={() => navigate('/Register')}>REGISTER</MenuItem>
+          <MenuItem onClick={() => navigate('/Login')}>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={1} color='warning'>
+            <Badge
+              badgeContent={1}
+              color='warning'
+              onClick={() => navigate('/Cart')}
+            >
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
@@ -225,9 +234,9 @@ const Navbar: FC<NavbarProps> = () => {
       </Wrapper>
       <SideNav clicked={click}>
         <MenuContainer>
-          <ListItem>HOME</ListItem>
-          <ListItem>PRODUCTS</ListItem>
-          <ListItem>MY BASKET</ListItem>
+          <ListItem onClick={() => navigate('/Home')}>HOME</ListItem>
+          <ListItem onClick={() => navigate('/Product')}>PRODUCTS</ListItem>
+          <ListItem onClick={() => navigate('/Cart')}>MY BASKET</ListItem>
           <ListItem>CONTACT</ListItem>
         </MenuContainer>
       </SideNav>

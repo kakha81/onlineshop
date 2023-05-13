@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const coverImg: string = require('../Images/cover.jpg');
 
@@ -71,6 +72,7 @@ const DirectLink = styled.a`
 `;
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Image src={coverImg} />
@@ -80,7 +82,7 @@ const Login = () => {
           <Input placeholder='email' />
           <Input placeholder='password' />
           <Link to='/Home'>
-            <Button>LOGIN</Button>
+            <Button onClick={() => navigate('./Home')}>LOGIN</Button>
           </Link>
           <DirectLink>DO NOT YOU REMEMBER THE PASSWORD?</DirectLink>
           <DirectLink>CREATE A NEW ACCOUNT</DirectLink>

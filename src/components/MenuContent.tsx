@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { tablet } from '../responsive';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -27,11 +28,14 @@ const MenuContainer = styled.li`
 `;
 
 const MenuContent = () => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <MenuContainer>HOME</MenuContainer>
-      <MenuContainer>PRODUCTS</MenuContainer>
-      <MenuContainer>MY BASKET</MenuContainer>
+      <MenuContainer onClick={() => navigate('/Home')}>HOME</MenuContainer>
+      <MenuContainer onClick={() => navigate('/ProductList')}>
+        PRODUCTS
+      </MenuContainer>
+      <MenuContainer onClick={() => navigate('/Cart')}>MY BASKET</MenuContainer>
       <MenuContainer>CONTACT</MenuContainer>
     </Container>
   );
