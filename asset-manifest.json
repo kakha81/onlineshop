@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/onlineshop/static/js/main.7905c0a5.js",
+    "main.js": "/onlineshop/static/js/main.be2559b9.js",
     "static/media/cover.jpg": "/onlineshop/static/media/cover.5f8f3de892facf29d219.jpg",
     "static/media/tbcBank.jpeg": "/onlineshop/static/media/tbcBank.ca449e8f6219d0b594b9.jpeg",
     "static/media/1.png": "/onlineshop/static/media/1.d6e2520c78e93a52b825.png",
@@ -8,9 +8,9 @@
     "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
     "static/media/united-states-flag.png": "/onlineshop/static/media/united-states-flag.348322a7eb6fa906d005.png",
     "index.html": "/onlineshop/index.html",
-    "main.7905c0a5.js.map": "/onlineshop/static/js/main.7905c0a5.js.map"
+    "main.be2559b9.js.map": "/onlineshop/static/js/main.be2559b9.js.map"
   },
   "entrypoints": [
-    "static/js/main.7905c0a5.js"
+    "static/js/main.be2559b9.js"
   ]
 }
