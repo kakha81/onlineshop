@@ -82,7 +82,9 @@ const Login = () => {
           <Input placeholder='password' />
           <Button onClick={() => navigate('/home')}>LOGIN</Button>
           <DirectLink>DO NOT YOU REMEMBER THE PASSWORD?</DirectLink>
-          <DirectLink>CREATE A NEW ACCOUNT</DirectLink>
+          <DirectLink onClick={() => navigate('/register')}>
+            CREATE A NEW ACCOUNT
+          </DirectLink>
         </Form>
       </Wrapper>
     </Container>

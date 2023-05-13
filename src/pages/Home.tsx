@@ -8,7 +8,7 @@ import MenuContent from '../components/MenuContent';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <MenuContent />
       <Slider />
@@ -16,7 +16,7 @@ const Home = () => {
       <Products />
       <NewsLetter />
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import MenuContent from '../components/MenuContent';
+import { useState } from 'react';
 const imageSrc: string = require('../Images/1.png');
 
 const Container = styled.div``;
@@ -54,7 +55,7 @@ const FilterTitle = styled.span`
   font-weight: 500;
 `;
 
-const FilterColor = styled.div`
+const FilterColor = styled.div<{ color: string }>`
   width: 1.2em;
   height: 1.2em;
   border-radius: 50%;
@@ -107,14 +108,24 @@ const Button = styled.button`
   font-weight: 900;
 `;
 
-const Product = () => {
+const Product: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
+
+  const decreaseCount = () => {
+    setCount((prevCount) => Math.max(prevCount - 1, 0));
+  };
+
+  const increaseCount = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
   return (
     <Container>
       <Navbar />
       <MenuContent />
       <Wrapper>
         <ImgContainer>
-          <Image src={imageSrc} />
+          <Image src={imageSrc} alt='Product' />
         </ImgContainer>
         <InfoContainer>
           <Title>Denim Jumpsuit</Title>
@@ -145,9 +156,17 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon />
-              <Amount>1</Amount>
-              <AddIcon />
+              <RemoveIcon
+                onClick={() => {
+                  decreaseCount();
+                }}
+              />
+              <Amount>{count}</Amount>
+              <AddIcon
+                onClick={() => {
+                  increaseCount();
+                }}
+              />
             </AmountContainer>
             <Button>ADD TO CART</Button>
           </AddContainer>
