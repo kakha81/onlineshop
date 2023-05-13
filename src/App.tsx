@@ -9,8 +9,9 @@ import Cart from './pages/Cart';
 const App = () => {
   return (
     <Routes>
-      <Route path='/Home' element={<Home />} />
+      <Route path='/' element={<Login />} />
       <Route path='/Login' element={<Login />} />
+      <Route path='/Home' element={<Home />} />
       <Route path='/ProductList' element={<ProductList />} />
       <Route path='/Product' element={<Product />} />
       <Route path='/Cart' element={<Cart />} />
