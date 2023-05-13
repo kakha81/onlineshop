@@ -104,7 +104,7 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 0.2em;
   width: 7em;
-  ${tablet({ width: '9em' })};
+  ${tablet({ display: 'none' })};
   ${minScreen({ width: '15em' })};
   ${midScreen({ width: '20em' })};
   ${maxScreen({ width: '20em' })};
@@ -237,7 +237,7 @@ const Navbar: FC<NavbarProps> = () => {
           <ListItem onClick={() => navigate('/home')}>HOME</ListItem>
           <ListItem onClick={() => navigate('/product')}>PRODUCTS</ListItem>
           <ListItem onClick={() => navigate('/cart')}>MY BASKET</ListItem>
-          <ListItem onClick={() => navigate('/profile')}>PROFILE</ListItem>
+          <ListItem onClick={() => navigate('/profile')}>MY ACCOUNT</ListItem>
         </MenuContainer>
       </SideNav>
     </Container>
