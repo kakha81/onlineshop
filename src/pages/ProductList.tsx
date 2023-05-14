@@ -4,6 +4,7 @@ import Products from '../components/Products';
 import NewsLetter from '../components/NewsLetter';
 import Footer from '../components/Footer';
 import MenuContent from '../components/MenuContent';
+import { colors, sizes } from '../data';
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -38,7 +39,7 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <MenuContent />
-      <Title>Dresses</Title>
+      <Title>SHOES</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -46,23 +47,17 @@ const ProductList = () => {
             <Option disabled selected>
               Color
             </Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            {colors.map((item) => (
+              <Option key={item.id}>{item.color}</Option>
+            ))}
           </Select>
           <Select>
             <Option disabled selected>
               Size
             </Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
-            <Option>XXL</Option>
+            {sizes.map((item) => (
+              <Option key={item.id}>{item.size}</Option>
+            ))}
           </Select>
         </Filter>
         <Filter>

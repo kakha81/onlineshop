@@ -157,7 +157,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 10rem;
+  width: 8rem;
   display: flex;
   justify-content: center;
   padding: 0.5em;

@@ -235,7 +235,7 @@ const Navbar: FC<NavbarProps> = () => {
       <SideNav clicked={click}>
         <MenuContainer>
           <ListItem onClick={() => navigate('/home')}>HOME</ListItem>
-          <ListItem onClick={() => navigate('/product')}>PRODUCTS</ListItem>
+          <ListItem onClick={() => navigate('/productList')}>PRODUCTS</ListItem>
           <ListItem onClick={() => navigate('/cart')}>MY BASKET</ListItem>
           <ListItem onClick={() => navigate('/profile')}>MY ACCOUNT</ListItem>
         </MenuContainer>

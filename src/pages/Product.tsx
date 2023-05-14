@@ -20,7 +20,6 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
   width: 60vw;
-  /* height: 40vh; */
   object-fit: cover;
 `;
 const InfoContainer = styled.div`

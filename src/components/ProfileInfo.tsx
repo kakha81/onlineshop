@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { cities } from '../data';
 
 const Container = styled.div`
   display: flex;
@@ -82,14 +83,20 @@ const ProfileInfo = () => {
       <TextContainer>
         <ProfileName>Email</ProfileName>
         <InputContainer>
-          <Input placeholder='Email' />
+          <Input placeholder='Email' type='email' />
+        </InputContainer>
+      </TextContainer>
+      <TextContainer>
+        <ProfileName>Password</ProfileName>
+        <InputContainer>
+          <Input placeholder='Password' type='password' />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Phone</ProfileName>
         <InputContainer>
-          <Input placeholder='+995 XXX XXX XXX' />
+          <Input placeholder='+995 XXX XXX XXX' type='number' />
         </InputContainer>
       </TextContainer>
 
@@ -104,7 +111,11 @@ const ProfileInfo = () => {
       <TextContainer>
         <ProfileName>Date of Birth</ProfileName>
         <InputContainer>
-          <Input placeholder='Day/Month/Year' />
+          <Input
+            placeholder='Month/Day/Year'
+            type='date'
+            style={{ paddingLeft: '1em', paddingRight: '4em' }}
+          />
         </InputContainer>
       </TextContainer>
 
@@ -119,21 +130,21 @@ const ProfileInfo = () => {
       <TextContainer>
         <ProfileName>Identification number</ProfileName>
         <InputContainer>
-          <Input placeholder='Identification number' />
+          <Input placeholder='Identification number' type='number' />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Legal address</ProfileName>
         <InputContainer>
-          <Input />
+          <Input placeholder='Legal address' />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Pysical address</ProfileName>
         <InputContainer>
-          <Input />
+          <Input placeholder='Pysical address' />
         </InputContainer>
       </TextContainer>
 
@@ -147,66 +158,11 @@ const ProfileInfo = () => {
       <TextContainer>
         <ProfileName>City</ProfileName>
         <Select>
-          <Option>Tbilisi</Option>
-          <Option>Kutaisi</Option>
-          <Option>Rustavi</Option>
-          <Option>Batumi</Option>
-          <Option>Zugdidi</Option>
-          <Option>Telavi</Option>
-          <Option>Akhaltsikhe</Option>
-          <Option>Gori</Option>
-          <Option>Abasha</Option>
-          <Option>Akhalkalaki</Option>
-          <Option>Bagdati</Option>
-          <Option>Bolnisi</Option>
-          <Option>Borjomi</Option>
-          <Option>Dedoplistskaro</Option>
-          <Option>Dmanisi</Option>
-          <Option>Dusheti</Option>
-          <Option>Gardabani</Option>
-          <Option>Gurjaani</Option>
-          <Option>Adigeni</Option>
-          <Option>Vale</Option>
-          <Option>Vani</Option>
-          <Option>Zestaponi</Option>
-          <Option>Tetritskaro</Option>
-          <Option>Terjola</Option>
-          <Option>Tianeti</Option>
-          <Option>Kaspi</Option>
-          <Option>Lagodekhi</Option>
-          <Option>Lanchkhuti</Option>
-          <Option>Marneuli</Option>
-          <Option>Martvili</Option>
-          <Option>Mestia</Option>
-          <Option>Mtskheta</Option>
-          <Option>Ninotsminda</Option>
-          <Option>Ozurgeti</Option>
-          <Option>Oni</Option>
-          <Option>Sagarejo</Option>
-          <Option>Samtredia</Option>
-          <Option>Sachkhere</Option>
-          <Option>Senaki</Option>
-          <Option>Sighnaghi</Option>
-          <Option>Stepantsminda</Option>
-          <Option>Surami</Option>
-          <Option>Tkibuli</Option>
-          <Option>Poti</Option>
-          <Option>Qareli</Option>
-          <Option>Qobuleti</Option>
-          <Option>Kvareli</Option>
-          <Option>Chokhatauri</Option>
-          <Option>Chkhorotsku</Option>
-          <Option>Tsageri</Option>
-          <Option>Tsalenjikha</Option>
-          <Option>Tsalka</Option>
-          <Option>Tsnori</Option>
-          <Option>Tskaltubo</Option>
-          <Option>Chiatura</Option>
-          <Option>Kharagauli</Option>
-          <Option>Khashuri</Option>
-          <Option>Khobi</Option>
-          <Option>Khoni</Option>
-          <Option>Jvari</Option>
+          {cities.map((item) => (
+            <Option key={item.id} value={item.city}>
+              {item.city}
+            </Option>
+          ))}
         </Select>
       </TextContainer>
 

@@ -1,62 +1,41 @@
 import styled from 'styled-components';
-import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-const Info = styled.div`
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-`;
 const Container = styled.div`
-  position: relative;
-  flex: 1;
-  min-width: 17em;
-  height: 22em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5fbfb;
-  &:hover ${Info} {
-    opacity: 1;
-  }
-`;
-const Circle = styled.div`
-  width: 12.5em;
-  height: 12.5em;
-  border-radius: 50%;
+  margin: 1em;
   background-color: white;
-  position: absolute;
-`;
-const Image = styled.img`
-  height: 75%;
-  z-index: 2;
 `;
 
-const Icon = styled.div`
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-color: white;
+const Image = styled.img`
+  width: 12em;
+  height: 12em;
+`;
+
+const ItemInfo = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+`;
+
+const ItemName = styled.div`
+  margin-bottom: 0.5em;
+`;
+
+const ItemPrice = styled.div`
   margin: 0.5em;
-  transition: 0.5s all ease;
-  &:hover {
-    color: white;
-    background-color: black;
-    transform: scale(1.1);
+`;
+
+const Button = styled.button`
+  padding: 3%;
+  margin-bottom: 1em;
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background-color: teal;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  &:active {
+    transform: scale(1.05);
   }
 `;
 
@@ -70,19 +49,12 @@ type ProductProps = {
 const Product: React.FC<ProductProps> = ({ item }) => {
   return (
     <Container>
-      <Circle />
       <Image src={item.img} />
-      <Info>
-        <Icon>
-          <ShoppingCartOutlined />
-        </Icon>
-        <Icon>
-          <SearchIcon />
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlinedIcon />
-        </Icon>
-      </Info>
+      <ItemInfo>
+        <ItemName>NIKE</ItemName>
+        <ItemPrice>30$</ItemPrice>
+        <Button>Add To Cart</Button>
+      </ItemInfo>
     </Container>
   );
 };
