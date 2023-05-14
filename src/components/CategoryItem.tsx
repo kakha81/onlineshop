@@ -8,6 +8,7 @@ const Container = styled.div`
   margin: 1em;
 `;
 const Image = styled.img`
+  contain: size;
   width: 350px;
   height: 350px;
   object-fit: cover;

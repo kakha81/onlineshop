@@ -121,22 +121,22 @@ interface SliderItem {
 export const sliderItems: SliderItem[] = [
   {
     id: 1,
-    img: require('./Images/1.png'),
-    title: 'SUMMER SALE',
+    img: require('./Images/4.png'),
+    title: `ATHLET'S WEAR`,
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: '#f5fafd',
   },
   {
     id: 2,
     img: require('./Images/2.png'),
-    title: 'AUTUMN COLLECTION',
+    title: 'CASUAL WEAR',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: '#f5fafd',
   },
   {
     id: 3,
-    img: require('./Images/3.png'),
-    title: 'WINTER COLLECTION',
+    img: require('./Images/10.png'),
+    title: 'RUNNERS',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: '#f5fafd',
   },
@@ -151,38 +151,63 @@ interface category {
 export const categories: category[] = [
   {
     id: 1,
-    img: require('./Images/1.png'),
-    title: 'SHIRT STYLE',
+    img: require('./Images/7.png'),
+    title: 'RUNNERS',
   },
   {
     id: 2,
     img: require('./Images/2.png'),
-    title: 'LOUNGEWEAR LOVE',
+    title: `CASUAL WEAR`,
   },
   {
     id: 3,
-    img: require('./Images/3.png'),
-    title: 'LIGHT JACKETS',
+    img: require('./Images/8.png'),
+    title: `BASKETBALL`,
+  },
+  {
+    id: 4,
+    img: require('./Images/4.png'),
+    title: `ATHLET'S WEAR`,
   },
 ];
 
 interface popularProduct {
   id: number;
+  name: string;
+  price: number;
   img: string;
 }
 
 export const popularProducts: popularProduct[] = [
   {
     id: 1,
+    name: 'New Balance',
+    price: 23,
     img: require('./Images/1.png'),
   },
   {
     id: 2,
+    name: 'Nike',
+    price: 30,
     img: require('./Images/2.png'),
   },
   {
     id: 3,
+    name: 'Puma',
+    price: 45,
     img: require('./Images/3.png'),
+  },
+  {
+    id: 4,
+    name: 'Levis',
+    price: 75,
+    img: require('./Images/4.png'),
+  },
+  {
+    id: 5,
+    name: 'Tommy Hilfiger',
+    price: 37,
+    img: require('./Images/5.png'),
   },
 ];
 

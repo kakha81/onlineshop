@@ -7,6 +7,13 @@ import MenuContent from '../components/MenuContent';
 import { colors, sizes } from '../data';
 
 const Container = styled.div``;
+
+const Header = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
 const Title = styled.h1`
   margin: 1.2em;
 `;
@@ -37,8 +44,10 @@ const Option = styled.option``;
 const ProductList = () => {
   return (
     <Container>
-      <Navbar />
-      <MenuContent />
+      <Header>
+        <Navbar />
+        <MenuContent />
+      </Header>
       <Title>SHOES</Title>
       <FilterContainer>
         <Filter>

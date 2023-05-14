@@ -7,6 +7,12 @@ import MenuContent from '../components/MenuContent';
 
 const Container = styled.div``;
 
+const Header = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
 const Wrapper = styled.div`
   padding: 10px;
 `;
@@ -176,8 +182,10 @@ const Button = styled.button`
 const Cart = () => {
   return (
     <Container>
-      <Navbar />
-      <MenuContent />
+      <Header>
+        <Navbar />
+        <MenuContent />
+      </Header>
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
-import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
-import { useState } from "react";
-import { sliderItems } from "../data";
+import styled from 'styled-components';
+import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
+import { useState } from 'react';
+import { sliderItems } from '../data';
 
 enum SlideIndex {
   FIRST = 0,
@@ -11,7 +11,7 @@ enum SlideIndex {
 }
 
 interface ArrowProps {
-  direction: "left" | "right";
+  direction: 'left' | 'right';
 }
 interface sliderProps {
   slideIndex: SlideIndex;
@@ -21,7 +21,6 @@ interface SlideProps {
 }
 
 const Container = styled.div`
-  /* display: none; */
   width: 100%;
   height: 50vh;
   display: flex;
@@ -41,8 +40,8 @@ const Arrow = styled.div<ArrowProps>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === "left" && "0.5em"};
-  right: ${(props) => props.direction === "right" && "0.5em"};
+  left: ${(props) => props.direction === 'left' && '0.5em'};
+  right: ${(props) => props.direction === 'right' && '0.5em'};
   margin: auto;
   cursor: pointer;
   opacity: 1;
@@ -54,18 +53,16 @@ const Arrow = styled.div<ArrowProps>`
 `;
 
 const Wrapper = styled.div<sliderProps>`
-  height: 100vh;
   display: flex;
-  transition: all 1.5s ease;
+  transition: 1.5s all ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div<SlideProps>`
   width: 100vw;
-  height: 5vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
-  background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -107,8 +104,8 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState<SlideIndex>(SlideIndex.FIRST);
 
-  const handleClick = (direction: "left" | "right") => {
-    if (direction === "left") {
+  const handleClick = (direction: 'left' | 'right') => {
+    if (direction === 'left') {
       setSlideIndex((prev) =>
         prev === SlideIndex.FIRST ? SlideIndex.THIRD : prev - 1
       );
@@ -121,7 +118,7 @@ const Slider = () => {
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
+      <Arrow direction='left' onClick={() => handleClick('left')}>
         <KeyboardArrowLeftOutlinedIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
@@ -137,7 +134,7 @@ const Slider = () => {
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
+      <Arrow direction='right' onClick={() => handleClick('right')}>
         <KeyboardArrowRightOutlinedIcon />
       </Arrow>
     </Container>

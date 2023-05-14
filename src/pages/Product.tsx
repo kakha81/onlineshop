@@ -9,6 +9,13 @@ import { useState } from 'react';
 const imageSrc: string = require('../Images/1.png');
 
 const Container = styled.div``;
+
+const Header = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
 const Wrapper = styled.div`
   padding: 0.5em;
   display: flex;
@@ -120,8 +127,10 @@ const Product: React.FC = () => {
 
   return (
     <Container>
-      <Navbar />
-      <MenuContent />
+      <Header>
+        <Navbar />
+        <MenuContent />
+      </Header>
       <Wrapper>
         <ImgContainer>
           <Image src={imageSrc} alt='Product' />

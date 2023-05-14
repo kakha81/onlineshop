@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { cities } from '../data';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -57,13 +58,20 @@ const Button = styled.button`
   justify-content: center;
   width: 25%;
   padding: 0.5em;
+  border-radius: 2em;
   font-size: 1em;
   font-weight: 700;
   color: white;
   background-color: teal;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  &:active {
+    transform: scale(1.05);
+  }
 `;
 
 const ProfileInfo = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <TextContainer>
@@ -114,7 +122,7 @@ const ProfileInfo = () => {
           <Input
             placeholder='Month/Day/Year'
             type='date'
-            style={{ paddingLeft: '1em', paddingRight: '4em' }}
+            style={{ paddingLeft: '0.5em', paddingRight: '3.5em' }}
           />
         </InputContainer>
       </TextContainer>
@@ -165,8 +173,7 @@ const ProfileInfo = () => {
           ))}
         </Select>
       </TextContainer>
-
-      <Button>Save</Button>
+      <Button onClick={() => navigate('/home')}>Save</Button>
     </Container>
   );
 };

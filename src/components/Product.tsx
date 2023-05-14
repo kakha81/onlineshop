@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 1em;
   background-color: white;
 `;
 
+const ItemContainer = styled.div`
+  border: 3px solid white;
+  cursor: pointer;
+  &:active {
+    border: 3px solid gray;
+  }
+`;
+
 const Image = styled.img`
-  width: 12em;
-  height: 12em;
+  width: 18em;
+  height: 18em;
 `;
 
 const ItemInfo = styled.div`
@@ -17,17 +27,18 @@ const ItemInfo = styled.div`
 `;
 
 const ItemName = styled.div`
+  font-weight: 700;
   margin-bottom: 0.5em;
 `;
 
 const ItemPrice = styled.div`
+  font-weight: 700;
   margin: 0.5em;
 `;
 
 const Button = styled.button`
-  padding: 3%;
-  margin-bottom: 1em;
-  border-radius: 2em;
+  width: 100%;
+  padding: 0.5em;
   font-size: 1em;
   font-weight: 700;
   color: white;
@@ -42,6 +53,8 @@ const Button = styled.button`
 type ProductProps = {
   item: {
     id: number;
+    name: string;
+    price: number;
     img: string;
   };
 };
@@ -49,12 +62,14 @@ type ProductProps = {
 const Product: React.FC<ProductProps> = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img} />
-      <ItemInfo>
-        <ItemName>NIKE</ItemName>
-        <ItemPrice>30$</ItemPrice>
-        <Button>Add To Cart</Button>
-      </ItemInfo>
+      <ItemContainer>
+        <Image src={item.img} />
+        <ItemInfo>
+          <ItemName>{item.name}</ItemName>
+          <ItemPrice>{item.price}$</ItemPrice>
+        </ItemInfo>
+      </ItemContainer>
+      <Button>Add To Cart</Button>
     </Container>
   );
 };
