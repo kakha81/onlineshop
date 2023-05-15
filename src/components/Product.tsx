@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -60,9 +61,10 @@ type ProductProps = {
 };
 
 const Product: React.FC<ProductProps> = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <ItemContainer>
+      <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
         <Image src={item.img} />
         <ItemInfo>
           <ItemName>{item.name}</ItemName>

@@ -1,12 +1,13 @@
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import NewsLetter from '../components/NewsLetter';
-import Footer from '../components/Footer';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import MenuContent from '../components/MenuContent';
-import { useState } from 'react';
-const imageSrc: string = require('../Images/1.png');
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import NewsLetter from "../components/NewsLetter";
+import Footer from "../components/Footer";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import MenuContent from "../components/MenuContent";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+const imageSrc: string = require("../Images/1.png");
 
 const Container = styled.div``;
 
@@ -116,6 +117,8 @@ const Button = styled.button`
 
 const Product: React.FC = () => {
   const [count, setCount] = useState<number>(0);
+  const navigate = useNavigate();
+  const { itemId } = useParams();
 
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 0));
@@ -133,10 +136,10 @@ const Product: React.FC = () => {
       </Header>
       <Wrapper>
         <ImgContainer>
-          <Image src={imageSrc} alt='Product' />
+          <Image src={imageSrc} alt="Product" />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
+          <Title>Item ID: {itemId}</Title>
           <Desc>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui eaque
             a obcaecati amet. Veniam laboriosam veritatis vitae, hic eius rerum
@@ -146,9 +149,9 @@ const Product: React.FC = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color='black' />
-              <FilterColor color='darkblue' />
-              <FilterColor color='gray' />
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="gray" />
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
@@ -176,7 +179,7 @@ const Product: React.FC = () => {
                 }}
               />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={() => navigate("/cart")}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
