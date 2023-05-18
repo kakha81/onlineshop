@@ -7,6 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import MenuContent from "../components/MenuContent";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { colors, sizes } from "../data";
 const imageSrc: string = require("../Images/1.png");
 
 const Container = styled.div``;
@@ -62,13 +63,14 @@ const FilterTitle = styled.span`
   font-weight: 500;
 `;
 
-const FilterColor = styled.div<{ color: string }>`
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0em 0.5em;
-  cursor: pointer;
+const FilterColor = styled.select`
+  margin-left: 0.5em;
+  padding: 0.5em;
+  font-weight: 900;
+`;
+
+const FilterColorOption = styled.option`
+  font-weight: 900;
 `;
 
 const FilterSize = styled.select`
@@ -148,20 +150,20 @@ const Product: React.FC = () => {
           <Price>$ 20</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              <FilterColor>
+                {colors.map((item) => (
+                  <FilterColorOption key={item.id}>
+                    {item.color}
+                  </FilterColorOption>
+                ))}
+              </FilterColor>
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
-                <FilterSizeOption>XXL</FilterSizeOption>
+                {sizes.map((item) => (
+                  <FilterSizeOption key={item.id}>{item.size}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>

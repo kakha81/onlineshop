@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import MenuContent from '../components/MenuContent';
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import MenuContent from "../components/MenuContent";
+import { useState } from "react";
 
 const Container = styled.div``;
 
@@ -33,10 +34,10 @@ const TopButton = styled.button`
   padding: 0.5em;
   font-weight: 600;
   cursor: pointer;
-  border: ${(props) => props.type === 'filled' && 'none'};
+  border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
-    props.type === 'filled' ? 'black' : 'transparent'};
-  color: ${(props) => props.type === 'filled' && 'white'};
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
 `;
 
 const TopTexts = styled.div`
@@ -109,9 +110,15 @@ const ProductAmountContainer = styled.div`
   margin-bottom: 1.2em;
 `;
 
-const ProductAmount = styled.div`
-  font-size: 1.5em;
-  margin: 0.3em 1em;
+const Amount = styled.span`
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  border: 0.1em solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0em 0.5em;
 `;
 
 const ProductPrice = styled.div`
@@ -128,7 +135,7 @@ const Hr = styled.hr`
 
 const Summary = styled.div`
   width: 18em;
-  margin: auto;
+  margin: 1em auto;
   padding: 1.2em;
   border: 0.5px solid lightgray;
   border-radius: 0.5em;
@@ -149,8 +156,8 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === 'total' && '500'};
-  font-size: ${(props) => props.type === 'total' && '1.5em'};
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "1.5em"};
 `;
 
 const SummaryItemText = styled.span``;
@@ -180,6 +187,15 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const [count, setCount] = useState(0);
+  const decreaseCount = () => {
+    setCount((prevCount) => Math.max(prevCount - 1, 0));
+  };
+
+  const increaseCount = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
   return (
     <Container>
       <Header>
@@ -194,21 +210,21 @@ const Cart = () => {
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist(0)</TopText>
           </TopTexts>
-          <TopButton type='filled'>CHECKOUT NOW</TopButton>
+          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
             <Product>
               <ProductDetail>
-                <Image src={require('../Images/1.png')} />
+                <Image src={require("../Images/1.png")} />
                 <Details>
                   <ProductName>
                     <b>Product:</b>ADIDAS
                   </ProductName>
                   <ProductId>
-                    <b>ID:</b>6464161651
+                    <b>ID:</b>1
                   </ProductId>
-                  <ProductColor color='orange' />
+                  <ProductColor color="orange" />
                   <ProductSize>
                     <b>Size:</b>37.5
                   </ProductSize>
@@ -216,39 +232,22 @@ const Cart = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <RemoveIcon />
-                  <ProductAmount>2</ProductAmount>
-                  <AddIcon />
+                  <RemoveIcon
+                    onClick={() => {
+                      decreaseCount();
+                    }}
+                  />
+                  <Amount>{count}</Amount>
+                  <AddIcon
+                    onClick={() => {
+                      increaseCount();
+                    }}
+                  />
                 </ProductAmountContainer>
                 <ProductPrice>$ 30</ProductPrice>
               </PriceDetail>
             </Product>
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src={require('../Images/2.png')} />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b>NIKE
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b>456415145
-                  </ProductId>
-                  <ProductColor color='gray' />
-                  <ProductSize>
-                    <b>Size:</b>32.5
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <RemoveIcon />
-                  <ProductAmount>5</ProductAmount>
-                  <AddIcon />
-                </ProductAmountContainer>
-                <ProductPrice>$ 20</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
           <Summary>
             <SummaryTitleContainer>
@@ -266,7 +265,7 @@ const Cart = () => {
               <SummaryItemText>Shipping Discount</SummaryItemText>
               <SummaryItemPrice>$ -5.90</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem type='total'>
+            <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>
