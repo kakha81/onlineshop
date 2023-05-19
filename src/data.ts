@@ -1,3 +1,118 @@
+interface ProductArray {
+  id: number;
+  category: string;
+  name: string;
+  color: string;
+  size: number
+  price: number;
+  img: string;
+}
+
+export const ProductsArray: ProductArray[] = [
+  {
+    id: 1,
+    category: 'runners',
+    name: 'New Balance',
+    color: 'white',
+    size: 35,
+    price: 23,
+    img: require('./Images/1.png'),
+  },
+  {
+    id: 2,
+    category: 'casualwear',
+    name: 'Nike',
+    color: 'grey',
+    size: 44,
+    price: 30,
+    img: require('./Images/2.png'),
+  },
+  {
+    id: 3,
+    category: 'runners',
+    name: 'Puma',
+    color: 'multi',
+    size: 38,
+    price: 45,
+    img: require('./Images/3.png'),
+  },
+  {
+    id: 4,
+    category: 'basketball',
+    name: 'Levis',
+    color: 'grey',
+    size: 45,
+    price: 75,
+    img: require('./Images/4.png'),
+  },
+  {
+    id: 5,
+    category: 'casualwear',
+    name: 'Tommy Hilfiger',
+    color: 'blue',
+    size: 37,
+    price: 37,
+    img: require('./Images/5.png'),
+  },
+  {
+    id: 6,
+    category: 'basketball',
+    name: 'Air Jordan',
+    color: 'grey',
+    size: 46,
+    price: 37,
+    img: require('./Images/6.png'),
+  },
+  {
+    id: 7,
+    category: 'basketball',
+    name: 'Reabok',
+    color: 'white',
+    size: 41,
+    price: 37,
+    img: require('./Images/7.png'),
+  },
+  {
+    id: 8,
+    category: 'basketball',
+    name: 'Reabok',
+    color: 'grey',
+    size: 39,
+    price: 35,
+    img: require('./Images/8.png'),
+  },
+  {
+    id: 9,
+    category: 'runners',
+    name: 'Reabok',
+    color: 'blue',
+    size: 44,
+    price: 45,
+    img: require('./Images/9.png'),
+  },
+  {
+    id: 10,
+    category: 'runners',
+    name: 'Reabok',
+    color: 'white',
+    size: 43,
+    price: 67,
+    img: require('./Images/10.png'),
+  },
+  {
+    id: 11,
+    category: 'runners',
+    name: 'Reabok',
+    color: 'grey',
+    size: 42,
+    price: 55,
+    img: require('./Images/11.png'),
+  },
+];
+
+
+
+
 interface colorProp {
   id: number;
   color: string;
@@ -25,7 +140,7 @@ export const colors: colorProp[] = [
   },
   {
     id: 6,
-    color: 'Green',
+    color: 'Grey',
   },
 ];
 
@@ -109,38 +224,38 @@ export const sizes: sizeProp[] = [
   },
 ];
 
-interface SliderItem {
-  id: number;
-  img: string;
-  title: string;
-  desc: string;
-  bg: string;
-  alt?: string;
-}
+// interface SliderItem {
+//   id: number;
+//   img: string;
+//   title: string;
+//   desc: string;
+//   bg: string;
+//   alt?: string;
+// }
 
-export const sliderItems: SliderItem[] = [
-  {
-    id: 1,
-    img: require('./Images/4.png'),
-    title: `ATHLET'S WEAR`,
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: '#f5fafd',
-  },
-  {
-    id: 2,
-    img: require('./Images/2.png'),
-    title: 'CASUAL WEAR',
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: '#f5fafd',
-  },
-  {
-    id: 3,
-    img: require('./Images/10.png'),
-    title: 'RUNNERS',
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: '#f5fafd',
-  },
-];
+// export const sliderItems: SliderItem[] = [
+//   {
+//     id: 1,
+//     img: require('./Images/4.png'),
+//     title: `ATHLET'S WEAR`,
+//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+//     bg: '#f5fafd',
+//   },
+//   {
+//     id: 2,
+//     img: require('./Images/2.png'),
+//     title: 'CASUAL WEAR',
+//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+//     bg: '#f5fafd',
+//   },
+//   {
+//     id: 3,
+//     img: require('./Images/10.png'),
+//     title: 'RUNNERS',
+//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+//     bg: '#f5fafd',
+//   },
+// ];
 
 interface category {
   id: number;
@@ -148,68 +263,30 @@ interface category {
   title: string;
 }
 
-export const categories: category[] = [
-  {
-    id: 1,
-    img: require('./Images/7.png'),
-    title: 'RUNNERS',
-  },
-  {
-    id: 2,
-    img: require('./Images/2.png'),
-    title: `CASUAL WEAR`,
-  },
-  {
-    id: 3,
-    img: require('./Images/8.png'),
-    title: `BASKETBALL`,
-  },
-  {
-    id: 4,
-    img: require('./Images/4.png'),
-    title: `ATHLET'S WEAR`,
-  },
-];
+// export const categories: category[] = [
+//   {
+//     id: 1,
+//     img: require('./Images/7.png'),
+//     title: 'RUNNERS',
+//   },
+//   {
+//     id: 2,
+//     img: require('./Images/2.png'),
+//     title: `CASUAL WEAR`,
+//   },
+//   {
+//     id: 3,
+//     img: require('./Images/8.png'),
+//     title: `BASKETBALL`,
+//   },
+//   {
+//     id: 4,
+//     img: require('./Images/4.png'),
+//     title: `ATHLET'S WEAR`,
+//   },
+// ];
 
-interface popularProduct {
-  id: number;
-  name: string;
-  price: number;
-  img: string;
-}
 
-export const popularProducts: popularProduct[] = [
-  {
-    id: 1,
-    name: 'New Balance',
-    price: 23,
-    img: require('./Images/1.png'),
-  },
-  {
-    id: 2,
-    name: 'Nike',
-    price: 30,
-    img: require('./Images/2.png'),
-  },
-  {
-    id: 3,
-    name: 'Puma',
-    price: 45,
-    img: require('./Images/3.png'),
-  },
-  {
-    id: 4,
-    name: 'Levis',
-    price: 75,
-    img: require('./Images/4.png'),
-  },
-  {
-    id: 5,
-    name: 'Tommy Hilfiger',
-    price: 37,
-    img: require('./Images/5.png'),
-  },
-];
 
 interface city {
   id: number;

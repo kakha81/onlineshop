@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
-import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
-import { useState } from 'react';
-import { sliderItems } from '../data';
+import styled from "styled-components";
+import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
+import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+import { useState } from "react";
+import { ProductsArray } from "../data";
 
 enum SlideIndex {
   FIRST = 0,
@@ -11,13 +11,10 @@ enum SlideIndex {
 }
 
 interface ArrowProps {
-  direction: 'left' | 'right';
+  direction: "left" | "right";
 }
 interface sliderProps {
   slideIndex: SlideIndex;
-}
-interface SlideProps {
-  bg: string;
 }
 
 const Container = styled.div`
@@ -40,8 +37,8 @@ const Arrow = styled.div<ArrowProps>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === 'left' && '0.5em'};
-  right: ${(props) => props.direction === 'right' && '0.5em'};
+  left: ${(props) => props.direction === "left" && "0.5em"};
+  right: ${(props) => props.direction === "right" && "0.5em"};
   margin: auto;
   cursor: pointer;
   opacity: 1;
@@ -58,7 +55,7 @@ const Wrapper = styled.div<sliderProps>`
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
-const Slide = styled.div<SlideProps>`
+const Slide = styled.div`
   width: 100vw;
   height: 15vh;
   display: flex;
@@ -104,8 +101,8 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState<SlideIndex>(SlideIndex.FIRST);
 
-  const handleClick = (direction: 'left' | 'right') => {
-    if (direction === 'left') {
+  const handleClick = (direction: "left" | "right") => {
+    if (direction === "left") {
       setSlideIndex((prev) =>
         prev === SlideIndex.FIRST ? SlideIndex.THIRD : prev - 1
       );
@@ -118,23 +115,23 @@ const Slider = () => {
 
   return (
     <Container>
-      <Arrow direction='left' onClick={() => handleClick('left')}>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <KeyboardArrowLeftOutlinedIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
-          <Slide key={item.id} bg={item.bg}>
+        {ProductsArray.map((item) => (
+          <Slide key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
             <InfoContainer>
-              <Title>{item.title}</Title>
+              <Title></Title>
               <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction='right' onClick={() => handleClick('right')}>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <KeyboardArrowRightOutlinedIcon />
       </Arrow>
     </Container>

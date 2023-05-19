@@ -6,6 +6,10 @@ const Container = styled.div`
   flex-direction: column;
   margin: 1em;
   background-color: white;
+  transition: 0.2s all ease-in;
+  &:hover {
+    box-shadow: 15px 15px 5px grey;
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -19,6 +23,7 @@ const ItemContainer = styled.div`
 const Image = styled.img`
   width: 18em;
   height: 18em;
+  object-fit: contain;
 `;
 
 const ItemInfo = styled.div`
