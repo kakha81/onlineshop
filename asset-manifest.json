@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.js": "/onlineshop/static/js/main.505b98e3.js",
+    "main.js": "/onlineshop/static/js/main.64a9bee3.js",
+    "static/media/11.png": "/onlineshop/static/media/11.98bf9b4c2f73a93f3485.png",
     "static/media/cover.jpg": "/onlineshop/static/media/cover.5f8f3de892facf29d219.jpg",
     "static/media/5.png": "/onlineshop/static/media/5.7b9bcad19d3106cb4d7b.png",
     "static/media/7.png": "/onlineshop/static/media/7.70f449391d6403016950.png",
     "static/media/8.png": "/onlineshop/static/media/8.abd7d7829cdcabb5b3c3.png",
     "static/media/4.png": "/onlineshop/static/media/4.333fe41368cd46c6cb7e.png",
+    "static/media/9.png": "/onlineshop/static/media/9.ccbd4cec7397e91d42db.png",
     "static/media/tbcBank.jpeg": "/onlineshop/static/media/tbcBank.ca449e8f6219d0b594b9.jpeg",
     "static/media/10.png": "/onlineshop/static/media/10.30e4fdf9a4caba42404e.png",
+    "static/media/6.png": "/onlineshop/static/media/6.ec791da6da62ebfa522b.png",
     "static/media/1.png": "/onlineshop/static/media/1.d6e2520c78e93a52b825.png",
     "static/media/bankOfGeorgia.jpg": "/onlineshop/static/media/bankOfGeorgia.0deef25728dd11fee2f2.jpg",
     "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
     "static/media/united-states-flag.png": "/onlineshop/static/media/united-states-flag.348322a7eb6fa906d005.png",
     "index.html": "/onlineshop/index.html",
-    "main.505b98e3.js.map": "/onlineshop/static/js/main.505b98e3.js.map"
+    "main.64a9bee3.js.map": "/onlineshop/static/js/main.64a9bee3.js.map"
   },
   "entrypoints": [
-    "static/js/main.505b98e3.js"
+    "static/js/main.64a9bee3.js"
   ]
 }
