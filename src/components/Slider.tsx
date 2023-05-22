@@ -8,6 +8,8 @@ enum SlideIndex {
   FIRST = 0,
   SECOND = 1,
   THIRD = 2,
+  FOURTH = 3,
+  FIFTH = 4,
 }
 
 interface ArrowProps {
@@ -104,11 +106,11 @@ const Slider = () => {
   const handleClick = (direction: "left" | "right") => {
     if (direction === "left") {
       setSlideIndex((prev) =>
-        prev === SlideIndex.FIRST ? SlideIndex.THIRD : prev - 1
+        prev === SlideIndex.FIRST ? SlideIndex.FIFTH : prev - 1
       );
     } else {
       setSlideIndex((prev) =>
-        prev === SlideIndex.THIRD ? SlideIndex.FIRST : prev + 1
+        prev === SlideIndex.FIFTH ? SlideIndex.FIRST : prev + 1
       );
     }
   };
