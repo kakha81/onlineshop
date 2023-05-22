@@ -257,11 +257,11 @@ export const sizes: sizeProp[] = [
 //   },
 // ];
 
-interface category {
-  id: number;
-  img: string;
-  title: string;
-}
+// interface category {
+//   id: number;
+//   img: string;
+//   title: string;
+// }
 
 // export const categories: category[] = [
 //   {
