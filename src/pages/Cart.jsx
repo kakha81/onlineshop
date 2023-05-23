@@ -20,15 +20,15 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 500;
   text-align: center;
+  font-weight: 800;
+  color: green;
 `;
 
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5em;
 `;
 
 const TopButton = styled.button`
@@ -46,13 +46,22 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
-  display: none;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
 `;
 
 const TopText = styled.span`
-  text-decoration: underline;
+  margin: 0.3em 1em;
+  padding: 0.1em;
+  color: teal;
+  font-weight: 900;
+  border-bottom: 0.2em solid white;
   cursor: pointer;
-  margin: 0em 0.5em;
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    border-bottom: 0.2em solid teal;
+  }
 `;
 
 const Bottom = styled.div`
@@ -61,88 +70,87 @@ const Bottom = styled.div`
   justify-content: space-between;
 `;
 
-const Info = styled.div`
-  flex: 3;
-  flex-wrap: wrap;
-`;
+const Info = styled.div``;
 
 const Product = styled.div`
+  width: 95%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  margin: 0.5em auto;
+  border-radius: 0.5em;
+  border: 0.2em solid teal;
 `;
 
 const ProductDetail = styled.div`
-  flex: 2;
   display: flex;
-  justify-content: center;
+  align-items: center;
 `;
 
 const Image = styled.img`
-  width: 12em;
+  width: 5em;
+  border-radius: 0.5em;
 `;
 
 const Details = styled.div`
-  padding: 1.2em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  padding: 0.2em;
 `;
 
-const ProductName = styled.span``;
-
-const ProductId = styled.span``;
-
-const ProductColor = styled.span`
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 50%;
+const ProductName = styled.span`
+  font-weight: 700;
+  margin: 0.1em;
 `;
 
-const ProductSize = styled.span``;
+const ProductId = styled.span`
+  font-weight: 700;
+  margin: 0.1em;
+`;
+
+const ProductSize = styled.span`
+  font-weight: 700;
+  margin: 0.1em;
+`;
 
 const PriceDetail = styled.div`
-  flex: 1;
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1.2em;
+  margin-left: 1em;
+  font-weight: 900;
 `;
 
 const Amount = styled.span`
   width: 2em;
   height: 2em;
-  border-radius: 0.5em;
-  border: 0.1em solid teal;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0.1em solid teal;
+  border-radius: 0.5em;
   margin: 0em 0.5em;
+  font-weight: 900;
 `;
 
 const ProductPrice = styled.div`
   font-size: 2em;
-  font-weight: 200;
-  margin-bottom: 0.5em;
-`;
-
-const Hr = styled.hr`
-  background-color: gray;
-  border: none;
-  height: 0.1em;
+  font-weight: 900;
+  color: green;
+  margin-right: 0.2em;
 `;
 
 const Summary = styled.div`
   width: 18em;
   margin: 1em auto;
   padding: 1.2em;
-  border: 0.5px solid lightgray;
+  border: 1px solid lightgray;
   border-radius: 0.5em;
 `;
 
@@ -215,28 +223,22 @@ const Cart = () => {
           <TopButton onClick={() => navigate("/productlist")}>
             CONTINUE SHOPPING
           </TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist(0)</TopText>
-          </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton>CHECKOUT NOW</TopButton>
         </Top>
+        <TopTexts>
+          <TopText>Shopping Bag (2)</TopText>
+          <TopText>Your Wishlist (0)</TopText>
+        </TopTexts>
         <Bottom>
           <Info>
+            {/* ----------------------------------------------product 1 -------------------------------- */}
             <Product>
               <ProductDetail>
                 <Image src={require("../Images/1.png")} />
                 <Details>
-                  <ProductName>
-                    <b>Product:</b>ADIDAS
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b>1
-                  </ProductId>
-                  <ProductColor color="orange" />
-                  <ProductSize>
-                    <b>Size:</b>37.5
-                  </ProductSize>
+                  <ProductName>Product: ADIDAS</ProductName>
+                  <ProductId>ID: 1</ProductId>
+                  <ProductSize>Size: 37.5</ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
@@ -256,7 +258,34 @@ const Cart = () => {
                 <ProductPrice>$ 30</ProductPrice>
               </PriceDetail>
             </Product>
-            <Hr />
+            {/* ----------------------------------------------product 2 -------------------------------- */}
+            <Product>
+              <ProductDetail>
+                <Image src={require("../Images/2.png")} />
+                <Details>
+                  <ProductName>Product: ADIDAS</ProductName>
+                  <ProductId>ID: 2</ProductId>
+                  <ProductSize>Size: 34</ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <RemoveIcon
+                    onClick={() => {
+                      decreaseCount();
+                    }}
+                  />
+                  <Amount>{count}</Amount>
+                  <AddIcon
+                    onClick={() => {
+                      increaseCount();
+                    }}
+                  />
+                </ProductAmountContainer>
+                <ProductPrice>$ 57</ProductPrice>
+              </PriceDetail>
+            </Product>
+            {/* ----------------------------------------------product-------------------------------- */}
           </Info>
           <Summary>
             <SummaryTitleContainer>
