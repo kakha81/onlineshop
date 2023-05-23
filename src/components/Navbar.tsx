@@ -182,7 +182,6 @@ const Navbar: FC<NavbarProps> = () => {
   const [activeFlag, setActiveFlag] = useState<"us" | "geo">("us");
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => setClick(!click);
-
   const navigate = useNavigate();
 
   return (

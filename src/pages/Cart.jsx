@@ -5,6 +5,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import MenuContent from "../components/MenuContent";
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -32,12 +33,16 @@ const Top = styled.div`
 
 const TopButton = styled.button`
   padding: 0.5em;
-  font-weight: 600;
+  font-weight: 700;
+  color: white;
+  background-color: teal;
+  border: 0.25em solid teal;
+  border-radius: 2em;
   cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
+  &:active {
+    border-color: red;
+    background-color: red;
+  }
 `;
 
 const TopTexts = styled.div`
@@ -70,6 +75,7 @@ const Product = styled.div`
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  justify-content: center;
 `;
 
 const Image = styled.img`
@@ -91,7 +97,6 @@ const ProductColor = styled.span`
   width: 1.2em;
   height: 1.2em;
   border-radius: 50%;
-  background-color: ${(props) => props.color};
 `;
 
 const ProductSize = styled.span``;
@@ -188,6 +193,8 @@ const Button = styled.button`
 
 const Cart = () => {
   const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 0));
   };
@@ -205,7 +212,9 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton onClick={() => navigate("/productlist")}>
+            CONTINUE SHOPPING
+          </TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist(0)</TopText>
