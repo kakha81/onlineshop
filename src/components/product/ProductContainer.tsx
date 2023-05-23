@@ -2,7 +2,7 @@ import styled from "styled-components";
 import FilterItem from "./FilterItem";
 import AddItem from "./AddItem";
 import { useParams } from "react-router-dom";
-const imageSrc: string = require("../../Images/1.png");
+import { ProductsArray } from "../../data";
 
 const Container = styled.div`
   padding: 0.5em;
@@ -11,10 +11,11 @@ const Container = styled.div`
 `;
 const ImgContainer = styled.div`
   flex: 1;
-  max-width: 100%;
+  align-self: center;
 `;
 const Image = styled.img`
-  width: 60vw;
+  width: 40vw;
+  max-width: 400px;
   object-fit: cover;
 `;
 const InfoContainer = styled.div`
@@ -24,29 +25,22 @@ const InfoContainer = styled.div`
 const Title = styled.h1`
   font-weight: 800;
 `;
-const Desc = styled.p`
-  margin: 1em 0em;
-`;
 const Price = styled.span`
   font-weight: 500;
   font-size: 2em;
 `;
 
-const ProductItem = () => {
+const ProductContainer = () => {
   const { itemId } = useParams();
+
   return (
     <Container>
       <ImgContainer>
-        <Image src={imageSrc} alt="Product" />
+        <Image src={require(`../../Images/${itemId}.png`)} alt="Product" />
       </ImgContainer>
       <InfoContainer>
-        <Title>Item ID: {itemId}</Title>
-        <Desc>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui eaque a
-          obcaecati amet. Veniam laboriosam veritatis vitae, hic eius rerum
-          itaque vel saepe magnam nesciunt animi quidem natus dolores a.
-        </Desc>
-        <Price>$ 20</Price>
+        <Title>{ProductsArray[`${Number(itemId) - 1}`].name}</Title>
+        <Price>${ProductsArray[`${Number(itemId) - 1}`].price}</Price>
         <FilterItem />
         <AddItem />
       </InfoContainer>
@@ -54,4 +48,4 @@ const ProductItem = () => {
   );
 };
 
-export default ProductItem;
+export default ProductContainer;

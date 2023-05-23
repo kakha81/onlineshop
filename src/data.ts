@@ -69,7 +69,7 @@ export const ProductsArray: ProductArray[] = [
     name: 'Reabok',
     color: 'white',
     size: 41,
-    price: 37,
+    price: 120,
     img: require('./Images/7.png'),
   },
   {

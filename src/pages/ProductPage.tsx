@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import MenuContent from "../components/MenuContent";
-import ProductItem from "../components/product/ProductItem";
+import ProductContainer from "../components/product/ProductContainer";
 
 const Header = styled.div`
   position: sticky;
@@ -18,7 +18,7 @@ const Product = () => {
         <Navbar />
         <MenuContent />
       </Header>
-      <ProductItem />
+      <ProductContainer />
       <NewsLetter />
       <Footer />
     </>

@@ -9,45 +9,41 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const FilterTitle = styled.span`
+const FilterSizeTitle = styled.span`
   font-size: 1.2em;
-  font-weight: 500;
 `;
 
-const FilterColor = styled.select`
+const FilterColorContainer = styled.select`
   margin-left: 0.5em;
   padding: 0.5em;
-  font-weight: 900;
 `;
 
-const FilterColorOption = styled.option`
-  font-weight: 900;
-`;
+const FilterColorOption = styled.option``;
+
+const FilterSizeContainer = styled.div``;
 
 const FilterSize = styled.select`
-  margin-left: 0.5em;
   padding: 0.5em;
-  font-weight: 900;
 `;
 
-const FilterSizeOption = styled.option`
-  font-weight: 900;
-`;
+const FilterSizeOption = styled.option``;
 
 const FilterItem = () => {
   return (
     <Container>
-      <FilterColor>
+      <FilterColorContainer>
         {colors.map((item) => (
           <FilterColorOption key={item.id}>{item.color}</FilterColorOption>
         ))}
-      </FilterColor>
-      <FilterTitle>Size</FilterTitle>
-      <FilterSize>
-        {sizes.map((item) => (
-          <FilterSizeOption key={item.id}>{item.size}</FilterSizeOption>
-        ))}
-      </FilterSize>
+      </FilterColorContainer>
+      <FilterSizeContainer>
+        <FilterSizeTitle>Size</FilterSizeTitle>
+        <FilterSize>
+          {sizes.map((item) => (
+            <FilterSizeOption key={item.id}>{item.size}</FilterSizeOption>
+          ))}
+        </FilterSize>
+      </FilterSizeContainer>
     </Container>
   );
 };
