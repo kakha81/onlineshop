@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { ProductsArray } from "../data";
 const SliderContainer = styled.section`
   position: relative;
@@ -50,17 +50,17 @@ const Slider = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCurrent(current => (current === slideCount - 1 ? 0 : current + 1));
+      setCurrent((current) => (current === slideCount - 1 ? 0 : current + 1));
     }, 3000);
     return () => clearTimeout(timer);
-  }, [current]);
+  }, [current, slideCount]);
 
   const prevSlide = () => {
-    setCurrent(current => (current === 0 ? slideCount - 1 : current - 1));
+    setCurrent((current) => (current === 0 ? slideCount - 1 : current - 1));
   };
 
   const nextSlide = () => {
-    setCurrent(current => (current === slideCount - 1 ? 0 : current + 1));
+    setCurrent((current) => (current === slideCount - 1 ? 0 : current + 1));
   };
 
   return (
