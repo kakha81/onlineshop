@@ -10,7 +10,7 @@ const LeftArrow = styled(FaArrowAltCircleLeft)`
   position: absolute;
   top: 50%;
   left: 20px;
-  font-size: 2em;
+  font-size: 3em;
   color: teal;
   transform: translateY(-50%);
   cursor: pointer;
@@ -24,7 +24,7 @@ const RightArrow = styled(FaArrowAltCircleRight)`
   position: absolute;
   top: 50%;
   right: 20px;
-  font-size: 2em;
+  font-size: 3em;
   color: teal;
   transform: translateY(-50%);
   cursor: pointer;
