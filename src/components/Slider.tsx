@@ -51,7 +51,7 @@ const Slider = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrent(current => (current === slideCount - 1 ? 0 : current + 1));
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [current]);
 
