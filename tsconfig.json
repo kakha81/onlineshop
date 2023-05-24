@@ -23,6 +23,7 @@
   "include": [
     "src",
     "src/pages",
-    "src/App.tsx"
+    "src/App.tsx",
+    "src/index.tsx"
   ]
 }

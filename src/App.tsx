@@ -11,13 +11,13 @@ const App = () => {
   return (
     <Router basename="/onlineshop">
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/productlist" element={<ProductList />} />
-        <Route path="/product/:itemId" element={<ProductPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/productlist" element={<ProductList />}></Route>
+        <Route path="/product/:itemId" element={<ProductPage />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </Router>
   );
