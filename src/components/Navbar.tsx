@@ -140,8 +140,8 @@ const Right = styled.div`
 `;
 
 const MenuItem = styled.div`
-  font-size: 0.7em;
-  font-weight: 900;
+  font-size: 0.6em;
+  font-weight: 700;
   cursor: pointer;
   margin-right: 0.8em;
 `;
@@ -215,7 +215,7 @@ const Navbar: FC<NavbarProps> = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo onClick={() => navigate("/home")}>ONLINE SHOP</Logo>
+          <Logo onClick={() => navigate("/home")}>ONLINESHOP</Logo>
         </Center>
         <Right>
           <MenuItem onClick={() => navigate("/register")}>REGISTER</MenuItem>

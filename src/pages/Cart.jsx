@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import MenuContent from "../components/MenuContent";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { maxScreen, midScreen, minScreen, tablet } from "../responsive";
 
 const Container = styled.div``;
 
@@ -22,18 +23,19 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-weight: 800;
-  color: green;
+  color: black;
 `;
 
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 1em auto;
 `;
 
 const TopButton = styled.button`
-  padding: 0.5em;
-  font-weight: 700;
+  padding: 0.4em;
+  font-weight: 500;
   color: white;
   background-color: teal;
   border: 0.25em solid teal;
@@ -47,8 +49,8 @@ const TopButton = styled.button`
 
 const TopTexts = styled.div`
   display: flex;
-  justify-content: center;
-  margin: 1em;
+  justify-content: space-between;
+  margin: 2em auto;
 `;
 
 const TopText = styled.span`
@@ -64,21 +66,20 @@ const TopText = styled.span`
   }
 `;
 
-const Bottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
+const Bottom = styled.div``;
 
 const Info = styled.div``;
 
 const Product = styled.div`
-  width: 95%;
+  width: 90%;
+  max-width: 30em;
   display: flex;
   flex-direction: row;
   margin: 0.5em auto;
   border-radius: 0.5em;
-  border: 0.2em solid teal;
+  border: 0.15em solid teal;
+  ${midScreen({ maxWidth: "45%" })};
+  ${maxScreen({ maxWidth: "45%" })};
 `;
 
 const ProductDetail = styled.div`
@@ -87,7 +88,7 @@ const ProductDetail = styled.div`
 `;
 
 const Image = styled.img`
-  width: 5em;
+  width: 6em;
   border-radius: 0.5em;
 `;
 
@@ -98,17 +99,17 @@ const Details = styled.div`
 `;
 
 const ProductName = styled.span`
-  font-weight: 700;
+  font-weight: 500;
   margin: 0.1em;
 `;
 
 const ProductId = styled.span`
-  font-weight: 700;
+  font-weight: 500;
   margin: 0.1em;
 `;
 
 const ProductSize = styled.span`
-  font-weight: 700;
+  font-weight: 500;
   margin: 0.1em;
 `;
 
@@ -135,14 +136,14 @@ const Amount = styled.span`
   justify-content: center;
   border: 0.1em solid teal;
   border-radius: 0.5em;
-  margin: 0em 0.5em;
-  font-weight: 900;
+  margin: auto 0.2em;
+  font-weight: 700;
 `;
 
 const ProductPrice = styled.div`
-  font-size: 2em;
-  font-weight: 900;
-  color: green;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: teal;
   margin-right: 0.2em;
 `;
 
