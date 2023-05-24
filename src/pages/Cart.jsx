@@ -125,12 +125,11 @@ const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 1em;
-  font-weight: 900;
 `;
 
 const Amount = styled.span`
-  width: 1.7em;
-  height: 1.7em;
+  width: 1.5em;
+  height: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,16 +137,18 @@ const Amount = styled.span`
   border-radius: 0.5em;
   margin: auto 0.1em;
   font-weight: 700;
+  ${tablet({ width: "1.7em", height: "1.7em" })}
   ${minScreen({ width: "2em", height: "2em" })}
   ${midScreen({ width: "2.2em", height: "2.2em" })}
   ${maxScreen({ width: "2.5em", height: "2.5em" })}
 `;
 
 const ProductPrice = styled.div`
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
   color: teal;
   margin-right: 0.1em;
+  ${minScreen({ fontSize: "1.2em" })}
   ${minScreen({ fontSize: "1.5em" })}
   ${midScreen({ fontSize: "1.7em" })}
   ${maxScreen({ fontSize: "2em" })}
