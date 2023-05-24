@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/onlineshop/static/js/main.b31df6cb.js",
+    "main.js": "/onlineshop/static/js/main.74808439.js",
     "static/media/11.png": "/onlineshop/static/media/11.98bf9b4c2f73a93f3485.png",
     "static/media/cover.jpg": "/onlineshop/static/media/cover.5f8f3de892facf29d219.jpg",
     "static/media/5.png": "/onlineshop/static/media/5.7b9bcad19d3106cb4d7b.png",
@@ -16,9 +16,9 @@
     "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
     "static/media/united-states-flag.png": "/onlineshop/static/media/united-states-flag.348322a7eb6fa906d005.png",
     "index.html": "/onlineshop/index.html",
-    "main.b31df6cb.js.map": "/onlineshop/static/js/main.b31df6cb.js.map"
+    "main.74808439.js.map": "/onlineshop/static/js/main.74808439.js.map"
   },
   "entrypoints": [
-    "static/js/main.b31df6cb.js"
+    "static/js/main.74808439.js"
   ]
 }
