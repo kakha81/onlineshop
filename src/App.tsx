@@ -9,7 +9,7 @@ import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <Router basename="/onlineshop">
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
