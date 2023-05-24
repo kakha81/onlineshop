@@ -71,7 +71,7 @@ const Bottom = styled.div``;
 const Info = styled.div``;
 
 const Product = styled.div`
-  width: 90%;
+  width: 95%;
   max-width: 30em;
   display: flex;
   flex-direction: row;
@@ -129,22 +129,28 @@ const ProductAmountContainer = styled.div`
 `;
 
 const Amount = styled.span`
-  width: 2em;
-  height: 2em;
+  width: 1.7em;
+  height: 1.7em;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0.1em solid teal;
   border-radius: 0.5em;
-  margin: auto 0.2em;
+  margin: auto 0.1em;
   font-weight: 700;
+  ${minScreen({ width: "2em", height: "2em" })}
+  ${midScreen({ width: "2.2em", height: "2.2em" })}
+  ${maxScreen({ width: "2.5em", height: "2.5em" })}
 `;
 
 const ProductPrice = styled.div`
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   color: teal;
-  margin-right: 0.2em;
+  margin-right: 0.1em;
+  ${minScreen({ fontSize: "1.5em" })}
+  ${midScreen({ fontSize: "1.7em" })}
+  ${maxScreen({ fontSize: "2em" })}
 `;
 
 const Summary = styled.div`
