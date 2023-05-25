@@ -191,19 +191,16 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 8rem;
-  display: flex;
-  justify-content: center;
-  padding: 0.5em;
-  border-radius: 2em;
-  font-size: 0.8em;
-  font-weight: 600;
+  padding: 0.4em;
+  font-weight: 500;
   color: white;
   background-color: teal;
+  border: 0.25em solid teal;
+  border-radius: 2em;
   cursor: pointer;
-  transition: 0.3s all ease;
   &:active {
-    transform: scale(1.05);
+    border-color: red;
+    background-color: red;
   }
 `;
 

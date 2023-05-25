@@ -8,7 +8,7 @@ const Container = styled.div`
   background-color: white;
   transition: 0.2s all ease-in;
   &:hover {
-    box-shadow: 15px 15px 5px grey;
+    box-shadow: 10px 10px 5px grey;
   }
 `;
 

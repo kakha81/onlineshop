@@ -82,6 +82,7 @@ const Icon = styled.span<IconProps>`
 const FlagsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin-left: 0.3em;
 `;
 
 interface FlagProps {
