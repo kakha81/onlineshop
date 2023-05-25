@@ -13,16 +13,12 @@ const Container = styled.div`
 `;
 
 const ItemContainer = styled.div`
-  border: 3px solid white;
   cursor: pointer;
-  &:active {
-    border: 3px solid gray;
-  }
 `;
 
 const Image = styled.img`
-  width: 18em;
-  height: 18em;
+  width: 10em;
+  height: 10em;
   object-fit: contain;
 `;
 
@@ -49,6 +45,7 @@ const Button = styled.button`
   font-weight: 700;
   color: white;
   background-color: teal;
+  border: 1px solid teal;
   cursor: pointer;
   transition: 0.3s all ease;
   &:active {
