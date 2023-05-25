@@ -73,7 +73,7 @@ const Product: React.FC<ProductProps> = ({ item }) => {
           <ItemPrice>{item.price}$</ItemPrice>
         </ItemInfo>
       </ItemContainer>
-      <Button>Add To Cart</Button>
+      <Button onClick={() => navigate("/cart")}>Add To Cart</Button>
     </Container>
   );
 };

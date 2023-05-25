@@ -82,7 +82,6 @@ const Icon = styled.span<IconProps>`
 const FlagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  ${tablet({ display: "none" })};
 `;
 
 interface FlagProps {
@@ -179,7 +178,7 @@ const ListItem = styled.li`
 `;
 
 const Navbar: FC<NavbarProps> = () => {
-  const [activeFlag, setActiveFlag] = useState<"us" | "geo">("us");
+  const [activeFlag, setActiveFlag] = useState<"US" | "GEO">("US");
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => setClick(!click);
   const navigate = useNavigate();
@@ -194,13 +193,13 @@ const Navbar: FC<NavbarProps> = () => {
           <FlagsContainer>
             <Flag
               src={UsFlag}
-              isActive={activeFlag === "us"}
-              onClick={() => setActiveFlag("us")}
+              isActive={activeFlag === "US"}
+              onClick={() => setActiveFlag("US")}
             />
             <Flag
               src={GeoFlag}
-              isActive={activeFlag === "geo"}
-              onClick={() => setActiveFlag("geo")}
+              isActive={activeFlag === "GEO"}
+              onClick={() => setActiveFlag("GEO")}
             />
           </FlagsContainer>
           <SearchContainer>

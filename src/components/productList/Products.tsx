@@ -6,7 +6,7 @@ const Container = styled.div`
   margin: 1em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: lightgray;
 `;
 
