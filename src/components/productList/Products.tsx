@@ -3,10 +3,10 @@ import { ProductsArray } from "../../data";
 import Product from "../Product";
 
 const Container = styled.div`
-  margin: 0.5em;
+  margin: 1em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   background-color: lightgray;
 `;
 

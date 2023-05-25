@@ -17,8 +17,8 @@ const ItemContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 8em;
-  height: 8em;
+  width: 10em;
+  height: 10em;
   object-fit: contain;
 `;
 
