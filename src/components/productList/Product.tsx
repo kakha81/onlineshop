@@ -23,7 +23,7 @@ const ItemContainer = styled.div`
 
 const FavoriteIcon = styled.div`
   position: absolute;
-  color: orange;
+  color: #ffa200;
   z-index: 2;
   cursor: pointer;
 `;
