@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +16,15 @@ const Container = styled.div`
 `;
 
 const ItemContainer = styled.div`
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+`;
+
+const FavoriteIcon = styled.div`
+  position: absolute;
+  color: orange;
+  z-index: 2;
   cursor: pointer;
 `;
 
@@ -65,8 +77,12 @@ type ProductProps = {
 
 const Product: React.FC<ProductProps> = ({ item }) => {
   const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   return (
     <Container>
+      <FavoriteIcon onClick={() => setIsClicked(!isClicked)}>
+        {isClicked ? <StarIcon /> : <StarBorderIcon />}
+      </FavoriteIcon>
       <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
         <Image src={item.img} />
         <ItemInfo>

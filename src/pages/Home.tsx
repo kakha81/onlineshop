@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 const Header = styled.div`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 999;
 `;
 
 const Home = () => {
