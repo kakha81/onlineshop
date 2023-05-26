@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import FilterItem from "./FilterItem";
-import AddItem from "./AddItem";
-import { useParams } from "react-router-dom";
-import { ProductsArray } from "../../data";
+import styled from 'styled-components';
+import FilterItem from './FilterItem';
+import AddItem from './AddItem';
+import { useParams } from 'react-router-dom';
+import { ProductsArray } from '../../data';
 
 const Container = styled.div`
   padding: 0.5em;
@@ -36,7 +36,7 @@ const ProductContainer = () => {
   return (
     <Container>
       <ImgContainer>
-        <Image src={require(`../../Images/${itemId}.png`)} alt="Product" />
+        <Image src={require(`../../Images/${itemId}.png`)} alt='Product' />
       </ImgContainer>
       <InfoContainer>
         <Title>{ProductsArray[`${Number(itemId) - 1}`].name}</Title>

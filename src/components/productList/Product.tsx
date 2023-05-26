@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -73,7 +73,7 @@ const Product: React.FC<ProductProps> = ({ item }) => {
           <ItemPrice>{item.price}$</ItemPrice>
         </ItemInfo>
       </ItemContainer>
-      <Button onClick={() => navigate("/cart")}>Add To Cart</Button>
+      <Button onClick={() => navigate('/cart')}>Add To Cart</Button>
     </Container>
   );
 };

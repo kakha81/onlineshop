@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Navbar from "../components/Navbar";
-import MenuContent from "../components/MenuContent";
-import Slider from "../components/Slider";
-import Products from "../components/productList/Products";
-import NewsLetter from "../components/NewsLetter";
-import Footer from "../components/Footer";
+import Navbar from '../components/Navbar';
+import MenuContent from '../components/MenuContent';
+import Slider from '../components/Slider';
+import Products from '../components/productList/Products';
+import NewsLetter from '../components/NewsLetter';
+import Footer from '../components/Footer';
 
 const Header = styled.div`
   position: sticky;

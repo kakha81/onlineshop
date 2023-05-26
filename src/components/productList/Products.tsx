@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ProductsArray } from "../../data";
-import Product from "../Product";
+import styled from 'styled-components';
+import { ProductsArray } from '../../data';
+import Product from './Product';
 
 const Container = styled.div`
   margin: 1em;

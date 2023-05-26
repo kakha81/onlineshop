@@ -1,5 +1,5 @@
-import { colors, sizes } from "../../data";
-import styled from "styled-components";
+import { colors, sizes } from '../../data';
+import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100%;
@@ -11,6 +11,7 @@ const Container = styled.div`
 
 const FilterSizeTitle = styled.span`
   font-size: 1.2em;
+  margin-right: 0.5em;
 `;
 
 const FilterColorContainer = styled.select`
