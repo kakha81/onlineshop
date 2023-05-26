@@ -31,7 +31,7 @@ const MenuContent = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <MenuContainer onClick={() => navigate('/Home')}>HOME</MenuContainer>
+      <MenuContainer onClick={() => navigate('/')}>HOME</MenuContainer>
       <MenuContainer onClick={() => navigate('/Cart')}>MY BASKET</MenuContainer>
       <MenuContainer onClick={() => navigate('/profile')}>
         MY ACCOUNT
