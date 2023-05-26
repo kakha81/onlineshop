@@ -49,7 +49,8 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.3s all ease;
   &:active {
-    transform: scale(1.05);
+    background-color: red;
+    border: 1px solid red;
   }
 `;
 

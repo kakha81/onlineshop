@@ -173,7 +173,7 @@ const ProfileInfo = () => {
           ))}
         </Select>
       </TextContainer>
-      <Button onClick={() => navigate('/home')}>Save</Button>
+      <Button onClick={() => navigate('/')}>Save</Button>
     </Container>
   );
 };

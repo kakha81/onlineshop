@@ -32,9 +32,6 @@ const MenuContent = () => {
   return (
     <Container>
       <MenuContainer onClick={() => navigate('/Home')}>HOME</MenuContainer>
-      <MenuContainer onClick={() => navigate('/ProductList')}>
-        PRODUCTS
-      </MenuContainer>
       <MenuContainer onClick={() => navigate('/Cart')}>MY BASKET</MenuContainer>
       <MenuContainer onClick={() => navigate('/profile')}>
         MY ACCOUNT

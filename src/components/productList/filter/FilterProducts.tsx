@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import FilterColor from "./filter/FilterColor";
-import FilterCategory from "./filter/FilterCategory";
-import FilterPrice from "./filter/FilterPrice";
+import styled from 'styled-components';
+import FilterBrand from './FilterBrand';
+import FilterCategory from './FilterCategory';
+import FilterPrice from './FilterPrice';
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +18,7 @@ const FilterText = styled.span`
   font-size: 1.2em;
   font-weight: 600;
   margin-right: 0em;
+  text-transform: uppercase;
 `;
 
 const FilterProducts = () => {
@@ -25,8 +26,8 @@ const FilterProducts = () => {
     <Container>
       <Filter>
         <FilterText>Filter Products:</FilterText>
-        <FilterColor />
         <FilterCategory />
+        <FilterBrand />
       </Filter>
       <Filter>
         <FilterText>Sort Products:</FilterText>

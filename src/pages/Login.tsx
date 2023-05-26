@@ -80,7 +80,7 @@ const Login = () => {
         <Form>
           <Input placeholder='email' />
           <Input placeholder='password' />
-          <Button onClick={() => navigate('/home')}>LOGIN</Button>
+          <Button onClick={() => navigate('/')}>LOGIN</Button>
           <DirectLink>DO NOT YOU REMEMBER THE PASSWORD?</DirectLink>
           <DirectLink onClick={() => navigate('/register')}>
             CREATE A NEW ACCOUNT
