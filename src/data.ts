@@ -32,7 +32,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 3,
-    gender: 'men',
+    gender: 'woman',
     category: 'runners',
     name: 'Puma',
     color: 'multi',
@@ -52,7 +52,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 5,
-    gender: 'men',
+    gender: 'woman',
     category: 'casualwear',
     name: 'Tommy Hilfiger',
     color: 'blue',
@@ -72,7 +72,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 7,
-    gender: 'men',
+    gender: 'woman',
     category: 'basketball',
     name: 'Reabok',
     color: 'white',
@@ -82,7 +82,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 8,
-    gender: 'men',
+    gender: 'woman',
     category: 'basketball',
     name: 'Reabok',
     color: 'grey',

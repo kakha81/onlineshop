@@ -1,22 +1,29 @@
 import styled from 'styled-components';
 
-const Select = styled.select`
-  max-width: 7em;
-  font-size: 1.2em;
-  font-weight: 600;
-  margin: 0.5em;
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-const Option = styled.option`
-  text-transform: uppercase;
+
+const Button = styled.button`
+  max-width: 7em;
+  min-width: 7em;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.5em;
+  border-color: teal;
+  color: teal;
+  background-color: white;
 `;
 
 const FilterByPrice = () => {
   return (
-    <Select>
-      <Option selected>PRICE</Option>
-      <Option>Price (asc)</Option>
-      <Option>Price (desc)</Option>
-    </Select>
+    <Container>
+      <Button>ALL</Button>
+      <Button>PRICE ASC</Button>
+      <Button>PRICE DESC</Button>
+    </Container>
   );
 };
 

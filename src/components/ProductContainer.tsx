@@ -1,6 +1,6 @@
 import { productsArray } from '../data';
 import styled from 'styled-components';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import FilterBySize from './filter/FilterBySize';
 
 const Container = styled.div`
@@ -61,7 +61,6 @@ const Button = styled.button`
 
 const ProductContainer = () => {
   const { itemId } = useParams();
-  const navigate = useNavigate();
 
   return (
     <Container>
@@ -71,12 +70,12 @@ const ProductContainer = () => {
       <InfoContainer>
         <TitleContainer>
           <Title>{productsArray[`${Number(itemId) - 1}`].name}</Title>
-          <FilterBySize />
+          <Price>${productsArray[`${Number(itemId) - 1}`].price}</Price>
         </TitleContainer>
-        <Price>${productsArray[`${Number(itemId) - 1}`].price}</Price>
+        <FilterBySize />
       </InfoContainer>
       <ButtonContainer>
-        <Button onClick={() => navigate('/cart')}>ADD TO CART</Button>
+        <Button>ADD TO CART</Button>
       </ButtonContainer>
     </Container>
   );
