@@ -17,12 +17,14 @@ const Container = styled.div`
 
 const ItemContainer = styled.div`
   position: relative;
+  border: 0.2em solid teal;
   z-index: 1;
   cursor: pointer;
 `;
 
 const FavoriteIcon = styled.div`
   position: absolute;
+  margin: 0.4em;
   color: #ffa200;
   z-index: 2;
   cursor: pointer;
@@ -59,7 +61,6 @@ const Button = styled.button`
   background-color: teal;
   border: 1px solid teal;
   cursor: pointer;
-  transition: 0.3s all ease;
   &:active {
     background-color: red;
     border: 1px solid red;
@@ -77,11 +78,11 @@ type ProductProps = {
 
 const Product: React.FC<ProductProps> = ({ item }) => {
   const navigate = useNavigate();
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [starFilled, setStarFilled] = useState<boolean>(false);
   return (
     <Container>
-      <FavoriteIcon onClick={() => setIsClicked(!isClicked)}>
-        {isClicked ? <StarIcon /> : <StarBorderIcon />}
+      <FavoriteIcon onClick={() => setStarFilled(!starFilled)}>
+        {starFilled ? <StarIcon /> : <StarBorderIcon />}
       </FavoriteIcon>
       <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
         <Image src={item.img} />
@@ -90,7 +91,7 @@ const Product: React.FC<ProductProps> = ({ item }) => {
           <ItemPrice>{item.price}$</ItemPrice>
         </ItemInfo>
       </ItemContainer>
-      <Button onClick={() => navigate('/cart')}>Add To Cart</Button>
+      <Button>Add To Cart</Button>
     </Container>
   );
 };

@@ -1,19 +1,20 @@
 import styled from 'styled-components';
-import { ProductsArray } from '../../data';
+
 import Product from './Product';
+import { productsArray } from '../../data';
 
 const Container = styled.div`
   margin: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: lightgray;
+  background-color: white;
 `;
 
 const Products = () => {
   return (
     <Container>
-      {ProductsArray.map((item) => (
+      {productsArray.map((item) => (
         <Product key={item.id} item={item} />
       ))}
     </Container>

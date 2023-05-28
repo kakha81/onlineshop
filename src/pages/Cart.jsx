@@ -196,7 +196,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const decreaseCount = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 0));
+    setCount((prevCount) => Math.max(prevCount - 1, 1));
   };
 
   const increaseCount = () => {

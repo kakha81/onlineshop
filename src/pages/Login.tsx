@@ -70,7 +70,7 @@ const DirectLink = styled.a`
   }
 `;
 
-const Login = () => {
+const LogIn = () => {
   const navigate = useNavigate();
   return (
     <Container>
@@ -91,4 +91,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LogIn;

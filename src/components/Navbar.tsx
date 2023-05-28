@@ -218,8 +218,8 @@ const Navbar: FC<NavbarProps> = () => {
           <Logo onClick={() => navigate('/')}>ONLINESHOP</Logo>
         </Center>
         <Right>
-          <MenuItem onClick={() => navigate('/register')}>REGISTER</MenuItem>
-          <MenuItem onClick={() => navigate('/login')}>SIGN IN</MenuItem>
+          <MenuItem onClick={() => navigate('/register')}>SIGN UP</MenuItem>
+          <MenuItem onClick={() => navigate('/login')}>LOG IN</MenuItem>
           <MenuItem>
             <Badge
               badgeContent={1}

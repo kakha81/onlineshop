@@ -62,7 +62,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Register = () => {
+const SignUp = () => {
   const navigate = useNavigate();
   return (
     <Container>
@@ -87,4 +87,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;

@@ -1,16 +1,18 @@
-interface ProductArray {
+interface productArray {
   id: number;
+  gender: string;
   category: string;
   name: string;
   color: string;
-  size: number
+  size: number;
   price: number;
   img: string;
 }
 
-export const ProductsArray: ProductArray[] = [
+export const productsArray: productArray[] = [
   {
     id: 1,
+    gender: 'men',
     category: 'runners',
     name: 'New Balance',
     color: 'white',
@@ -20,6 +22,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 2,
+    gender: 'men',
     category: 'casualwear',
     name: 'Nike',
     color: 'grey',
@@ -29,6 +32,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 3,
+    gender: 'men',
     category: 'runners',
     name: 'Puma',
     color: 'multi',
@@ -38,6 +42,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 4,
+    gender: 'men',
     category: 'basketball',
     name: 'Levis',
     color: 'grey',
@@ -47,6 +52,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 5,
+    gender: 'men',
     category: 'casualwear',
     name: 'Tommy Hilfiger',
     color: 'blue',
@@ -56,6 +62,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 6,
+    gender: 'men',
     category: 'basketball',
     name: 'Air Jordan',
     color: 'grey',
@@ -65,6 +72,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 7,
+    gender: 'men',
     category: 'basketball',
     name: 'Reabok',
     color: 'white',
@@ -74,6 +82,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 8,
+    gender: 'men',
     category: 'basketball',
     name: 'Reabok',
     color: 'grey',
@@ -83,6 +92,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 9,
+    gender: 'men',
     category: 'runners',
     name: 'Reabok',
     color: 'blue',
@@ -92,6 +102,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 10,
+    gender: 'men',
     category: 'runners',
     name: 'Reabok',
     color: 'white',
@@ -101,6 +112,7 @@ export const ProductsArray: ProductArray[] = [
   },
   {
     id: 11,
+    gender: 'men',
     category: 'runners',
     name: 'Reabok',
     color: 'grey',
@@ -109,184 +121,6 @@ export const ProductsArray: ProductArray[] = [
     img: require('./Images/11.png'),
   },
 ];
-
-
-
-
-interface colorProp {
-  id: number;
-  color: string;
-}
-export const colors: colorProp[] = [
-  {
-    id: 1,
-    color: 'white',
-  },
-  {
-    id: 2,
-    color: 'Black',
-  },
-  {
-    id: 3,
-    color: 'Red',
-  },
-  {
-    id: 4,
-    color: 'Blue',
-  },
-  {
-    id: 5,
-    color: 'Yellow',
-  },
-  {
-    id: 6,
-    color: 'Grey',
-  },
-];
-
-interface sizeProp {
-  id: number;
-  size: string;
-}
-
-export const sizes: sizeProp[] = [
-  {
-    id: 1,
-    size: '30',
-  },
-  {
-    id: 2,
-    size: '31',
-  },
-  {
-    id: 3,
-    size: '32',
-  },
-  {
-    id: 4,
-    size: '33',
-  },
-  {
-    id: 5,
-    size: '34',
-  },
-  {
-    id: 6,
-    size: '35',
-  },
-  {
-    id: 7,
-    size: '36',
-  },
-  {
-    id: 8,
-    size: '37',
-  },
-  {
-    id: 9,
-    size: '38',
-  },
-  {
-    id: 10,
-    size: '39',
-  },
-  {
-    id: 11,
-    size: '40',
-  },
-  {
-    id: 12,
-    size: '41',
-  },
-  {
-    id: 13,
-    size: '42',
-  },
-  {
-    id: 14,
-    size: '43',
-  },
-  {
-    id: 15,
-    size: '44',
-  },
-  {
-    id: 16,
-    size: '45',
-  },
-  {
-    id: 17,
-    size: '46',
-  },
-  {
-    id: 18,
-    size: '47',
-  },
-];
-
-// interface SliderItem {
-//   id: number;
-//   img: string;
-//   title: string;
-//   desc: string;
-//   bg: string;
-//   alt?: string;
-// }
-
-// export const sliderItems: SliderItem[] = [
-//   {
-//     id: 1,
-//     img: require('./Images/4.png'),
-//     title: `ATHLET'S WEAR`,
-//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-//     bg: '#f5fafd',
-//   },
-//   {
-//     id: 2,
-//     img: require('./Images/2.png'),
-//     title: 'CASUAL WEAR',
-//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-//     bg: '#f5fafd',
-//   },
-//   {
-//     id: 3,
-//     img: require('./Images/10.png'),
-//     title: 'RUNNERS',
-//     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-//     bg: '#f5fafd',
-//   },
-// ];
-
-// interface category {
-//   id: number;
-//   img: string;
-//   title: string;
-// }
-
-// export const categories: category[] = [
-//   {
-//     id: 1,
-//     img: require('./Images/7.png'),
-//     title: 'RUNNERS',
-//   },
-//   {
-//     id: 2,
-//     img: require('./Images/2.png'),
-//     title: `CASUAL WEAR`,
-//   },
-//   {
-//     id: 3,
-//     img: require('./Images/8.png'),
-//     title: `BASKETBALL`,
-//   },
-//   {
-//     id: 4,
-//     img: require('./Images/4.png'),
-//     title: `ATHLET'S WEAR`,
-//   },
-// ];
-
-
 
 interface city {
   id: number;
