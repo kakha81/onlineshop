@@ -14,8 +14,14 @@ const Button = styled.button`
   font-weight: 700;
   margin: 0.5em;
   border-color: teal;
-  color: teal;
-  background-color: white;
+  letter-spacing: 1px;
+  color: white;
+  background-color: teal;
+  cursor: pointer;
+  transition: 0.3s all ease-out;
+  &:active {
+    transform: scale(1.1);
+  }
 `;
 
 const FilterByPrice = ({ card, setCard }) => {
