@@ -1,7 +1,6 @@
 import { productsArray } from "../data";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import FilterBySize from "./filter/FilterBySize";
 
 const Container = styled.div`
   padding: 0.5em;
