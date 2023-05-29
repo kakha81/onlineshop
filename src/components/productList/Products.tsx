@@ -1,7 +1,20 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import Product from "./Product";
 
-import Product from './Product';
-import { productsArray } from '../../data';
+interface ProductItem {
+  id: number;
+  gender: string;
+  category: string;
+  name: string;
+  color: string;
+  size: number;
+  price: number;
+  img: string;
+}
+
+interface ProductsProps {
+  filtered: ProductItem[];
+}
 
 const Container = styled.div`
   margin: 1em;
@@ -11,10 +24,10 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const Products = () => {
+const Products: React.FC<ProductsProps> = ({ filtered }) => {
   return (
     <Container>
-      {productsArray.map((item) => (
+      {filtered.map((item) => (
         <Product key={item.id} item={item} />
       ))}
     </Container>
