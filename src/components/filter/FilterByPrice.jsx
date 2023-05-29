@@ -18,18 +18,13 @@ const Button = styled.button`
   background-color: white;
 `;
 
-const FilterByPrice = ({
-  popular,
-  setFiltered,
-  activeButton,
-  setActiveButton,
-}) => {
+const FilterByPrice = ({ card, setCard, activeButton, setActiveButton }) => {
   const handleButtonClick = (sortedArray) => {
-    setFiltered(sortedArray);
+    setCard(sortedArray);
   };
 
   const handleSortByPrice = (asc) => {
-    const sortedArray = [...popular].sort((a, b) => {
+    const sortedArray = [...card].sort((a, b) => {
       return asc ? a.price - b.price : b.price - a.price;
     });
 
@@ -38,7 +33,7 @@ const FilterByPrice = ({
 
   return (
     <Container>
-      <Button onClick={() => handleButtonClick(popular)}>ALL</Button>
+      <Button onClick={() => handleButtonClick(productsArray)}>ALL</Button>
       <Button onClick={() => handleSortByPrice(false)}>PRICE DESC</Button>
       <Button onClick={() => handleSortByPrice(true)}>PRICE ASC</Button>
     </Container>

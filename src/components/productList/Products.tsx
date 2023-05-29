@@ -13,7 +13,7 @@ interface ProductItem {
 }
 
 interface ProductsProps {
-  filtered: ProductItem[];
+  card: ProductItem[];
 }
 
 const Container = styled.div`
@@ -24,10 +24,10 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const Products: React.FC<ProductsProps> = ({ filtered }) => {
+const Products: React.FC<ProductsProps> = ({ card }) => {
   return (
     <Container>
-      {filtered.map((item) => (
+      {card.map((item) => (
         <Product key={item.id} item={item} />
       ))}
     </Container>

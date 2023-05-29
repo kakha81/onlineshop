@@ -16,8 +16,7 @@ const Header = styled.div`
 `;
 
 const Home = () => {
-  const [popular, setPopular] = useState(productsArray);
-  const [filtered, setFiltered] = useState(productsArray);
+  const [card, setCard] = useState(productsArray);
   const [activeButton, setActiveButton] = useState(0);
 
   return (
@@ -28,12 +27,12 @@ const Home = () => {
       </Header>
       <Slider />
       <FilterProducts
-        popular={popular}
-        setFiltered={setFiltered}
+        card={card}
+        setCard={setCard}
         activeButton={activeButton}
         setActiveButton={setActiveButton}
       />
-      <Products filtered={filtered} />
+      <Products card={card} />
       <NewsLetter />
       <Footer />
     </>

@@ -36,8 +36,8 @@ const FilterProducts = (props) => {
     <Container>
       <FilterText>Filter Products:</FilterText>
       <FilterByPrice
-        popular={props.popular}
-        setFiltered={props.setFiltered}
+        card={props.card}
+        setCard={props.setCard}
         activeButton={props.activeButton}
         setActiveButton={props.setActiveButton}
       />
