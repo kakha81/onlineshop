@@ -1,7 +1,7 @@
-import { productsArray } from '../data';
-import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import FilterBySize from './filter/FilterBySize';
+import { productsArray } from "../data";
+import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import FilterBySize from "./filter/FilterBySize";
 
 const Container = styled.div`
   padding: 0.5em;
@@ -13,8 +13,7 @@ const ImgContainer = styled.div`
   align-self: center;
 `;
 const Image = styled.img`
-  width: 40vw;
-  max-width: 400px;
+  width: 50vw;
   object-fit: cover;
 `;
 const InfoContainer = styled.div`
@@ -24,16 +23,22 @@ const InfoContainer = styled.div`
 
 const TitleContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  color: teal;
 `;
 
 const Title = styled.h1`
-  font-weight: 800;
+  font-weight: 700;
 `;
 
 const Price = styled.span`
-  font-weight: 500;
+  font-weight: 700;
   font-size: 2em;
+`;
+
+const Size = styled.h1`
+  font-size: 2em;
+  font-weight: 500;
 `;
 
 const ButtonContainer = styled.div`
@@ -65,14 +70,14 @@ const ProductContainer = () => {
   return (
     <Container>
       <ImgContainer>
-        <Image src={require(`../Images/${itemId}.png`)} alt='Product' />
+        <Image src={require(`../Images/${itemId}.png`)} alt="Product" />
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
           <Title>{productsArray[`${Number(itemId) - 1}`].name}</Title>
           <Price>${productsArray[`${Number(itemId) - 1}`].price}</Price>
+          <Size>size: {productsArray[`${Number(itemId) - 1}`].size}</Size>
         </TitleContainer>
-        <FilterBySize />
       </InfoContainer>
       <ButtonContainer>
         <Button>ADD TO CART</Button>
