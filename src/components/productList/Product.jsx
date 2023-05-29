@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarIcon from '@mui/icons-material/Star';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarIcon from "@mui/icons-material/Star";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   display: flex;
@@ -67,32 +68,31 @@ const Button = styled.button`
   }
 `;
 
-type ProductProps = {
-  item: {
-    id: number;
-    name: string;
-    price: number;
-    img: string;
-  };
-};
-
-const Product: React.FC<ProductProps> = ({ item }) => {
+const Product = ({ item }) => {
   const navigate = useNavigate();
-  const [starFilled, setStarFilled] = useState<boolean>(false);
+  const [starFilled, setStarFilled] = useState(false);
   return (
-    <Container>
-      <FavoriteIcon onClick={() => setStarFilled(!starFilled)}>
-        {starFilled ? <StarIcon /> : <StarBorderIcon />}
-      </FavoriteIcon>
-      <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
-        <Image src={item.img} />
-        <ItemInfo>
-          <ItemName>{item.name}</ItemName>
-          <ItemPrice>{item.price}$</ItemPrice>
-        </ItemInfo>
-      </ItemContainer>
-      <Button>Add To Cart</Button>
-    </Container>
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.7 }}
+    >
+      <Container>
+        <FavoriteIcon onClick={() => setStarFilled(!starFilled)}>
+          {starFilled ? <StarIcon /> : <StarBorderIcon />}
+        </FavoriteIcon>
+        <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
+          <Image src={item.img} />
+          <ItemInfo>
+            <ItemName>{item.name}</ItemName>
+            <ItemPrice>{item.price}$</ItemPrice>
+          </ItemInfo>
+        </ItemContainer>
+        <Button>Add To Cart</Button>
+      </Container>
+    </motion.div>
   );
 };
 

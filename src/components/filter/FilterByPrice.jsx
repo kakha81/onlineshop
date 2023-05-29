@@ -18,16 +18,15 @@ const Button = styled.button`
   background-color: white;
 `;
 
-const FilterByPrice = ({ card, setCard, activeButton, setActiveButton }) => {
+const FilterByPrice = ({ card, setCard }) => {
   const handleButtonClick = (sortedArray) => {
     setCard(sortedArray);
   };
 
   const handleSortByPrice = (asc) => {
-    const sortedArray = [...card].sort((a, b) => {
-      return asc ? a.price - b.price : b.price - a.price;
-    });
-
+    const sortedArray = [...card].sort((a, b) =>
+      asc ? a.price - b.price : b.price - a.price
+    );
     handleButtonClick(sortedArray);
   };
 
