@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { productsArray } from '../../data';
+import styled from "styled-components";
+import { productsArray } from "../../data";
 
 const Select = styled.select`
   max-width: 7em;
@@ -14,10 +14,8 @@ const Option = styled.option`
 
 const FilterBySize = () => {
   return (
-    <Select>
-      <Option disabled selected>
-        SIZE
-      </Option>
+    <Select defaultValue="SIZE">
+      <Option disabled>SIZE</Option>
       {productsArray.map((item) => (
         <Option key={item.id}>{item.size}</Option>
       ))}

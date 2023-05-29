@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import FilterByBrand from './FilterByBrand';
-import FilterByCategory from './FilterByCategory';
-import FilterByColor from './FilterByColor';
-import FilterByGender from './FilterByGender';
-import { maxScreen, midScreen, minScreen, tablet } from '../../responsive';
-import FilterByPrice from './FilterByPrice';
+import styled from "styled-components";
+import FilterByBrand from "./FilterByBrand";
+import FilterByCategory from "./FilterByCategory";
+import FilterByColor from "./FilterByColor";
+import FilterByGender from "./FilterByGender";
+import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
+import FilterByPrice from "./FilterByPrice";
 
 const Container = styled.div`
   display: flex;
@@ -25,10 +25,10 @@ const Filter = styled.div`
   grid-template-columns: repeat(2, 1fr);
   margin: 0em auto;
   flex-wrap: wrap;
-  ${tablet({ gridTemplateColumns: 'repeat(2, 1fr)' })};
-  ${minScreen({ gridTemplateColumns: 'repeat(4, 1fr)' })};
-  ${midScreen({ gridTemplateColumns: 'repeat(4, 1fr)' })};
-  ${maxScreen({ gridTemplateColumns: 'repeat(4, 1fr)' })};
+  ${tablet({ gridTemplateColumns: "repeat(2, 1fr)" })};
+  ${minScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
+  ${midScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
+  ${maxScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
 `;
 
 const FilterProducts = () => {

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-import { productsArray } from '../data';
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { productsArray } from "../data";
 const SliderContainer = styled.section`
   position: relative;
 `;
@@ -69,7 +69,7 @@ const Slider = () => {
       <RightArrow onClick={nextSlide} />
       {productsArray.map((slide, index) => (
         <ImageContainer key={index}>
-          {index === current && <Image src={slide.img} alt='' />}
+          {index === current && <Image src={slide.img} alt="" />}
         </ImageContainer>
       ))}
     </SliderContainer>

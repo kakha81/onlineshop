@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Select = styled.select`
   max-width: 7em;
@@ -13,12 +13,10 @@ const Option = styled.option`
 
 const FilterByGender = () => {
   return (
-    <Select>
-      <Option disabled selected>
-        GENDER
-      </Option>
-      <Option value='men'>FOR MAN</Option>
-      <Option value='women'>FOR WOMAN</Option>
+    <Select defaultValue="GENDER">
+      <Option disabled>GENDER</Option>
+      <Option value="men">FOR MAN</Option>
+      <Option value="women">FOR WOMAN</Option>
     </Select>
   );
 };
