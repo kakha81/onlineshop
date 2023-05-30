@@ -42,6 +42,7 @@ const FilterByBrand = ({ setCard }) => {
       <Option value="tommy hilfiger">tommy hilfiger</Option>
       <Option value="reabok">reabok</Option>
       <Option value="new balance">new balance</Option>
+      <Option value="adidas">adidas</Option>
     </Select>
   );
 };

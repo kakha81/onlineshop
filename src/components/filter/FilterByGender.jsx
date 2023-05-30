@@ -36,7 +36,7 @@ const FilterByGender = ({ setCard }) => {
     <Select value={selectedGender} onChange={handleGenderChange}>
       <Option value="gender">GENDER</Option>
       <Option value="men">FOR MEN</Option>
-      <Option value="woman">FOR WOMEN</Option>
+      <Option value="women">FOR WOMEN</Option>
     </Select>
   );
 };

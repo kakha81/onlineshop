@@ -39,6 +39,9 @@ const FilterByColor = ({ setCard }) => {
       <Option value="gray">gray</Option>
       <Option value="blue">blue</Option>
       <Option value="green">green</Option>
+      <Option value="red">red</Option>
+      <Option value="black">black</Option>
+      <Option value="yellow">yellow</Option>
     </Select>
   );
 };

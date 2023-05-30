@@ -32,7 +32,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 3,
-    gender: 'woman',
+    gender: 'women',
     category: 'runners',
     brand: 'puma',
     color: 'white',
@@ -52,7 +52,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 5,
-    gender: 'woman',
+    gender: 'women',
     category: 'casual',
     brand: 'tommy hilfiger',
     color: 'blue',
@@ -72,7 +72,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 7,
-    gender: 'woman',
+    gender: 'women',
     category: 'basketball',
     brand: 'reabok',
     color: 'white',
@@ -82,7 +82,7 @@ export const productsArray: productArray[] = [
   },
   {
     id: 8,
-    gender: 'woman',
+    gender: 'women',
     category: 'basketball',
     brand: 'reabok',
     color: 'green',
@@ -120,7 +120,136 @@ export const productsArray: productArray[] = [
     price: 55,
     img: require('./Images/11.png')
   },
-
+  {
+    id: 12,
+    gender: 'men',
+    category: 'runners',
+    brand: 'adidas',
+    color: 'red',
+    size: 40,
+    price: 97,
+    img: require('./Images/12.jpg')
+  },
+  {
+    id: 13,
+    gender: 'men',
+    category: 'runners',
+    brand: 'adidas',
+    color: 'blue',
+    size: 44,
+    price: 111,
+    img: require('./Images/13.png')
+  },
+  {
+    id: 14,
+    gender: 'men',
+    category: 'runners',
+    brand: 'adidas',
+    color: 'black',
+    size: 43,
+    price: 32,
+    img: require('./Images/14.png')
+  },
+  {
+    id: 15,
+    gender: 'women',
+    category: 'runners',
+    brand: 'adidas',
+    color: 'red',
+    size: 39,
+    price: 37,
+    img: require('./Images/15.jpg')
+  },
+  {
+    id: 16,
+    gender: 'men',
+    category: 'runners',
+    brand: 'adidas',
+    color: 'gray',
+    size: 38,
+    price: 49,
+    img: require('./Images/16.png')
+  },
+  {
+    id: 17,
+    gender: 'women',
+    category: 'runners',
+    brand: 'nike',
+    color: 'red',
+    size: 40,
+    price: 56,
+    img: require('./Images/17.png')
+  },
+  {
+    id: 18,
+    gender: 'women',
+    category: 'runners',
+    brand: 'nike',
+    color: 'red',
+    size: 41,
+    price: 58,
+    img: require('./Images/18.jpg')
+  },
+  {
+    id: 19,
+    gender: 'men',
+    category: 'basketball',
+    brand: 'nike',
+    color: 'yellow',
+    size: 45,
+    price: 98,
+    img: require('./Images/19.jpg')
+  },
+  {
+    id: 20,
+    gender: 'women',
+    category: 'runners',
+    brand: 'nike',
+    color: 'blue',
+    size: 42,
+    price: 54,
+    img: require('./Images/20.jpg')
+  },
+  {
+    id: 21,
+    gender: 'women',
+    category: 'casual',
+    brand: 'nike',
+    color: 'white',
+    size: 38,
+    price: 44,
+    img: require('./Images/21.png')
+  },
+  {
+    id: 22,
+    gender: 'women',
+    category: 'casual',
+    brand: 'nike',
+    color: 'white',
+    size: 35,
+    price: 40,
+    img: require('./Images/22.jpg')
+  },
+  {
+    id: 23,
+    gender: 'women',
+    category: 'basketball',
+    brand: 'nike',
+    color: 'red',
+    size: 46,
+    price: 90,
+    img: require('./Images/23.png')
+  },
+  {
+    id: 24,
+    gender: 'men',
+    category: 'runners',
+    brand: 'nike',
+    color: 'green',
+    size: 42,
+    price: 85,
+    img: require('./Images/24.jpg')
+  },
 ];
 
 interface city {
