@@ -1,6 +1,6 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState, useEffect } from "react";
 import { productsArray } from "../../data";
+import styled from "styled-components";
 
 const Select = styled.select`
   max-width: 7em;
@@ -13,25 +13,28 @@ const Option = styled.option`
   text-transform: uppercase;
 `;
 
-const FilterByGender = ({ card, setCard }) => {
-  const [selectedGender, setSelectedGender] = useState("GENDER");
+const FilterByGender = ({ setCard }) => {
+  const [selectedGender, setSelectedGender] = useState("gender");
 
   const handleGenderChange = (event) => {
     const value = event.target.value;
     setSelectedGender(value);
 
-    if (value === "GENDER") {
+    if (value === "gender") {
       setCard(productsArray);
     } else {
       const filtered = productsArray.filter((item) => item.gender === value);
       setCard(filtered);
-      console.log(filtered);
     }
   };
 
+  useEffect(() => {
+    handleGenderChange({ target: { value: selectedGender } });
+  }, [selectedGender]);
+
   return (
     <Select value={selectedGender} onChange={handleGenderChange}>
-      <Option value="GENDER">GENDER</Option>
+      <Option value="gender">GENDER</Option>
       <Option value="men">FOR MEN</Option>
       <Option value="woman">FOR WOMEN</Option>
     </Select>

@@ -77,7 +77,7 @@ const ProductContainer = () => {
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
-          <Title>{specifiedProduct.name}</Title>
+          <Title>{specifiedProduct.brand}</Title>
           <Price>${specifiedProduct.price}</Price>
           <Size>size: {specifiedProduct.size}</Size>
         </TitleContainer>

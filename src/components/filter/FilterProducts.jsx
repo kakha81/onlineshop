@@ -37,10 +37,10 @@ const FilterProducts = ({ card, setCard }) => {
       <FilterText>Filter Products:</FilterText>
       <FilterByPrice card={card} setCard={setCard} />
       <Filter>
-        <FilterByGender card={card} setCard={setCard} />
-        <FilterByCategory />
-        <FilterByBrand />
-        <FilterByColor />
+        <FilterByGender setCard={setCard} />
+        <FilterByCategory setCard={setCard} />
+        <FilterByBrand setCard={setCard} />
+        <FilterByColor setCard={setCard} />
       </Filter>
     </Container>
   );
