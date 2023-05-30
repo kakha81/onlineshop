@@ -37,7 +37,7 @@ const FilterProducts = ({ card, setCard }) => {
       <FilterText>Filter Products:</FilterText>
       <FilterByPrice card={card} setCard={setCard} />
       <Filter>
-        <FilterByGender />
+        <FilterByGender card={card} setCard={setCard} />
         <FilterByCategory />
         <FilterByBrand />
         <FilterByColor />
