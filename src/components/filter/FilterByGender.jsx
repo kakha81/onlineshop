@@ -11,7 +11,7 @@ const Option = styled.option`
   text-transform: uppercase;
 `;
 
-const FilterByGender = () => {
+const FilterByGender = ({ card, setCard }) => {
   return (
     <Select defaultValue="GENDER">
       <Option disabled>GENDER</Option>

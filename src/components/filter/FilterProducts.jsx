@@ -31,16 +31,11 @@ const Filter = styled.div`
   ${maxScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
 `;
 
-const FilterProducts = (props) => {
+const FilterProducts = ({ card, setCard }) => {
   return (
     <Container>
       <FilterText>Filter Products:</FilterText>
-      <FilterByPrice
-        card={props.card}
-        setCard={props.setCard}
-        activeButton={props.activeButton}
-        setActiveButton={props.setActiveButton}
-      />
+      <FilterByPrice card={card} setCard={setCard} />
       <Filter>
         <FilterByGender />
         <FilterByCategory />

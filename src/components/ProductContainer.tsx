@@ -28,6 +28,7 @@ const TitleContainer = styled.div`
 
 const Title = styled.h1`
   font-weight: 700;
+  text-transform: capitalize;
 `;
 
 const Price = styled.span`
@@ -38,6 +39,7 @@ const Price = styled.span`
 const Size = styled.h1`
   font-size: 2em;
   font-weight: 500;
+  text-transform: capitalize;
 `;
 
 const ButtonContainer = styled.div`
@@ -65,6 +67,8 @@ const Button = styled.button`
 
 const ProductContainer = () => {
   const { itemId } = useParams();
+  const specifiedProduct = productsArray[Number(itemId) - 1];
+  console.log(specifiedProduct);
 
   return (
     <Container>
@@ -73,9 +77,9 @@ const ProductContainer = () => {
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
-          <Title>{productsArray[`${Number(itemId) - 1}`].name}</Title>
-          <Price>${productsArray[`${Number(itemId) - 1}`].price}</Price>
-          <Size>size: {productsArray[`${Number(itemId) - 1}`].size}</Size>
+          <Title>{specifiedProduct.name}</Title>
+          <Price>${specifiedProduct.price}</Price>
+          <Size>size: {specifiedProduct.size}</Size>
         </TitleContainer>
       </InfoContainer>
       <ButtonContainer>

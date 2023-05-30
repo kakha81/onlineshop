@@ -17,7 +17,6 @@ const Header = styled.div`
 
 const Home = () => {
   const [card, setCard] = useState(productsArray);
-  const [activeButton, setActiveButton] = useState(0);
 
   return (
     <>
@@ -26,12 +25,7 @@ const Home = () => {
         <MenuContent />
       </Header>
       <Slider />
-      <FilterProducts
-        card={card}
-        setCard={setCard}
-        activeButton={activeButton}
-        setActiveButton={setActiveButton}
-      />
+      <FilterProducts card={card} setCard={setCard} />
       <Products card={card} />
       <NewsLetter />
       <Footer />

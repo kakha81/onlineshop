@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import MenuContent from '../components/MenuContent';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { maxScreen, midScreen, minScreen, tablet } from '../responsive';
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import MenuContent from "../components/MenuContent";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { maxScreen, midScreen, minScreen, tablet } from "../responsive";
 
 const Container = styled.div``;
 
@@ -64,8 +64,8 @@ const Product = styled.div`
   margin: 0.5em auto;
   border-radius: 0.5em;
   border: 0.15em solid teal;
-  ${midScreen({ maxWidth: '45%' })};
-  ${maxScreen({ maxWidth: '45%' })};
+  ${midScreen({ maxWidth: "45%" })};
+  ${maxScreen({ maxWidth: "45%" })};
 `;
 
 const ProductDetail = styled.div`
@@ -123,10 +123,10 @@ const Amount = styled.span`
   border-radius: 0.5em;
   margin: auto 0.1em;
   font-weight: 700;
-  ${tablet({ width: '1.7em', height: '1.7em' })}
-  ${minScreen({ width: '2em', height: '2em' })}
-  ${midScreen({ width: '2.2em', height: '2.2em' })}
-  ${maxScreen({ width: '2.5em', height: '2.5em' })}
+  ${tablet({ width: "1.7em", height: "1.7em" })}
+  ${minScreen({ width: "2em", height: "2em" })}
+  ${midScreen({ width: "2.2em", height: "2.2em" })}
+  ${maxScreen({ width: "2.5em", height: "2.5em" })}
 `;
 
 const ProductPrice = styled.div`
@@ -134,10 +134,10 @@ const ProductPrice = styled.div`
   font-weight: 700;
   color: teal;
   margin-right: 0.1em;
-  ${minScreen({ fontSize: '1.2em' })}
-  ${minScreen({ fontSize: '1.5em' })}
-  ${midScreen({ fontSize: '1.7em' })}
-  ${maxScreen({ fontSize: '2em' })}
+  ${minScreen({ fontSize: "1.2em" })}
+  ${minScreen({ fontSize: "1.5em" })}
+  ${midScreen({ fontSize: "1.7em" })}
+  ${maxScreen({ fontSize: "2em" })}
 `;
 
 const Summary = styled.div`
@@ -163,8 +163,8 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === 'total' && '500'};
-  font-size: ${(props) => props.type === 'total' && '1.5em'};
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "1.5em"};
 `;
 
 const SummaryItemText = styled.span``;
@@ -212,9 +212,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Button onClick={() => navigate('/productlist')}>
-            CONTINUE SHOPPING
-          </Button>
+          <Button onClick={() => navigate("/")}>CONTINUE SHOPPING</Button>
           <Button>CHECKOUT NOW</Button>
         </Top>
         <TopTexts>
@@ -226,7 +224,7 @@ const Cart = () => {
             {/* ----------------------------------------------product-------------------------------- */}
             <Product>
               <ProductDetail>
-                <Image src={require('../Images/1.png')} />
+                <Image src={require("../Images/1.png")} />
                 <Details>
                   <ProductName>Product: ADIDAS</ProductName>
                   <ProductId>ID: 1</ProductId>
@@ -268,7 +266,7 @@ const Cart = () => {
               <SummaryItemText>Shipping Discount</SummaryItemText>
               <SummaryItemPrice>$ -5.90</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem type='total'>
+            <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>

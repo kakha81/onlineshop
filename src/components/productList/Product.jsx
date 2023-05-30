@@ -46,6 +46,7 @@ const ItemInfo = styled.div`
 const ItemName = styled.div`
   font-weight: 700;
   margin-bottom: 0.5em;
+  text-transform: capitalize;
 `;
 
 const ItemPrice = styled.div`

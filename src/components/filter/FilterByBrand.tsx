@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { productsArray } from "../../data";
 
 const Select = styled.select`
   max-width: 7em;
@@ -16,9 +15,13 @@ const FilterByBrand = () => {
   return (
     <Select defaultValue="BRAND">
       <Option disabled>BRAND</Option>
-      {productsArray.map((item) => (
-        <Option key={item.id}>{item.name}</Option>
-      ))}
+      <Option>New Balance</Option>
+      <Option>Nike</Option>
+      <Option>Puma</Option>
+      <Option>Air Jordan</Option>
+      <Option>Levis</Option>
+      <Option>Tommy Hilfiger</Option>
+      <Option>Reabok</Option>
     </Select>
   );
 };

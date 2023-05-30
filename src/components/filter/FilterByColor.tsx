@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { productsArray } from "../../data";
 
 const Select = styled.select`
   max-width: 7em;
@@ -16,9 +15,10 @@ const FilterByColor = () => {
   return (
     <Select defaultValue="COLOR">
       <Option disabled>COLOR</Option>
-      {productsArray.map((item) => (
-        <Option key={item.id}>{item.color}</Option>
-      ))}
+      <Option>white</Option>
+      <Option>gray</Option>
+      <Option>blue</Option>
+      <Option>green</Option>
     </Select>
   );
 };
