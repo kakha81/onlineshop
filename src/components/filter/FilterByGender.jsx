@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { productsArray } from "../../data";
 import styled from "styled-components";
 
@@ -19,15 +19,18 @@ const FilterByGender = ({ setCard }) => {
   const handleGenderChange = (event) => {
     const value = event.target.value;
     setSelectedGender(value);
+  };
 
-    if (value === "gender") {
+  useEffect(() => {
+    if (selectedGender === "gender") {
       setCard(productsArray);
     } else {
-      const filtered = productsArray.filter((item) => item.gender === value);
+      const filtered = productsArray.filter(
+        (item) => item.gender === selectedGender
+      );
       setCard(filtered);
     }
-  };
-  handleGenderChange({ target: { value: selectedGender } });
+  }, [selectedGender, setCard]);
 
   return (
     <Select value={selectedGender} onChange={handleGenderChange}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { productsArray } from "../../data";
 import styled from "styled-components";
 
@@ -19,16 +19,18 @@ const FilterByBrand = ({ setCard }) => {
   const handleBrandChange = (event) => {
     const value = event.target.value;
     setSelectedBrand(value);
+  };
 
-    if (value === "brand") {
+  useEffect(() => {
+    if (selectedBrand === "brand") {
       setCard(productsArray);
     } else {
-      const filtered = productsArray.filter((item) => item.brand === value);
+      const filtered = productsArray.filter(
+        (item) => item.brand === selectedBrand
+      );
       setCard(filtered);
     }
-  };
-  handleBrandChange({ target: { value: selectedBrand } });
-
+  }, [selectedBrand, setCard]);
   return (
     <Select value={selectedBrand} onChange={handleBrandChange}>
       <Option value="brand">brand</Option>

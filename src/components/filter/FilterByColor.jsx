@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { productsArray } from "../../data";
 import styled from "styled-components";
 
@@ -19,16 +19,18 @@ const FilterByColor = ({ setCard }) => {
   const handleColorChange = (event) => {
     const value = event.target.value;
     setSelectedColor(value);
+  };
 
-    if (value === "color") {
+  useEffect(() => {
+    if (selectedColor === "color") {
       setCard(productsArray);
     } else {
-      const filtered = productsArray.filter((item) => item.color === value);
+      const filtered = productsArray.filter(
+        (item) => item.color === selectedColor
+      );
       setCard(filtered);
     }
-  };
-  handleColorChange({ target: { value: selectedColor } });
-
+  }, [selectedColor, setCard]);
   return (
     <Select value={selectedColor} onChange={handleColorChange}>
       <Option value="color">color</Option>

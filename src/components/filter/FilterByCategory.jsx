@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { productsArray } from "../../data";
 
@@ -19,15 +19,18 @@ const FilterByCategory = ({ setCard }) => {
   const handleCategoryChange = (event) => {
     const value = event.target.value;
     setSelectedCategory(value);
+  };
 
-    if (value === "category") {
+  useEffect(() => {
+    if (selectedCategory === "category") {
       setCard(productsArray);
     } else {
-      const filtered = productsArray.filter((item) => item.category === value);
+      const filtered = productsArray.filter(
+        (item) => item.category === selectedCategory
+      );
       setCard(filtered);
     }
-  };
-  handleCategoryChange({ target: { value: selectedCategory } });
+  }, [selectedCategory, setCard]);
 
   return (
     <Select value={selectedCategory} onChange={handleCategoryChange}>
