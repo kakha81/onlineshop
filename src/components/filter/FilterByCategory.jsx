@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { productsArray } from "../../data";
 
@@ -27,10 +27,7 @@ const FilterByCategory = ({ setCard }) => {
       setCard(filtered);
     }
   };
-
-  useEffect(() => {
-    handleCategoryChange({ target: { value: selectedCategory } });
-  }, [selectedCategory]);
+  handleCategoryChange({ target: { value: selectedCategory } });
 
   return (
     <Select value={selectedCategory} onChange={handleCategoryChange}>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { productsArray } from "../../data";
 import styled from "styled-components";
 
@@ -27,10 +27,7 @@ const FilterByBrand = ({ setCard }) => {
       setCard(filtered);
     }
   };
-
-  useEffect(() => {
-    handleBrandChange({ target: { value: selectedBrand } });
-  }, [selectedBrand]);
+  handleBrandChange({ target: { value: selectedBrand } });
 
   return (
     <Select value={selectedBrand} onChange={handleBrandChange}>

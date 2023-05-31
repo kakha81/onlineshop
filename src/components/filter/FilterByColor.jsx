@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { productsArray } from "../../data";
 import styled from "styled-components";
 
@@ -27,10 +27,7 @@ const FilterByColor = ({ setCard }) => {
       setCard(filtered);
     }
   };
-
-  useEffect(() => {
-    handleColorChange({ target: { value: selectedColor } });
-  }, [selectedColor]);
+  handleColorChange({ target: { value: selectedColor } });
 
   return (
     <Select value={selectedColor} onChange={handleColorChange}>

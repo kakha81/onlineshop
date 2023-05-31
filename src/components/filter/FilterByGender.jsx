@@ -23,13 +23,11 @@ const FilterByGender = ({ setCard }) => {
     if (value === "gender") {
       setCard(productsArray);
     } else {
-      const filtered =
-        selectedGender === "gender"
-          ? productsArray
-          : productsArray.filter((item) => item.gender === selectedGender);
+      const filtered = productsArray.filter((item) => item.gender === value);
       setCard(filtered);
     }
   };
+  handleGenderChange({ target: { value: selectedGender } });
 
   return (
     <Select value={selectedGender} onChange={handleGenderChange}>
