@@ -68,12 +68,11 @@ const Button = styled.button`
 const ProductContainer = () => {
   const { itemId } = useParams();
   const specifiedProduct = productsArray[Number(itemId) - 1];
-  console.log(specifiedProduct);
 
   return (
     <Container>
       <ImgContainer>
-        <Image src={require(`../Images/${itemId}.png`)} alt="Product" />
+        <Image src={specifiedProduct.img} alt="Product" />
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
