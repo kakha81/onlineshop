@@ -1,16 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
-
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { maxScreen, midScreen, minScreen, tablet } from "../responsive";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const Product = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: row;
   border-radius: 0.5em;
   border: 0.15em solid teal;
+  margin-bottom: 0.5em;
 `;
 
 const ProductDetail = styled.div`
@@ -56,6 +56,16 @@ const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 1em;
+`;
+
+const RemoveIconItem = styled(RemoveIcon)`
+  cursor: pointer;
+  color: teal;
+`;
+
+const AddIconItem = styled(AddIcon)`
+  cursor: pointer;
+  color: teal;
 `;
 
 const Amount = styled.span`
@@ -111,7 +121,7 @@ const CartItem = () => {
   };
 
   return (
-    <Product>
+    <Container>
       <ProductDetail>
         <Image src={require("../Images/1.png")} />
         <Details>
@@ -123,15 +133,13 @@ const CartItem = () => {
       <PriceDetail>
         <ProductPrice>${productItem}</ProductPrice>
         <ProductAmountContainer>
-          <RemoveIcon
-            style={{ cursor: "pointer", color: "teal" }}
+          <RemoveIconItem
             onClick={() => {
               decreaseCount();
             }}
           />
           <Amount>{count}</Amount>
-          <AddIcon
-            style={{ cursor: "pointer", color: "teal" }}
+          <AddIconItem
             onClick={() => {
               increaseCount();
             }}
@@ -140,7 +148,7 @@ const CartItem = () => {
         <ProductPrice>${productItem * count}</ProductPrice>
         <RedDeleteIcon onClick={() => reduceCount()} />
       </PriceDetail>
-    </Product>
+    </Container>
   );
 };
 

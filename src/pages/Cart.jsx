@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import CartItems from "../components/CartItems";
+import CartItems from "../components/CartItemsContainer";
 import OrderContainer from "../components/OrderContainer";
 import Footer from "../components/Footer";
 import MenuContent from "../components/MenuContent";
