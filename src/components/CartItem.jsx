@@ -124,12 +124,14 @@ const CartItem = () => {
         <ProductPrice>${productItem}</ProductPrice>
         <ProductAmountContainer>
           <RemoveIcon
+            style={{ cursor: "pointer", color: "teal" }}
             onClick={() => {
               decreaseCount();
             }}
           />
           <Amount>{count}</Amount>
           <AddIcon
+            style={{ cursor: "pointer", color: "teal" }}
             onClick={() => {
               increaseCount();
             }}

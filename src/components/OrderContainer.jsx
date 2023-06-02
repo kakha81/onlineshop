@@ -44,7 +44,7 @@ const Button = styled.button`
   background-color: teal;
   border: 0.25em solid teal;
   border-radius: 0.3em;
-  opacity: 0.8;
+  opacity: 0.7;
   cursor: pointer;
   &:hover {
     opacity: 1;

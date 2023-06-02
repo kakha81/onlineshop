@@ -27,7 +27,7 @@ const ClearButton = styled.button`
   background-color: red;
   border-color: red;
   border-radius: 0.3em;
-  opacity: 0.8;
+  opacity: 0.6;
   cursor: pointer;
   &:hover {
     opacity: 1;
