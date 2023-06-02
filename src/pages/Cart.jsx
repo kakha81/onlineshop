@@ -57,12 +57,17 @@ const Bottom = styled.div``;
 
 const Info = styled.div``;
 
-const Product = styled.div`
+const ProducContainer = styled.div`
   width: 95%;
   max-width: 45em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0.5em auto;
+`;
+
+const Product = styled.div`
+  display: flex;
+  flex-direction: row;
   border-radius: 0.5em;
   border: 0.15em solid teal;
 `;
@@ -199,9 +204,11 @@ const Button = styled.button`
   }
 `;
 const ClearButtonContainer = styled.div`
+  width: 95%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-top: 0.5em;
 `;
 
 const ClearButton = styled(Button)`
@@ -248,37 +255,39 @@ const Cart = () => {
         <Bottom>
           <Info>
             {/* ----------------------------------------------product-------------------------------- */}
-            <Product>
-              <ProductDetail>
-                <Image src={require("../Images/1.png")} />
-                <Details>
-                  <ProductName>Product: ADIDAS</ProductName>
-                  <ProductId>ID: 1</ProductId>
-                  <ProductSize>Size: 37.5</ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductPrice>${productItem}</ProductPrice>
-                <ProductAmountContainer>
-                  <RemoveIcon
-                    onClick={() => {
-                      decreaseCount();
-                    }}
-                  />
-                  <Amount>{count}</Amount>
-                  <AddIcon
-                    onClick={() => {
-                      increaseCount();
-                    }}
-                  />
-                </ProductAmountContainer>
-                <ProductPrice>${productItem * count}</ProductPrice>
-                <RedDeleteIcon />
-              </PriceDetail>
-            </Product>
-            <ClearButtonContainer>
-              <ClearButton>CLEAR CART</ClearButton>
-            </ClearButtonContainer>
+            <ProducContainer>
+              <Product>
+                <ProductDetail>
+                  <Image src={require("../Images/1.png")} />
+                  <Details>
+                    <ProductName>Product: ADIDAS</ProductName>
+                    <ProductId>ID: 1</ProductId>
+                    <ProductSize>Size: 37.5</ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductPrice>${productItem}</ProductPrice>
+                  <ProductAmountContainer>
+                    <RemoveIcon
+                      onClick={() => {
+                        decreaseCount();
+                      }}
+                    />
+                    <Amount>{count}</Amount>
+                    <AddIcon
+                      onClick={() => {
+                        increaseCount();
+                      }}
+                    />
+                  </ProductAmountContainer>
+                  <ProductPrice>${productItem * count}</ProductPrice>
+                  <RedDeleteIcon />
+                </PriceDetail>
+              </Product>
+              <ClearButtonContainer>
+                <ClearButton>CLEAR CART</ClearButton>
+              </ClearButtonContainer>
+            </ProducContainer>
             {/* ----------------------------------------------product-------------------------------- */}
           </Info>
           <Summary>
