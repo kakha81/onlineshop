@@ -6,7 +6,7 @@ import CartEmpty from "../components/CartEmpty";
 const ProductContainer = styled.div`
   width: 95%;
   max-width: 45em;
-  display: ${({ count }) => (count < 1 ? "none" : "flex")};
+  display: flex;
   flex-direction: column;
   margin: 0.5em auto;
 `;
@@ -27,7 +27,7 @@ const ClearButton = styled.button`
   background-color: red;
   border-color: red;
   border-radius: 0.3em;
-  opacity: 0.6;
+  opacity: 0.7;
   cursor: pointer;
   &:hover {
     opacity: 1;
@@ -39,7 +39,6 @@ const ClearButton = styled.button`
 
 const CartItems = () => {
   const [isShown, setIsShown] = useState(true);
-  console.log(isShown);
   return (
     <ProductContainer>
       {isShown ? <CartItem /> : <CartEmpty />}
