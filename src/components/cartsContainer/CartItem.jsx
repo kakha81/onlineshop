@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { maxScreen, midScreen, minScreen, tablet } from "../responsive";
+import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const Container = styled.div`
@@ -123,7 +123,7 @@ const CartItem = () => {
   return (
     <Container>
       <ProductDetail>
-        <Image src={require("../Images/1.png")} />
+        <Image src={require("../../Images/1.png")} />
         <Details>
           <ProductName>Product: ADIDAS</ProductName>
           <ProductId>ID: 1</ProductId>
