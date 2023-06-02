@@ -197,14 +197,18 @@ const Button = styled.button`
   background-color: teal;
   border: 0.25em solid teal;
   border-radius: 0.3em;
+  opacity: 0.8;
   cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
   &:active {
     border-color: red;
     background-color: red;
   }
 `;
 const ClearButtonContainer = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -217,6 +221,10 @@ const ClearButton = styled(Button)`
   color: white;
   background-color: red;
   border-color: red;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
   &:active {
     box-shadow: 5px 5px 15px gray;
   }
