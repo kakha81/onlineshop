@@ -7,6 +7,7 @@ import MenuContent from "../components/MenuContent";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { maxScreen, midScreen, minScreen, tablet } from "../responsive";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Container = styled.div``;
 
@@ -58,14 +59,12 @@ const Info = styled.div``;
 
 const Product = styled.div`
   width: 95%;
-  max-width: 30em;
+  max-width: 45em;
   display: flex;
   flex-direction: row;
   margin: 0.5em auto;
   border-radius: 0.5em;
   border: 0.15em solid teal;
-  ${midScreen({ maxWidth: "45%" })};
-  ${maxScreen({ maxWidth: "45%" })};
 `;
 
 const ProductDetail = styled.div`
@@ -140,6 +139,15 @@ const ProductPrice = styled.div`
   ${maxScreen({ fontSize: "2em" })}
 `;
 
+const RedDeleteIcon = styled(DeleteIcon)`
+  color: red;
+  cursor: pointer;
+  transform: scale(1.3);
+  &:active {
+    transform: scale(1);
+  }
+`;
+
 const Summary = styled.div`
   width: 18em;
   margin: 1em auto;
@@ -183,17 +191,35 @@ const Button = styled.button`
   color: white;
   background-color: teal;
   border: 0.25em solid teal;
-  border-radius: 2em;
+  border-radius: 0.3em;
   cursor: pointer;
   &:active {
     border-color: red;
     background-color: red;
   }
 `;
+const ClearButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ClearButton = styled(Button)`
+  width: 8em;
+  padding: 0.4em;
+  color: white;
+  background-color: red;
+  border-color: red;
+  &:active {
+    box-shadow: 5px 5px 15px gray;
+  }
+`;
 
 const Cart = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const navigate = useNavigate();
+
+  const productItem = 30;
 
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 1));
@@ -216,7 +242,7 @@ const Cart = () => {
           <Button>CHECKOUT NOW</Button>
         </Top>
         <TopTexts>
-          <TopText>Shopping Bag (2)</TopText>
+          <TopText>Shopping Bag (0)</TopText>
           <TopText>Your Wishlist (0)</TopText>
         </TopTexts>
         <Bottom>
@@ -232,6 +258,7 @@ const Cart = () => {
                 </Details>
               </ProductDetail>
               <PriceDetail>
+                <ProductPrice>${productItem}</ProductPrice>
                 <ProductAmountContainer>
                   <RemoveIcon
                     onClick={() => {
@@ -245,9 +272,13 @@ const Cart = () => {
                     }}
                   />
                 </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
+                <ProductPrice>${productItem * count}</ProductPrice>
+                <RedDeleteIcon />
               </PriceDetail>
             </Product>
+            <ClearButtonContainer>
+              <ClearButton>CLEAR CART</ClearButton>
+            </ClearButtonContainer>
             {/* ----------------------------------------------product-------------------------------- */}
           </Info>
           <Summary>
