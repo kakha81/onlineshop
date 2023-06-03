@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Summary = styled.div`
   width: 18em;
@@ -23,8 +23,8 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "1.5em"};
+  font-weight: ${(props) => props.type === 'total' && '500'};
+  font-size: ${(props) => props.type === 'total' && '1.5em'};
 `;
 
 const SummaryItemText = styled.span``;
@@ -73,7 +73,7 @@ const OrderContainer = () => {
         <SummaryItemText>Shipping Discount</SummaryItemText>
         <SummaryItemPrice>$ -5.90</SummaryItemPrice>
       </SummaryItem>
-      <SummaryItem type="total">
+      <SummaryItem type='total'>
         <SummaryItemText>Total</SummaryItemText>
         <SummaryItemPrice>$ 80</SummaryItemPrice>
       </SummaryItem>

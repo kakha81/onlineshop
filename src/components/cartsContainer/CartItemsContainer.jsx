@@ -1,27 +1,17 @@
-import { useState } from "react";
-import styled from "styled-components";
-import CartItems from "./CartItems";
-import CartEmpty from "./CartEmpty";
-
-const Container = styled.div`
-  width: 95%;
-  max-width: 45em;
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em auto;
-`;
+import { useState } from 'react';
+import styled from 'styled-components';
+import CartItems from './CartItems';
+import CartEmpty from './CartEmpty';
 
 const ClearButtonContainer = styled.div`
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 0.5em;
+  justify-content: center;
+  margin: 2em auto;
 `;
 
 const ClearButton = styled.button`
-  width: 8em;
-  padding: 0.4em;
+  width: 7em;
+  padding: 0.3em 0.4em;
   font-weight: 500;
   color: white;
   background-color: red;
@@ -40,12 +30,16 @@ const ClearButton = styled.button`
 const CartItemsContainer = () => {
   const [isShown, setIsShown] = useState(true);
   return (
-    <Container>
+    <>
       {isShown ? <CartItems /> : <CartEmpty />}
-      <ClearButtonContainer>
-        <ClearButton onClick={() => setIsShown(false)}>CLEAR CART</ClearButton>
-      </ClearButtonContainer>
-    </Container>
+      {isShown ? (
+        <ClearButtonContainer>
+          <ClearButton onClick={() => setIsShown(false)}>
+            CLEAR CART
+          </ClearButton>
+        </ClearButtonContainer>
+      ) : null}
+    </>
   );
 };
 

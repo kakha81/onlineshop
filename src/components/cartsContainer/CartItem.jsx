@@ -1,21 +1,56 @@
-import { useState } from "react";
-import styled from "styled-components";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
-import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { useState } from 'react';
+import styled from 'styled-components';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import { maxScreen, midScreen, minScreen, tablet } from '../../responsive';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+
+const ItemContainer = styled.div`
+  display: flex;
+  align-self: center;
+  width: 100%;
+  margin-bottom: 0.5em;
+  border-radius: 0.5em;
+  &:active {
+    box-shadow: 5px 5px 10px lightgray;
+  }
+  ${tablet({ width: '100%' })}
+  ${minScreen({ width: '40em' })}
+  ${midScreen({ width: '40em' })}
+  ${maxScreen({ width: '40em' })}
+`;
+
+const DeleteContainer = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 3em;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border: 0.15em solid red;
+  cursor: pointer;
+`;
+
+const RedDeleteIcon = styled(DeleteForeverOutlinedIcon)`
+  cursor: pointer;
+  color: white;
+`;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  border-radius: 0.5em;
-  border: 0.15em solid teal;
-  margin-bottom: 0.5em;
+  width: 100%;
+  border: 0.1em solid lightgray;
+  border-right-color: red;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 `;
 
 const ProductDetail = styled.div`
   display: flex;
   align-items: center;
+  margin: auto;
 `;
 
 const Image = styled.img`
@@ -46,26 +81,26 @@ const ProductSize = styled.span`
 
 const PriceDetail = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: auto;
 `;
 
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 1em;
+  margin: auto;
 `;
 
 const RemoveIconItem = styled(RemoveIcon)`
-  cursor: pointer;
   color: teal;
+  cursor: pointer;
 `;
 
 const AddIconItem = styled(AddIcon)`
-  cursor: pointer;
   color: teal;
+  cursor: pointer;
 `;
 
 const Amount = styled.span`
@@ -76,36 +111,29 @@ const Amount = styled.span`
   justify-content: center;
   border: 0.1em solid teal;
   border-radius: 0.5em;
-  margin: auto 0.1em;
+  margin: auto;
   font-weight: 700;
-  ${tablet({ width: "1.7em", height: "1.7em" })}
-  ${minScreen({ width: "2em", height: "2em" })}
-  ${midScreen({ width: "2.2em", height: "2.2em" })}
-  ${maxScreen({ width: "2.5em", height: "2.5em" })}
+  ${tablet({ width: '1.7em', height: '1.7em' })}
+  ${minScreen({ width: '2em', height: '2em' })}
+  ${midScreen({ width: '2.2em', height: '2.2em' })}
+  ${maxScreen({ width: '2.2em', height: '2.2em' })}
 `;
 
 const ProductPrice = styled.div`
   font-size: 1em;
   font-weight: 700;
   color: teal;
-  margin-right: 0.1em;
-  ${minScreen({ fontSize: "1.2em" })}
-  ${minScreen({ fontSize: "1.5em" })}
-  ${midScreen({ fontSize: "1.7em" })}
-  ${maxScreen({ fontSize: "2em" })}
-`;
-
-const RedDeleteIcon = styled(DeleteIcon)`
-  color: red;
-  cursor: pointer;
-  transform: scale(1.3);
-  &:active {
-    transform: scale(1);
-  }
+  margin: auto;
+  ${minScreen({ fontSize: '1.2em' })}
+  ${minScreen({ fontSize: '1.5em' })}
+  ${midScreen({ fontSize: '1.5em' })}
+  ${maxScreen({ fontSize: '1.5em' })}
 `;
 
 const CartItem = () => {
   const [count, setCount] = useState(1);
+  const [isShown, setIsShown] = useState(true);
+
   const productItem = 30;
 
   const decreaseCount = () => {
@@ -116,39 +144,43 @@ const CartItem = () => {
     setCount((prevCount) => Math.min(prevCount + 1, 10));
   };
 
-  const reduceCount = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 1));
-  };
-
   return (
-    <Container>
-      <ProductDetail>
-        <Image src={require("../../Images/1.png")} />
-        <Details>
-          <ProductName>Product: ADIDAS</ProductName>
-          <ProductId>ID: 1</ProductId>
-          <ProductSize>Size: 37.5</ProductSize>
-        </Details>
-      </ProductDetail>
-      <PriceDetail>
-        <ProductPrice>${productItem}</ProductPrice>
-        <ProductAmountContainer>
-          <RemoveIconItem
-            onClick={() => {
-              decreaseCount();
-            }}
-          />
-          <Amount>{count}</Amount>
-          <AddIconItem
-            onClick={() => {
-              increaseCount();
-            }}
-          />
-        </ProductAmountContainer>
-        <ProductPrice>${productItem * count}</ProductPrice>
-        <RedDeleteIcon onClick={() => reduceCount()} />
-      </PriceDetail>
-    </Container>
+    <>
+      {isShown ? (
+        <ItemContainer>
+          <Container>
+            <ProductDetail>
+              <Image src={require('../../Images/1.png')} />
+              <Details>
+                <ProductName>Product: ADIDAS</ProductName>
+                <ProductId>ID: 1</ProductId>
+                <ProductSize>Size: 37.5</ProductSize>
+              </Details>
+            </ProductDetail>
+            <PriceDetail>
+              <ProductPrice>${productItem}</ProductPrice>
+              <ProductAmountContainer>
+                <RemoveIconItem
+                  onClick={() => {
+                    decreaseCount();
+                  }}
+                />
+                <Amount>{count}</Amount>
+                <AddIconItem
+                  onClick={() => {
+                    increaseCount();
+                  }}
+                />
+              </ProductAmountContainer>
+              <ProductPrice>${productItem * count}</ProductPrice>
+            </PriceDetail>
+          </Container>
+          <DeleteContainer onClick={() => setIsShown(false)}>
+            <RedDeleteIcon />
+          </DeleteContainer>
+        </ItemContainer>
+      ) : null}
+    </>
   );
 };
 
