@@ -130,11 +130,9 @@ const ProductPrice = styled.div`
   ${maxScreen({ fontSize: '1.5em' })}
 `;
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
   const [count, setCount] = useState(1);
   const [isShown, setIsShown] = useState(true);
-
-  const productItem = 30;
 
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 1));
@@ -150,15 +148,15 @@ const CartItem = () => {
         <ItemContainer>
           <Container>
             <ProductDetail>
-              <Image src={require('../../Images/1.png')} />
+              <Image src={item.img} />
               <Details>
-                <ProductName>Product: ADIDAS</ProductName>
-                <ProductId>ID: 1</ProductId>
-                <ProductSize>Size: 37.5</ProductSize>
+                <ProductName>{item.brand}</ProductName>
+                <ProductId>ID: {item.id}</ProductId>
+                <ProductSize>Size: {item.size}</ProductSize>
               </Details>
             </ProductDetail>
             <PriceDetail>
-              <ProductPrice>${productItem}</ProductPrice>
+              <ProductPrice>${item.price}</ProductPrice>
               <ProductAmountContainer>
                 <RemoveIconItem
                   onClick={() => {
@@ -172,7 +170,7 @@ const CartItem = () => {
                   }}
                 />
               </ProductAmountContainer>
-              <ProductPrice>${productItem * count}</ProductPrice>
+              <ProductPrice>${item.price * count}</ProductPrice>
             </PriceDetail>
           </Container>
           <DeleteContainer onClick={() => setIsShown(false)}>

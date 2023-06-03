@@ -1,13 +1,14 @@
-import { FC, useState } from "react";
-import styled from "styled-components";
-import SearchIcon from "@mui/icons-material/Search";
-import Badge from "@mui/material/Badge";
-import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
-import { tablet, minScreen, midScreen, maxScreen } from "../responsive";
-import { useNavigate } from "react-router-dom";
+import { FC, useState } from 'react';
+import styled from 'styled-components';
+import SearchIcon from '@mui/icons-material/Search';
+import Badge from '@mui/material/Badge';
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
+import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
+import { useNavigate } from 'react-router-dom';
+import { productsArray } from '../data';
 
-const UsFlag = require("../Images/flags/united-states-flag.png");
-const GeoFlag = require("../Images/flags/georgian-flag.png");
+const UsFlag = require('../Images/flags/united-states-flag.png');
+const GeoFlag = require('../Images/flags/georgian-flag.png');
 
 interface NavbarProps {}
 
@@ -28,31 +29,31 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${tablet({ flexDirection: "row" })};
-  ${minScreen({ flexDirection: "row" })};
+  ${tablet({ flexDirection: 'row' })};
+  ${minScreen({ flexDirection: 'row' })};
 `;
 
 const Left = styled.div`
   display: flex;
   align-items: center;
-  ${tablet({ flexDirection: "row" })};
-  ${minScreen({ flexDirection: "row" })};
-  ${midScreen({ justifyContent: "left" })};
-  ${maxScreen({ justifyContent: "left" })};
+  ${tablet({ flexDirection: 'row' })};
+  ${minScreen({ flexDirection: 'row' })};
+  ${midScreen({ justifyContent: 'left' })};
+  ${maxScreen({ justifyContent: 'left' })};
 `;
 
 const MenuLabel = styled.label`
   cursor: pointer;
   width: 3em;
   margin-top: 0.5em;
-  ${minScreen({ display: "none" })};
-  ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })};
+  ${minScreen({ display: 'none' })};
+  ${midScreen({ display: 'none' })};
+  ${maxScreen({ display: 'none' })};
 `;
 
 const Icon = styled.span<IconProps>`
   position: relative;
-  background-color: ${(props) => (props.clicked ? "transparent" : "white")};
+  background-color: ${(props) => (props.clicked ? 'transparent' : 'white')};
   width: 2em;
   height: 3px;
   margin: 0.3em;
@@ -60,7 +61,7 @@ const Icon = styled.span<IconProps>`
   transition: 0.3s all ease;
   &::before,
   &::after {
-    content: "";
+    content: '';
     background-color: white;
     width: 2em;
     height: 3px;
@@ -70,12 +71,12 @@ const Icon = styled.span<IconProps>`
     transition: 0.3s all ease;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '-0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(135deg)' : 'rotate(0)')};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '0.8rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(-135deg)' : 'rotate(0)')};
   }
 `;
 
@@ -104,10 +105,10 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 0.2em;
   width: 7em;
-  ${tablet({ display: "none" })};
-  ${minScreen({ width: "15em" })};
-  ${midScreen({ width: "20em" })};
-  ${maxScreen({ width: "20em" })};
+  ${tablet({ display: 'none' })};
+  ${minScreen({ width: '15em' })};
+  ${midScreen({ width: '20em' })};
+  ${maxScreen({ width: '20em' })};
 `;
 
 const Input = styled.input`
@@ -125,9 +126,9 @@ const Logo = styled.h1`
   font-weight: 600;
   color: white;
   cursor: pointer;
-  ${minScreen({ fontSize: "1em" })};
-  ${midScreen({ fontSize: "1.5em" })};
-  ${maxScreen({ fontSize: "1.7em" })};
+  ${minScreen({ fontSize: '1em' })};
+  ${midScreen({ fontSize: '1.5em' })};
+  ${maxScreen({ fontSize: '1.7em' })};
 `;
 
 const Right = styled.div`
@@ -150,10 +151,10 @@ const SideNav = styled.div<SideNavProps>`
   width: 15em;
   height: 100%;
   background-color: teal;
-  transform: translateX(${(props) => (props.clicked ? "0%" : "-100%")});
+  transform: translateX(${(props) => (props.clicked ? '0%' : '-100%')});
   transition: all 0.5s ease-in-out;
-  ${midScreen({ display: "none" })};
-  ${maxScreen({ display: "none" })};
+  ${midScreen({ display: 'none' })};
+  ${maxScreen({ display: 'none' })};
   z-index: 1000;
 `;
 
@@ -179,7 +180,7 @@ const ListItem = styled.li`
 `;
 
 const Navbar: FC<NavbarProps> = () => {
-  const [activeFlag, setActiveFlag] = useState<"US" | "GEO">("US");
+  const [activeFlag, setActiveFlag] = useState<'US' | 'GEO'>('US');
   const [click, setClick] = useState<boolean>(false);
   const handleClick = () => setClick(!click);
   const navigate = useNavigate();
@@ -188,43 +189,43 @@ const Navbar: FC<NavbarProps> = () => {
     <Container>
       <Wrapper>
         <Left>
-          <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
+          <MenuLabel htmlFor='navi-toggle' onClick={handleClick}>
             <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
           <FlagsContainer>
             <Flag
               src={UsFlag}
-              isActive={activeFlag === "US"}
-              onClick={() => setActiveFlag("US")}
+              isActive={activeFlag === 'US'}
+              onClick={() => setActiveFlag('US')}
             />
             <Flag
               src={GeoFlag}
-              isActive={activeFlag === "GEO"}
-              onClick={() => setActiveFlag("GEO")}
+              isActive={activeFlag === 'GEO'}
+              onClick={() => setActiveFlag('GEO')}
             />
           </FlagsContainer>
           <SearchContainer>
-            <Input placeholder="SEARCH" />
+            <Input placeholder='SEARCH' />
             <SearchIcon
               style={{
-                color: "white",
-                fontSize: "1.5em",
-                paddingLeft: "0.2em",
+                color: 'white',
+                fontSize: '1.5em',
+                paddingLeft: '0.2em',
               }}
             />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo onClick={() => navigate("/")}>ONLINESHOP</Logo>
+          <Logo onClick={() => navigate('/')}>ONLINESHOP</Logo>
         </Center>
         <Right>
-          <MenuItem onClick={() => navigate("/register")}>SIGN UP</MenuItem>
-          <MenuItem onClick={() => navigate("/login")}>LOG IN</MenuItem>
+          <MenuItem onClick={() => navigate('/register')}>SIGN UP</MenuItem>
+          <MenuItem onClick={() => navigate('/login')}>LOG IN</MenuItem>
           <MenuItem>
             <Badge
-              badgeContent={1}
-              color="error"
-              onClick={() => navigate("/cart")}
+              badgeContent={productsArray.length}
+              color='error'
+              onClick={() => navigate('/cart')}
             >
               <ShoppingCartOutlined />
             </Badge>
@@ -233,9 +234,9 @@ const Navbar: FC<NavbarProps> = () => {
       </Wrapper>
       <SideNav clicked={click}>
         <MenuContainer>
-          <ListItem onClick={() => navigate("/")}>HOME</ListItem>
-          <ListItem onClick={() => navigate("/cart")}>MY CART</ListItem>
-          <ListItem onClick={() => navigate("/profile")}>MY ACCOUNT</ListItem>
+          <ListItem onClick={() => navigate('/')}>HOME</ListItem>
+          <ListItem onClick={() => navigate('/cart')}>MY CART</ListItem>
+          <ListItem onClick={() => navigate('/profile')}>MY ACCOUNT</ListItem>
         </MenuContainer>
       </SideNav>
     </Container>

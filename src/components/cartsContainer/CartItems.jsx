@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import CartItem from './CartItem';
+import { productsArray } from '../../data';
 
 const Container = styled.div`
   display: flex;
@@ -9,9 +10,9 @@ const Container = styled.div`
 const CartItems = () => {
   return (
     <Container>
-      <CartItem />
-      <CartItem />
-      <CartItem />
+      {productsArray.map((item) => (
+        <CartItem item={item} />
+      ))}
     </Container>
   );
 };
