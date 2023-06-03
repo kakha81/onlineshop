@@ -9,6 +9,7 @@ const ItemContainer = styled.div`
   display: flex;
   align-self: center;
   width: 100%;
+  height: 7em;
   margin-bottom: 0.5em;
   border-radius: 0.5em;
   &:active {
