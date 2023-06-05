@@ -169,7 +169,7 @@ const ListItem = styled.li`
 
 const Navbar = () => {
   const { card } = useContext(DataContext);
-  const [activeFlag, setActiveFlag] = useState();
+  const [activeFlag, setActiveFlag] = useState("US");
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const navigate = useNavigate();
