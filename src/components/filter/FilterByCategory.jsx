@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { DataContext } from "../../App";
 import styled from "styled-components";
-import { productsArray } from "../../data";
 
 const Select = styled.select`
   max-width: 7em;
@@ -13,7 +13,8 @@ const Option = styled.option`
   text-transform: uppercase;
 `;
 
-const FilterByCategory = ({ setCard }) => {
+const FilterByCategory = () => {
+  const { card, setCard } = useContext(DataContext);
   const [selectedCategory, setSelectedCategory] = useState("category");
 
   const handleCategoryChange = (event) => {
@@ -23,14 +24,14 @@ const FilterByCategory = ({ setCard }) => {
 
   useEffect(() => {
     if (selectedCategory === "category") {
-      setCard(productsArray);
+      setCard(card);
     } else {
-      const filtered = productsArray.filter(
+      const filtered = card.filter(
         (item) => item.category === selectedCategory
       );
       setCard(filtered);
     }
-  }, [selectedCategory, setCard]);
+  }, [selectedCategory, setCard, card]);
 
   return (
     <Select value={selectedCategory} onChange={handleCategoryChange}>

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { productsArray } from "../../data";
+import { useState, useEffect, useContext } from "react";
+import { DataContext } from "../../App";
 import styled from "styled-components";
 
 const Select = styled.select`
@@ -13,7 +13,8 @@ const Option = styled.option`
   text-transform: uppercase;
 `;
 
-const FilterByColor = ({ setCard }) => {
+const FilterByColor = () => {
+  const { card, setCard } = useContext(DataContext);
   const [selectedColor, setSelectedColor] = useState("color");
 
   const handleColorChange = (event) => {
@@ -23,14 +24,12 @@ const FilterByColor = ({ setCard }) => {
 
   useEffect(() => {
     if (selectedColor === "color") {
-      setCard(productsArray);
+      setCard(card);
     } else {
-      const filtered = productsArray.filter(
-        (item) => item.color === selectedColor
-      );
+      const filtered = card.filter((item) => item.color === selectedColor);
       setCard(filtered);
     }
-  }, [selectedColor, setCard]);
+  }, [selectedColor, setCard, card]);
   return (
     <Select value={selectedColor} onChange={handleColorChange}>
       <Option value="color">color</Option>

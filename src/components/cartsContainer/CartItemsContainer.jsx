@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import CartItems from './CartItems';
-import CartEmpty from './CartEmpty';
+import { useState } from "react";
+import styled from "styled-components";
+import CartItems from "./CartItems";
+import CartEmpty from "./CartEmpty";
 
 const ClearButtonContainer = styled.div`
   display: flex;
@@ -10,20 +10,16 @@ const ClearButtonContainer = styled.div`
 `;
 
 const ClearButton = styled.button`
-  width: 7em;
-  padding: 0.3em 0.4em;
-  font-weight: 500;
+  width: 15em;
   color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
   background-color: red;
-  border-color: red;
+  border: 0.25em solid red;
   border-radius: 0.3em;
-  opacity: 0.7;
   cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
   &:active {
-    box-shadow: 5px 5px 15px gray;
+    box-shadow: 5px 5px 5px gray;
   }
 `;
 

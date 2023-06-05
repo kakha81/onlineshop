@@ -3,8 +3,8 @@ import FilterByBrand from "./FilterByBrand";
 import FilterByCategory from "./FilterByCategory";
 import FilterByColor from "./FilterByColor";
 import FilterByGender from "./FilterByGender";
-import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
 import FilterByPrice from "./FilterByPrice";
+import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -31,16 +31,16 @@ const Filter = styled.div`
   ${maxScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
 `;
 
-const FilterProducts = ({ card, setCard }) => {
+const FilterProducts = () => {
   return (
     <Container>
       <FilterText>Filter Products:</FilterText>
-      <FilterByPrice card={card} setCard={setCard} />
+      <FilterByPrice />
       <Filter>
-        <FilterByGender setCard={setCard} />
-        <FilterByCategory setCard={setCard} />
-        <FilterByBrand setCard={setCard} />
-        <FilterByColor setCard={setCard} />
+        <FilterByGender />
+        <FilterByCategory />
+        <FilterByBrand />
+        <FilterByColor />
       </Filter>
     </Container>
   );
