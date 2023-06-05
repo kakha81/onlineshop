@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "../../App";
-
 import styled from "styled-components";
 
 const Select = styled.select`
