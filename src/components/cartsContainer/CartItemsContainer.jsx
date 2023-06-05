@@ -10,7 +10,7 @@ const ClearButtonContainer = styled.div`
 `;
 
 const ClearButton = styled.button`
-  width: 11em;
+  width: 15em;
   color: white;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
