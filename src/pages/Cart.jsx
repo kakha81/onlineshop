@@ -60,14 +60,9 @@ const Button = styled.button`
   background-color: teal;
   border: 0.25em solid teal;
   border-radius: 0.3em;
-  opacity: 0.7;
   cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
   &:active {
-    border-color: red;
-    background-color: red;
+    box-shadow: 5px 5px 5px gray;
   }
 `;
 
