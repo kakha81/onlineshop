@@ -1,6 +1,6 @@
-import { productsArray } from "../data";
-import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { productsArray } from '../data';
+import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
 
 const Container = styled.div`
   padding: 0.5em;
@@ -72,7 +72,7 @@ const ProductContainer = () => {
   return (
     <Container>
       <ImgContainer>
-        <Image src={specifiedProduct.img} alt="Product" />
+        <Image src={specifiedProduct.img} alt='Product' />
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
