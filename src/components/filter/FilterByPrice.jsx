@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { useContext } from "react";
 import { DataContext } from "../../App";
+import styled from "styled-components";
 import { productsArray } from "../../data";
 
 const Container = styled.div`

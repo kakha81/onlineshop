@@ -13,7 +13,7 @@ const Header = styled.div`
   z-index: 999;
 `;
 
-const Home = ({ card, setCard }) => {
+const Home = () => {
   return (
     <>
       <Header>
@@ -21,7 +21,7 @@ const Home = ({ card, setCard }) => {
         <MenuContent />
       </Header>
       <Slider />
-      <FilterProducts card={card} setCard={setCard} />
+      <FilterProducts />
       <Products />
       <NewsLetter />
       <Footer />

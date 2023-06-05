@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import styled from "styled-components";
 import { DataContext } from "../../App";
+import styled from "styled-components";
 
 const Select = styled.select`
   max-width: 7em;
