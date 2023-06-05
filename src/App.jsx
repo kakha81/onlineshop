@@ -13,8 +13,8 @@ export const DataContext = createContext();
 const App = () => {
   const [card, setCard] = useState(productsArray);
   return (
-    <DataContext.Provider value={{ card, setCard }}>
-      <HashRouter>
+    <HashRouter>
+      <DataContext.Provider value={{ card, setCard }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
@@ -23,8 +23,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-      </HashRouter>
-    </DataContext.Provider>
+      </DataContext.Provider>
+    </HashRouter>
   );
 };
 
