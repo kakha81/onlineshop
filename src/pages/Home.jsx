@@ -1,13 +1,11 @@
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import MenuContent from '../components/MenuContent';
-import Slider from '../components/Slider';
-import FilterProducts from '../components/filter/FilterProducts';
-import Products from '../components/productList/Products';
-import NewsLetter from '../components/NewsLetter';
-import Footer from '../components/Footer';
-import { productsArray } from '../data';
-import { useState } from 'react';
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import MenuContent from "../components/MenuContent";
+import Slider from "../components/Slider";
+import FilterProducts from "../components/filter/FilterProducts";
+import Products from "../components/productList/Products";
+import NewsLetter from "../components/NewsLetter";
+import Footer from "../components/Footer";
 
 const Header = styled.div`
   position: sticky;
@@ -15,8 +13,7 @@ const Header = styled.div`
   z-index: 999;
 `;
 
-const Home = () => {
-  const [card, setCard] = useState(productsArray);
+const Home = ({ card, setCard }) => {
   return (
     <>
       <Header>
@@ -25,7 +22,7 @@ const Home = () => {
       </Header>
       <Slider />
       <FilterProducts card={card} setCard={setCard} />
-      <Products card={card} />
+      <Products />
       <NewsLetter />
       <Footer />
     </>

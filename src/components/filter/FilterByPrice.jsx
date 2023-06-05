@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { DataContext } from "../../App";
 import { productsArray } from "../../data";
 
 const Container = styled.div`
@@ -24,7 +26,8 @@ const Button = styled.button`
   }
 `;
 
-const FilterByPrice = ({ card, setCard }) => {
+const FilterByPrice = () => {
+  const { card, setCard } = useContext(DataContext);
   const handleButtonClick = (sortedArray) => {
     setCard(sortedArray);
   };

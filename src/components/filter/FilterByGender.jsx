@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { productsArray } from "../../data";
+import { useState, useEffect, useContext } from "react";
+import { DataContext } from "../../App";
+
 import styled from "styled-components";
 
 const Select = styled.select`
@@ -13,7 +14,8 @@ const Option = styled.option`
   text-transform: uppercase;
 `;
 
-const FilterByGender = ({ setCard }) => {
+const FilterByGender = () => {
+  const { card, setCard } = useContext(DataContext);
   const [selectedGender, setSelectedGender] = useState("gender");
 
   const handleGenderChange = (event) => {
@@ -23,14 +25,12 @@ const FilterByGender = ({ setCard }) => {
 
   useEffect(() => {
     if (selectedGender === "gender") {
-      setCard(productsArray);
+      setCard(card);
     } else {
-      const filtered = productsArray.filter(
-        (item) => item.gender === selectedGender
-      );
+      const filtered = card.filter((item) => item.gender === selectedGender);
       setCard(filtered);
     }
-  }, [selectedGender, setCard]);
+  }, [selectedGender, setCard, card]);
 
   return (
     <Select value={selectedGender} onChange={handleGenderChange}>
