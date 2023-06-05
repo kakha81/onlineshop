@@ -53,7 +53,7 @@ const TopText = styled.span`
 const Bottom = styled.div``;
 
 const Button = styled.button`
-  width: 13em;
+  width: 14em;
   color: white;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
