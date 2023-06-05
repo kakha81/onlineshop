@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
 
 const Select = styled.select`
   max-width: 7em;
@@ -14,8 +14,8 @@ const Option = styled.option`
 `;
 
 const FilterByCategory = () => {
-  const { card, setCard } = useContext(DataContext);
-  const [selectedCategory, setSelectedCategory] = useState("category");
+  const { product, setProduct } = useContext(DataContext);
+  const [selectedCategory, setSelectedCategory] = useState('category');
 
   const handleCategoryChange = (event) => {
     const value = event.target.value;
@@ -23,22 +23,22 @@ const FilterByCategory = () => {
   };
 
   useEffect(() => {
-    if (selectedCategory === "category") {
-      setCard(card);
+    if (selectedCategory === 'category') {
+      setProduct(product);
     } else {
-      const filtered = card.filter(
+      const filtered = product.filter(
         (item) => item.category === selectedCategory
       );
-      setCard(filtered);
+      setProduct(filtered);
     }
-  }, [selectedCategory, setCard, card]);
+  }, [selectedCategory, setProduct, product]);
 
   return (
     <Select value={selectedCategory} onChange={handleCategoryChange}>
-      <Option value="category">category</Option>
-      <Option value="casual">casual</Option>
-      <Option value="runners">runner</Option>
-      <Option value="basketball">basketball</Option>
+      <Option value='category'>category</Option>
+      <Option value='casual'>casual</Option>
+      <Option value='runners'>runner</Option>
+      <Option value='basketball'>basketball</Option>
     </Select>
   );
 };

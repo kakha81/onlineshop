@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
 
 const Select = styled.select`
   max-width: 7em;
@@ -14,8 +14,8 @@ const Option = styled.option`
 `;
 
 const FilterByColor = () => {
-  const { card, setCard } = useContext(DataContext);
-  const [selectedColor, setSelectedColor] = useState("color");
+  const { product, setProduct } = useContext(DataContext);
+  const [selectedColor, setSelectedColor] = useState('color');
 
   const handleColorChange = (event) => {
     const value = event.target.value;
@@ -23,23 +23,23 @@ const FilterByColor = () => {
   };
 
   useEffect(() => {
-    if (selectedColor === "color") {
-      setCard(card);
+    if (selectedColor === 'color') {
+      setProduct(product);
     } else {
-      const filtered = card.filter((item) => item.color === selectedColor);
-      setCard(filtered);
+      const filtered = product.filter((item) => item.color === selectedColor);
+      setProduct(filtered);
     }
-  }, [selectedColor, setCard, card]);
+  }, [selectedColor, setProduct, product]);
   return (
     <Select value={selectedColor} onChange={handleColorChange}>
-      <Option value="color">color</Option>
-      <Option value="white">white</Option>
-      <Option value="gray">gray</Option>
-      <Option value="blue">blue</Option>
-      <Option value="green">green</Option>
-      <Option value="red">red</Option>
-      <Option value="black">black</Option>
-      <Option value="yellow">yellow</Option>
+      <Option value='color'>color</Option>
+      <Option value='white'>white</Option>
+      <Option value='gray'>gray</Option>
+      <Option value='blue'>blue</Option>
+      <Option value='green'>green</Option>
+      <Option value='red'>red</Option>
+      <Option value='black'>black</Option>
+      <Option value='yellow'>yellow</Option>
     </Select>
   );
 };

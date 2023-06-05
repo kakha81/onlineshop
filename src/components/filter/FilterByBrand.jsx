@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
 
 const Select = styled.select`
   max-width: 7em;
@@ -14,8 +14,8 @@ const Option = styled.option`
 `;
 
 const FilterByBrand = () => {
-  const { card, setCard } = useContext(DataContext);
-  const [selectedBrand, setSelectedBrand] = useState("brand");
+  const { product, setProduct } = useContext(DataContext);
+  const [selectedBrand, setSelectedBrand] = useState('brand');
 
   const handleBrandChange = (event) => {
     const value = event.target.value;
@@ -23,24 +23,24 @@ const FilterByBrand = () => {
   };
 
   useEffect(() => {
-    if (selectedBrand === "brand") {
-      setCard(card);
+    if (selectedBrand === 'brand') {
+      setProduct(product);
     } else {
-      const filtered = card.filter((item) => item.brand === selectedBrand);
-      setCard(filtered);
+      const filtered = product.filter((item) => item.brand === selectedBrand);
+      setProduct(filtered);
     }
-  }, [selectedBrand, setCard, card]);
+  }, [selectedBrand, setProduct, product]);
   return (
     <Select value={selectedBrand} onChange={handleBrandChange}>
-      <Option value="brand">brand</Option>
-      <Option value="nike">nike</Option>
-      <Option value="puma">puma</Option>
-      <Option value="air jordan">air jordan</Option>
-      <Option value="levis">levis</Option>
-      <Option value="tommy hilfiger">tommy hilfiger</Option>
-      <Option value="reabok">reabok</Option>
-      <Option value="new balance">new balance</Option>
-      <Option value="adidas">adidas</Option>
+      <Option value='brand'>brand</Option>
+      <Option value='nike'>nike</Option>
+      <Option value='puma'>puma</Option>
+      <Option value='air jordan'>air jordan</Option>
+      <Option value='levis'>levis</Option>
+      <Option value='tommy hilfiger'>tommy hilfiger</Option>
+      <Option value='reabok'>reabok</Option>
+      <Option value='new balance'>new balance</Option>
+      <Option value='adidas'>adidas</Option>
     </Select>
   );
 };

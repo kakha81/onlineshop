@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
+import { useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
 
 const Select = styled.select`
   max-width: 7em;
@@ -14,11 +14,11 @@ const Option = styled.option`
 `;
 
 const FilterBySize = () => {
-  const { card } = useContext(DataContext);
+  const { product } = useContext(DataContext);
   return (
-    <Select defaultValue="SIZE">
+    <Select defaultValue='SIZE'>
       <Option disabled>SIZE</Option>
-      {card.map((item) => (
+      {product.map((item) => (
         <Option key={item.id}>{item.size}</Option>
       ))}
     </Select>

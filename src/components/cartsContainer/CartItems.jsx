@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import CartItem from "./CartItem";
-import { useContext } from "react";
-import { DataContext } from "../../App";
+import styled from 'styled-components';
+import CartItem from './CartItem';
+import { useContext } from 'react';
+import { DataContext } from '../../App';
 
 const Container = styled.div`
   display: flex;
@@ -9,10 +9,10 @@ const Container = styled.div`
 `;
 
 const CartItems = () => {
-  const { card } = useContext(DataContext);
+  const { product } = useContext(DataContext);
   return (
     <Container>
-      {card.map((item) => (
+      {product.map((item) => (
         <CartItem item={item} />
       ))}
     </Container>

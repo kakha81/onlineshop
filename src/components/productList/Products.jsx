@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
-import Product from "./Product";
+import { useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
+import Product from './Product';
 
 const Container = styled.div`
   margin: 1em;
@@ -12,10 +12,10 @@ const Container = styled.div`
 `;
 
 const Products = () => {
-  const { card } = useContext(DataContext);
+  const { product } = useContext(DataContext);
   return (
     <Container>
-      {card.map((item) => (
+      {product.map((item) => (
         <Product key={item.id} item={item} />
       ))}
     </Container>

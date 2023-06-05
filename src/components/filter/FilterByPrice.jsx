@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { DataContext } from "../../App";
-import styled from "styled-components";
-import { productsArray } from "../../data";
+import { useContext } from 'react';
+import { DataContext } from '../../App';
+import styled from 'styled-components';
+import { productsArray } from '../../data';
 
 const Container = styled.div`
   display: flex;
@@ -27,13 +27,13 @@ const Button = styled.button`
 `;
 
 const FilterByPrice = () => {
-  const { card, setCard } = useContext(DataContext);
+  const { product, setProduct } = useContext(DataContext);
   const handleButtonClick = (sortedArray) => {
-    setCard(sortedArray);
+    setProduct(sortedArray);
   };
 
   const handleSortByPrice = (asc) => {
-    const sortedArray = [...card].sort((a, b) =>
+    const sortedArray = [...product].sort((a, b) =>
       asc ? a.price - b.price : b.price - a.price
     );
     handleButtonClick(sortedArray);
