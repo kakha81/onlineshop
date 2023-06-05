@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Summary = styled.div`
   width: 18em;
@@ -23,8 +23,8 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === 'total' && '500'};
-  font-size: ${(props) => props.type === 'total' && '1.5em'};
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "1.5em"};
 `;
 
 const SummaryItemText = styled.span``;
@@ -37,21 +37,16 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 12em;
-  padding: 0.4em;
-  font-weight: 500;
+  width: 11em;
   color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
   background-color: teal;
   border: 0.25em solid teal;
   border-radius: 0.3em;
-  opacity: 0.7;
   cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
   &:active {
-    border-color: red;
-    background-color: red;
+    box-shadow: 5px 5px 5px gray;
   }
 `;
 
@@ -73,7 +68,7 @@ const OrderContainer = () => {
         <SummaryItemText>Shipping Discount</SummaryItemText>
         <SummaryItemPrice>$ -5.90</SummaryItemPrice>
       </SummaryItem>
-      <SummaryItem type='total'>
+      <SummaryItem type="total">
         <SummaryItemText>Total</SummaryItemText>
         <SummaryItemPrice>$ 80</SummaryItemPrice>
       </SummaryItem>

@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import CartItems from '../components/cartsContainer/CartItemsContainer';
-import OrderContainer from '../components/OrderContainer';
-import Footer from '../components/Footer';
-import MenuContent from '../components/MenuContent';
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import CartItems from "../components/cartsContainer/CartItemsContainer";
+import OrderContainer from "../components/OrderContainer";
+import Footer from "../components/Footer";
+import MenuContent from "../components/MenuContent";
 
 const Container = styled.div``;
 
@@ -53,10 +53,10 @@ const TopText = styled.span`
 const Bottom = styled.div``;
 
 const Button = styled.button`
-  width: 12em;
-  padding: 0.4em;
-  font-weight: 500;
+  width: 11em;
   color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
   background-color: teal;
   border: 0.25em solid teal;
   border-radius: 0.3em;
@@ -83,7 +83,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Button onClick={() => navigate('/')}>CONTINUE SHOPPING</Button>
+          <Button onClick={() => navigate("/")}>CONTINUE SHOPPING</Button>
           <Button>CHECKOUT NOW</Button>
         </Top>
         <TopTexts>
