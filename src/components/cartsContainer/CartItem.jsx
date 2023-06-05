@@ -1,9 +1,9 @@
-import { useState } from "react";
-import styled from "styled-components";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
-import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
-import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import { useState } from 'react';
+import styled from 'styled-components';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import { maxScreen, midScreen, minScreen, tablet } from '../../responsive';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
 const ItemContainer = styled.div`
   display: flex;
@@ -15,10 +15,10 @@ const ItemContainer = styled.div`
   &:active {
     box-shadow: 5px 5px 10px lightgray;
   }
-  ${tablet({ width: "100%" })}
-  ${minScreen({ width: "40em" })}
-  ${midScreen({ width: "40em" })}
-  ${maxScreen({ width: "40em" })}
+  ${tablet({ width: '100%' })}
+  ${minScreen({ width: '40em' })}
+  ${midScreen({ width: '40em' })}
+  ${maxScreen({ width: '40em' })}
 `;
 
 const DeleteContainer = styled.div`
@@ -114,10 +114,10 @@ const Amount = styled.span`
   border-radius: 0.5em;
   margin: auto;
   font-weight: 700;
-  ${tablet({ width: "1.7em", height: "1.7em" })}
-  ${minScreen({ width: "2em", height: "2em" })}
-  ${midScreen({ width: "2.2em", height: "2.2em" })}
-  ${maxScreen({ width: "2.2em", height: "2.2em" })}
+  ${tablet({ width: '1.7em', height: '1.7em' })}
+  ${minScreen({ width: '2em', height: '2em' })}
+  ${midScreen({ width: '2.2em', height: '2.2em' })}
+  ${maxScreen({ width: '2.2em', height: '2.2em' })}
 `;
 
 const ProductPrice = styled.div`
@@ -125,15 +125,14 @@ const ProductPrice = styled.div`
   font-weight: 700;
   color: teal;
   margin: auto;
-  ${minScreen({ fontSize: "1.2em" })}
-  ${minScreen({ fontSize: "1.5em" })}
-  ${midScreen({ fontSize: "1.5em" })}
-  ${maxScreen({ fontSize: "1.5em" })}
+  ${minScreen({ fontSize: '1.2em' })}
+  ${minScreen({ fontSize: '1.5em' })}
+  ${midScreen({ fontSize: '1.5em' })}
+  ${maxScreen({ fontSize: '1.5em' })}
 `;
 
 const CartItem = ({ item }) => {
   const [count, setCount] = useState(1);
-  const [isShown, setIsShown] = useState(true);
 
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 1));
@@ -145,40 +144,38 @@ const CartItem = ({ item }) => {
 
   return (
     <>
-      {isShown ? (
-        <ItemContainer>
-          <Container>
-            <ProductDetail>
-              <Image src={item.img} />
-              <Details>
-                <ProductName>{item.brand}</ProductName>
-                <ProductId>ID: {item.id}</ProductId>
-                <ProductSize>Size: {item.size}</ProductSize>
-              </Details>
-            </ProductDetail>
-            <PriceDetail>
-              <ProductPrice>${item.price}</ProductPrice>
-              <ProductAmountContainer>
-                <RemoveIconItem
-                  onClick={() => {
-                    decreaseCount();
-                  }}
-                />
-                <Amount>{count}</Amount>
-                <AddIconItem
-                  onClick={() => {
-                    increaseCount();
-                  }}
-                />
-              </ProductAmountContainer>
-              <ProductPrice>${item.price * count}</ProductPrice>
-            </PriceDetail>
-          </Container>
-          <DeleteContainer onClick={() => setIsShown(false)}>
-            <RedDeleteIcon />
-          </DeleteContainer>
-        </ItemContainer>
-      ) : null}
+      <ItemContainer>
+        <Container>
+          <ProductDetail>
+            <Image src={item.img} />
+            <Details>
+              <ProductName>{item.brand}</ProductName>
+              <ProductId>ID: {item.id}</ProductId>
+              <ProductSize>Size: {item.size}</ProductSize>
+            </Details>
+          </ProductDetail>
+          <PriceDetail>
+            <ProductPrice>${item.price}</ProductPrice>
+            <ProductAmountContainer>
+              <RemoveIconItem
+                onClick={() => {
+                  decreaseCount();
+                }}
+              />
+              <Amount>{count}</Amount>
+              <AddIconItem
+                onClick={() => {
+                  increaseCount();
+                }}
+              />
+            </ProductAmountContainer>
+            <ProductPrice>${item.price * count}</ProductPrice>
+          </PriceDetail>
+        </Container>
+        <DeleteContainer>
+          <RedDeleteIcon />
+        </DeleteContainer>
+      </ItemContainer>
     </>
   );
 };

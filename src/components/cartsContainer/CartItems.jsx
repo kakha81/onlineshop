@@ -9,10 +9,10 @@ const Container = styled.div`
 `;
 
 const CartItems = () => {
-  const { product } = useContext(DataContext);
+  const { cart } = useContext(DataContext);
   return (
     <Container>
-      {product.map((item) => (
+      {cart.map((item) => (
         <CartItem item={item} />
       ))}
     </Container>

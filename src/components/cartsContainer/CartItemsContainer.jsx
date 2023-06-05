@@ -1,7 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-import CartItems from "./CartItems";
-import CartEmpty from "./CartEmpty";
+import { useContext } from 'react';
+import styled from 'styled-components';
+import CartItems from './CartItems';
+import CartEmpty from './CartEmpty';
+import { DataContext } from '../../App';
 
 const ClearButtonContainer = styled.div`
   display: flex;
@@ -24,17 +25,18 @@ const ClearButton = styled.button`
 `;
 
 const CartItemsContainer = () => {
-  const [isShown, setIsShown] = useState(true);
+  const { cart, setCart } = useContext(DataContext);
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <>
-      {isShown ? <CartItems /> : <CartEmpty />}
-      {isShown ? (
-        <ClearButtonContainer>
-          <ClearButton onClick={() => setIsShown(false)}>
-            CLEAR CART
-          </ClearButton>
-        </ClearButtonContainer>
-      ) : null}
+      {cart.length === 0 ? <CartEmpty /> : <CartItems />}
+      <ClearButtonContainer>
+        <ClearButton onClick={clearCart}>CLEAR CART</ClearButton>
+      </ClearButtonContainer>
     </>
   );
 };

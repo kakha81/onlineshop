@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import StarIcon from "@mui/icons-material/Star";
-import { motion } from "framer-motion";
+import { useContext, useState } from 'react';
+import { DataContext } from '../../App';
+import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import { motion } from 'framer-motion';
+import { productsArray } from '../../data';
 
 const Container = styled.div`
   display: flex;
@@ -72,6 +74,13 @@ const Button = styled.button`
 const Product = ({ item }) => {
   const navigate = useNavigate();
   const [starFilled, setStarFilled] = useState(false);
+  const { setCart } = useContext(DataContext);
+  const { itemId } = useParams();
+  const specifiedProduct = productsArray[itemId - 1];
+
+  const addProductToCart = () => {
+    setCart((prevCart) => [...prevCart, specifiedProduct]);
+  };
   return (
     <motion.div
       layout
@@ -91,7 +100,7 @@ const Product = ({ item }) => {
             <ItemPrice>{item.price}$</ItemPrice>
           </ItemInfo>
         </ItemContainer>
-        <Button>Add To Cart</Button>
+        <Button onClick={() => addProductToCart()}>Add To Cart</Button>
       </Container>
     </motion.div>
   );

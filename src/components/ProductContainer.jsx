@@ -1,6 +1,8 @@
-import { productsArray } from '../data';
-import styled from 'styled-components';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { productsArray } from '../data';
+import { DataContext } from '../App';
 
 const Container = styled.div`
   padding: 0.5em;
@@ -67,7 +69,12 @@ const Button = styled.button`
 
 const ProductContainer = () => {
   const { itemId } = useParams();
-  const specifiedProduct = productsArray[Number(itemId) - 1];
+  const specifiedProduct = productsArray[itemId - 1];
+  const { setCart } = useContext(DataContext);
+
+  const addProductToCart = () => {
+    setCart((prevCart) => [...prevCart, specifiedProduct]);
+  };
 
   return (
     <Container>
@@ -82,7 +89,7 @@ const ProductContainer = () => {
         </TitleContainer>
       </InfoContainer>
       <ButtonContainer>
-        <Button>ADD TO CART</Button>
+        <Button onClick={() => addProductToCart()}>ADD TO CART</Button>
       </ButtonContainer>
     </Container>
   );

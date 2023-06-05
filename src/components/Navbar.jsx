@@ -1,12 +1,11 @@
 import { useState, useContext } from 'react';
+import { DataContext } from '../App';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import { tablet, minScreen, midScreen, maxScreen } from '../responsive';
 import { useNavigate } from 'react-router-dom';
-
-import { DataContext } from '../App';
 
 const UsFlag = require('../Images/flags/united-states-flag.png');
 const GeoFlag = require('../Images/flags/georgian-flag.png');
@@ -168,7 +167,7 @@ const ListItem = styled.li`
 `;
 
 const Navbar = () => {
-  const { product } = useContext(DataContext);
+  const { cart } = useContext(DataContext);
   const [activeFlag, setActiveFlag] = useState('US');
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -212,7 +211,7 @@ const Navbar = () => {
           <MenuItem onClick={() => navigate('/login')}>LOG IN</MenuItem>
           <MenuItem>
             <Badge
-              badgeContent={product.length}
+              badgeContent={cart.length}
               color='error'
               onClick={() => navigate('/cart')}
             >
