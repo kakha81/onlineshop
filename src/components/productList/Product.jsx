@@ -80,8 +80,6 @@ const Product = ({ item }) => {
     (product) => product.id === item.id
   );
 
-  console.log(cart);
-
   const addProductToCart = () => {
     setCart((prevCart) => [...prevCart, specifiedProduct]);
   };
