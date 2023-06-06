@@ -74,7 +74,7 @@ const Button = styled.button`
 const Product = ({ item }) => {
   const navigate = useNavigate();
   const [starFilled, setStarFilled] = useState(false);
-  const { cart, setCart } = useContext(DataContext);
+  const { setCart } = useContext(DataContext);
 
   const specifiedProduct = productsArray.find(
     (product) => product.id === item.id
