@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
-import CartItems from './CartItems';
-import CartEmpty from './CartEmpty';
-import { DataContext } from '../../App';
+import { useContext } from "react";
+import styled from "styled-components";
+import CartItems from "./CartItems";
+import CartEmpty from "./CartEmpty";
+import { DataContext } from "../../App";
 
 const ClearButtonContainer = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const ClearButton = styled.button`
 const CartItemsContainer = () => {
   const { cart, setCart } = useContext(DataContext);
 
-  const clearCart = () => {
+  const ClearCart = () => {
     setCart([]);
   };
 
@@ -35,7 +35,7 @@ const CartItemsContainer = () => {
     <>
       {cart.length === 0 ? <CartEmpty /> : <CartItems />}
       <ClearButtonContainer>
-        <ClearButton onClick={clearCart}>CLEAR CART</ClearButton>
+        <ClearButton onClick={ClearCart}>CLEAR CART</ClearButton>
       </ClearButtonContainer>
     </>
   );

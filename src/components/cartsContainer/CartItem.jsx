@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import { maxScreen, midScreen, minScreen, tablet } from '../../responsive';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import { useContext, useState } from "react";
+import styled from "styled-components";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import { DataContext } from "../../App";
 
 const ItemContainer = styled.div`
   display: flex;
@@ -15,10 +16,10 @@ const ItemContainer = styled.div`
   &:active {
     box-shadow: 5px 5px 10px lightgray;
   }
-  ${tablet({ width: '100%' })}
-  ${minScreen({ width: '40em' })}
-  ${midScreen({ width: '40em' })}
-  ${maxScreen({ width: '40em' })}
+  ${tablet({ width: "100%" })}
+  ${minScreen({ width: "40em" })}
+  ${midScreen({ width: "40em" })}
+  ${maxScreen({ width: "40em" })}
 `;
 
 const DeleteContainer = styled.div`
@@ -114,10 +115,10 @@ const Amount = styled.span`
   border-radius: 0.5em;
   margin: auto;
   font-weight: 700;
-  ${tablet({ width: '1.7em', height: '1.7em' })}
-  ${minScreen({ width: '2em', height: '2em' })}
-  ${midScreen({ width: '2.2em', height: '2.2em' })}
-  ${maxScreen({ width: '2.2em', height: '2.2em' })}
+  ${tablet({ width: "1.7em", height: "1.7em" })}
+  ${minScreen({ width: "2em", height: "2em" })}
+  ${midScreen({ width: "2.2em", height: "2.2em" })}
+  ${maxScreen({ width: "2.2em", height: "2.2em" })}
 `;
 
 const ProductPrice = styled.div`
@@ -125,14 +126,15 @@ const ProductPrice = styled.div`
   font-weight: 700;
   color: teal;
   margin: auto;
-  ${minScreen({ fontSize: '1.2em' })}
-  ${minScreen({ fontSize: '1.5em' })}
-  ${midScreen({ fontSize: '1.5em' })}
-  ${maxScreen({ fontSize: '1.5em' })}
+  ${minScreen({ fontSize: "1.2em" })}
+  ${minScreen({ fontSize: "1.5em" })}
+  ${midScreen({ fontSize: "1.5em" })}
+  ${maxScreen({ fontSize: "1.5em" })}
 `;
 
 const CartItem = ({ item }) => {
   const [count, setCount] = useState(1);
+  const { cart, setCart } = useContext(DataContext);
 
   const decreaseCount = () => {
     setCount((prevCount) => Math.max(prevCount - 1, 1));
@@ -140,6 +142,9 @@ const CartItem = ({ item }) => {
 
   const increaseCount = () => {
     setCount((prevCount) => Math.min(prevCount + 1, 10));
+  };
+  const ClearItem = () => {
+    setCart(cart.filter((items) => items.id !== item.id));
   };
 
   return (
@@ -172,7 +177,7 @@ const CartItem = ({ item }) => {
             <ProductPrice>${item.price * count}</ProductPrice>
           </PriceDetail>
         </Container>
-        <DeleteContainer>
+        <DeleteContainer onClick={ClearItem}>
           <RedDeleteIcon />
         </DeleteContainer>
       </ItemContainer>
