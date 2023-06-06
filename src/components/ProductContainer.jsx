@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import { productsArray } from '../data';
-import { DataContext } from '../App';
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+import { productsArray } from "../data";
+import { DataContext } from "../App";
 
 const Container = styled.div`
   padding: 0.5em;
@@ -79,7 +79,7 @@ const ProductContainer = () => {
   return (
     <Container>
       <ImgContainer>
-        <Image src={specifiedProduct.img} alt='Product' />
+        <Image src={specifiedProduct.img} alt="Product" />
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
