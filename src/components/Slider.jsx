@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { productsArray } from "../data";
+
 const SliderContainer = styled.section`
   position: relative;
 `;

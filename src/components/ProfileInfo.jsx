@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { cities } from '../data';
-import { useNavigate } from 'react-router-dom';
+import styled from "styled-components";
+import { cities } from "../data";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const Container = styled.div`
   display: flex;
@@ -72,39 +73,40 @@ const Button = styled.button`
 
 const ProfileInfo = () => {
   const navigate = useNavigate();
+
   return (
     <Container>
       <TextContainer>
         <ProfileName>First name</ProfileName>
         <InputContainer>
-          <Input placeholder='First name' />
+          <Input placeholder="First name" />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Last name</ProfileName>
         <InputContainer>
-          <Input placeholder='Last name' />
+          <Input placeholder="Last name" />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Email</ProfileName>
         <InputContainer>
-          <Input placeholder='Email' type='email' />
+          <Input placeholder="Email" type="email" />
         </InputContainer>
       </TextContainer>
       <TextContainer>
         <ProfileName>Password</ProfileName>
         <InputContainer>
-          <Input placeholder='Password' type='password' />
+          <Input placeholder="Password" type="password" />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Phone</ProfileName>
         <InputContainer>
-          <Input placeholder='+995 XXX XXX XXX' type='number' />
+          <Input placeholder="+995 XXX XXX XXX" type="number" />
         </InputContainer>
       </TextContainer>
 
@@ -120,9 +122,9 @@ const ProfileInfo = () => {
         <ProfileName>Date of Birth</ProfileName>
         <InputContainer>
           <Input
-            placeholder='Month/Day/Year'
-            type='date'
-            style={{ paddingLeft: '0.5em', paddingRight: '3.5em' }}
+            placeholder="Month/Day/Year"
+            type="date"
+            style={{ paddingLeft: "0.5em", paddingRight: "3.5em" }}
           />
         </InputContainer>
       </TextContainer>
@@ -138,21 +140,21 @@ const ProfileInfo = () => {
       <TextContainer>
         <ProfileName>Identification number</ProfileName>
         <InputContainer>
-          <Input placeholder='Identification number' type='number' />
+          <Input placeholder="Identification number" type="number" />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Legal address</ProfileName>
         <InputContainer>
-          <Input placeholder='Legal address' />
+          <Input placeholder="Legal address" />
         </InputContainer>
       </TextContainer>
 
       <TextContainer>
         <ProfileName>Pysical address</ProfileName>
         <InputContainer>
-          <Input placeholder='Pysical address' />
+          <Input placeholder="Pysical address" />
         </InputContainer>
       </TextContainer>
 
@@ -167,13 +169,13 @@ const ProfileInfo = () => {
         <ProfileName>City</ProfileName>
         <Select>
           {cities.map((item) => (
-            <Option key={item.id} value={item.city}>
+            <Option key={uuidv4()} value={item.city}>
               {item.city}
             </Option>
           ))}
         </Select>
       </TextContainer>
-      <Button onClick={() => navigate('/')}>Save</Button>
+      <Button onClick={() => navigate("/")}>Save</Button>
     </Container>
   );
 };

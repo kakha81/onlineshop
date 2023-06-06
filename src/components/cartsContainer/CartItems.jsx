@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CartItem from "./CartItem";
 import { useContext } from "react";
 import { DataContext } from "../../App";
+import { v4 as uuidv4 } from "uuid";
 
 const Container = styled.div`
   display: flex;
@@ -10,10 +11,11 @@ const Container = styled.div`
 
 const CartItems = () => {
   const { cart } = useContext(DataContext);
+  console.log(cart);
   return (
     <Container>
       {cart.map((item) => (
-        <CartItem item={item} key={item.id} />
+        <CartItem item={item} key={uuidv4()} />
       ))}
     </Container>
   );
