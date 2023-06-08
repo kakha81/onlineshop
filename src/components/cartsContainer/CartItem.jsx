@@ -26,6 +26,7 @@ const DeleteContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 3em;
+  min-width: 3em;
   align-items: center;
   justify-content: center;
   background-color: red;
@@ -42,6 +43,7 @@ const RedDeleteIcon = styled(DeleteForeverOutlinedIcon)`
 
 const Container = styled.div`
   display: flex;
+  justify-content: space-around;
   width: 100%;
   border: 0.1em solid lightgray;
   border-right-color: red;
@@ -52,7 +54,6 @@ const Container = styled.div`
 const ProductDetail = styled.div`
   display: flex;
   align-items: center;
-  margin: auto;
 `;
 
 const Image = styled.img`
@@ -68,31 +69,30 @@ const Details = styled.div`
 
 const ProductName = styled.span`
   font-weight: 500;
-  margin: 0.1em;
+  margin: auto 0.1em;
 `;
 
 const ProductId = styled.span`
   font-weight: 500;
-  margin: 0.1em;
+  margin: auto 0.1em;
 `;
 
 const ProductSize = styled.span`
   font-weight: 500;
-  margin: 0.1em;
+  margin: auto 0.1em;
 `;
 
 const PriceDetail = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: auto;
+  justify-content: center;
 `;
 
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: auto;
+  margin: auto 0.5em;
 `;
 
 const RemoveIconItem = styled(RemoveIcon)`
@@ -113,7 +113,7 @@ const Amount = styled.span`
   justify-content: center;
   border: 0.1em solid teal;
   border-radius: 0.5em;
-  margin: auto;
+  margin: auto 0.5em;
   font-weight: 700;
   ${tablet({ width: "1.7em", height: "1.7em" })}
   ${minScreen({ width: "2em", height: "2em" })}
@@ -125,7 +125,7 @@ const ProductPrice = styled.div`
   font-size: 1em;
   font-weight: 700;
   color: teal;
-  margin: auto;
+  margin: auto 0.5em;
   ${minScreen({ fontSize: "1.2em" })}
   ${minScreen({ fontSize: "1.5em" })}
   ${midScreen({ fontSize: "1.5em" })}
@@ -151,8 +151,8 @@ const CartItem = ({ item }) => {
     <>
       <ItemContainer>
         <Container>
+          <Image src={item.img} />
           <ProductDetail>
-            <Image src={item.img} />
             <Details>
               <ProductName>{item.brand}</ProductName>
               <ProductId>ID: {item.id}</ProductId>
