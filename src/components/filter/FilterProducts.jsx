@@ -24,6 +24,7 @@ const Filter = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0em auto;
+
   flex-wrap: wrap;
   ${tablet({ gridTemplateColumns: "repeat(2, 1fr)" })};
   ${minScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};

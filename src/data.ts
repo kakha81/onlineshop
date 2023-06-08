@@ -7,6 +7,8 @@ interface productArray {
   size: number;
   price: number;
   img: string;
+  availableItem: number;
+  orderedItem: number;
 }
 
 export const productsArray: productArray[] = [
@@ -19,6 +21,9 @@ export const productsArray: productArray[] = [
     size: 35,
     price: 23,
     img: require('./Images/1.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 2,
@@ -29,6 +34,9 @@ export const productsArray: productArray[] = [
     size: 44,
     price: 30,
     img: require('./Images/2.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 3,
@@ -39,6 +47,9 @@ export const productsArray: productArray[] = [
     size: 38,
     price: 45,
     img: require('./Images/3.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 4,
@@ -49,6 +60,9 @@ export const productsArray: productArray[] = [
     size: 45,
     price: 75,
     img: require('./Images/4.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 5,
@@ -59,6 +73,9 @@ export const productsArray: productArray[] = [
     size: 37,
     price: 37,
     img: require('./Images/5.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 6,
@@ -69,56 +86,74 @@ export const productsArray: productArray[] = [
     size: 46,
     price: 37,
     img: require('./Images/6.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 7,
     gender: 'women',
     category: 'basketball',
-    brand: 'reabok',
+    brand: 'reebok',
     color: 'white',
     size: 41,
     price: 120,
     img: require('./Images/7.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 8,
     gender: 'women',
     category: 'basketball',
-    brand: 'reabok',
+    brand: 'reebok',
     color: 'green',
     size: 39,
     price: 35,
     img: require('./Images/8.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 9,
     gender: 'men',
     category: 'runners',
-    brand: 'reabok',
+    brand: 'reebok',
     color: 'blue',
     size: 44,
     price: 45,
     img: require('./Images/9.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 10,
     gender: 'men',
     category: 'runners',
-    brand: 'reabok',
+    brand: 'reebok',
     color: 'white',
     size: 43,
     price: 67,
     img: require('./Images/10.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 11,
     gender: 'men',
     category: 'runners',
-    brand: 'reabok',
-    color: 'gray',
+    brand: 'reebok',
+    color: 'white',
     size: 42,
     price: 55,
-    img: require('./Images/11.png')
+    img: require('./Images/11.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 12,
@@ -128,7 +163,10 @@ export const productsArray: productArray[] = [
     color: 'red',
     size: 40,
     price: 97,
-    img: require('./Images/12.jpg')
+    img: require('./Images/12.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 13,
@@ -138,7 +176,10 @@ export const productsArray: productArray[] = [
     color: 'blue',
     size: 44,
     price: 111,
-    img: require('./Images/13.png')
+    img: require('./Images/13.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 14,
@@ -148,7 +189,10 @@ export const productsArray: productArray[] = [
     color: 'black',
     size: 43,
     price: 32,
-    img: require('./Images/14.png')
+    img: require('./Images/14.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 15,
@@ -158,7 +202,10 @@ export const productsArray: productArray[] = [
     color: 'red',
     size: 39,
     price: 37,
-    img: require('./Images/15.jpg')
+    img: require('./Images/15.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 16,
@@ -168,7 +215,10 @@ export const productsArray: productArray[] = [
     color: 'gray',
     size: 38,
     price: 49,
-    img: require('./Images/16.png')
+    img: require('./Images/16.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 17,
@@ -178,7 +228,10 @@ export const productsArray: productArray[] = [
     color: 'red',
     size: 40,
     price: 56,
-    img: require('./Images/17.png')
+    img: require('./Images/17.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 18,
@@ -188,7 +241,10 @@ export const productsArray: productArray[] = [
     color: 'red',
     size: 41,
     price: 58,
-    img: require('./Images/18.jpg')
+    img: require('./Images/18.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 19,
@@ -198,7 +254,10 @@ export const productsArray: productArray[] = [
     color: 'yellow',
     size: 45,
     price: 98,
-    img: require('./Images/19.jpg')
+    img: require('./Images/19.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 20,
@@ -208,17 +267,23 @@ export const productsArray: productArray[] = [
     color: 'blue',
     size: 42,
     price: 54,
-    img: require('./Images/20.jpg')
+    img: require('./Images/20.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 21,
     gender: 'women',
     category: 'casual',
     brand: 'nike',
-    color: 'white',
+    color: 'blue',
     size: 38,
     price: 44,
-    img: require('./Images/21.png')
+    img: require('./Images/21.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 22,
@@ -228,7 +293,10 @@ export const productsArray: productArray[] = [
     color: 'white',
     size: 35,
     price: 40,
-    img: require('./Images/22.jpg')
+    img: require('./Images/22.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 23,
@@ -238,7 +306,10 @@ export const productsArray: productArray[] = [
     color: 'red',
     size: 46,
     price: 90,
-    img: require('./Images/23.png')
+    img: require('./Images/23.png'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
   {
     id: 24,
@@ -248,7 +319,10 @@ export const productsArray: productArray[] = [
     color: 'green',
     size: 42,
     price: 85,
-    img: require('./Images/24.jpg')
+    img: require('./Images/24.jpg'),
+    availableItem: 5,
+    orderedItem: 0,
+
   },
 ];
 

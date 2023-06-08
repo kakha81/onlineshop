@@ -41,7 +41,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 300px;
+  height: 10em;
   object-fit: contain;
 `;
 

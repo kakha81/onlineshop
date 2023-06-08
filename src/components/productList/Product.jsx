@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { DataContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { tablet, minScreen, midScreen, maxScreen } from "../../responsive";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import { motion } from "framer-motion";
@@ -10,9 +11,14 @@ import { productsArray } from "../../data";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 8em;
   margin: 0.5em;
   background-color: white;
   transition: 0.2s all ease-in;
+  ${tablet({ width: "8em" })};
+  ${minScreen({ width: "10em" })};
+  ${midScreen({ width: "12em" })};
+  ${maxScreen({ width: "12em" })};
   &:hover {
     box-shadow: 10px 10px 5px grey;
   }
@@ -34,9 +40,13 @@ const FavoriteIcon = styled.div`
 `;
 
 const Image = styled.img`
-  width: 10em;
-  height: 10em;
+  width: 100%;
+  height: 7em;
   object-fit: contain;
+  ${tablet({ height: "7em" })};
+  ${minScreen({ height: "10em" })};
+  ${midScreen({ height: "12em" })};
+  ${maxScreen({ height: "12em" })};
 `;
 
 const ItemInfo = styled.div`
