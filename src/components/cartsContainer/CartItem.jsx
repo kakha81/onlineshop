@@ -63,23 +63,23 @@ const Image = styled.img`
 
 const Details = styled.div`
   display: flex;
+
   flex-direction: column;
-  padding: 0.2em;
 `;
 
 const ProductName = styled.span`
   font-weight: 500;
-  margin: auto 0.1em;
+  margin-left: 0;
 `;
 
 const ProductId = styled.span`
   font-weight: 500;
-  margin: auto 0.1em;
+  margin-left: 0;
 `;
 
 const ProductSize = styled.span`
   font-weight: 500;
-  margin: auto 0.1em;
+  margin-left: 0;
 `;
 
 const PriceDetail = styled.div`
@@ -92,7 +92,7 @@ const PriceDetail = styled.div`
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: auto 0.5em;
+  margin: auto;
 `;
 
 const RemoveIconItem = styled(RemoveIcon)`
@@ -113,7 +113,7 @@ const Amount = styled.span`
   justify-content: center;
   border: 0.1em solid teal;
   border-radius: 0.5em;
-  margin: auto 0.5em;
+  margin: auto;
   font-weight: 700;
   ${tablet({ width: "1.7em", height: "1.7em" })}
   ${minScreen({ width: "2em", height: "2em" })}
@@ -125,7 +125,7 @@ const ProductPrice = styled.div`
   font-size: 1em;
   font-weight: 700;
   color: teal;
-  margin: auto 0.5em;
+  margin: auto;
   ${minScreen({ fontSize: "1.2em" })}
   ${minScreen({ fontSize: "1.5em" })}
   ${midScreen({ fontSize: "1.5em" })}
