@@ -84,16 +84,27 @@ const Button = styled.button`
 const Product = ({ item }) => {
   const navigate = useNavigate();
   const [starFilled, setStarFilled] = useState(false);
-  const { setCart } = useContext(DataContext);
+  const { cart, setCart } = useContext(DataContext);
 
   const specifiedProduct = productsArray.find(
     (product) => product.id === item.id
   );
 
-  const addProductToCart = () => {
-    setCart((prevCart) => [...prevCart, specifiedProduct]);
-  };
+  const addToCart = () => {
+    const itemInCart = cart.find((item) => item.id === specifiedProduct.id);
 
+    if (itemInCart) {
+      const updatedCart = cart.map((item) =>
+        item.id === specifiedProduct.id
+          ? { ...item, orderedItem: item.orderedItem + 1 }
+          : item
+      );
+      setCart(updatedCart);
+    } else {
+      const updatedCart = [...cart, { ...specifiedProduct, orderedItem: 1 }];
+      setCart(updatedCart);
+    }
+  };
   return (
     <motion.div
       layout
@@ -113,7 +124,7 @@ const Product = ({ item }) => {
             <ItemPrice>{item.price}$</ItemPrice>
           </ItemInfo>
         </ItemContainer>
-        <Button onClick={() => addProductToCart()}>Add To Cart</Button>
+        <Button onClick={() => addToCart()}>Add To Cart</Button>
       </Container>
     </motion.div>
   );

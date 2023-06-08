@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
@@ -133,55 +133,58 @@ const ProductPrice = styled.div`
 `;
 
 const CartItem = ({ item }) => {
-  const [count, setCount] = useState(1);
   const { cart, setCart } = useContext(DataContext);
 
   const decreaseCount = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 1));
+    if (item.orderedItem > 1) {
+      const updatedCart = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, orderedItem: cartItem.orderedItem - 1 }
+          : cartItem
+      );
+      setCart(updatedCart);
+    }
   };
 
   const increaseCount = () => {
-    setCount((prevCount) => Math.min(prevCount + 1, 10));
+    const updatedCart = cart.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...cartItem, orderedItem: cartItem.orderedItem + 1 }
+        : cartItem
+    );
+    setCart(updatedCart);
   };
-  const ClearItem = () => {
-    setCart(cart.filter((items) => items.id !== item.id));
+
+  const removeFromCart = () => {
+    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
+    setCart(updatedCart);
   };
 
   return (
-    <>
-      <ItemContainer>
-        <Container>
-          <Image src={item.img} />
-          <ProductDetail>
-            <Details>
-              <ProductName>{item.brand}</ProductName>
-              <ProductId>ID: {item.id}</ProductId>
-              <ProductSize>Size: {item.size}</ProductSize>
-            </Details>
-          </ProductDetail>
-          <PriceDetail>
-            <ProductPrice>${item.price}</ProductPrice>
-            <ProductAmountContainer>
-              <RemoveIconItem
-                onClick={() => {
-                  decreaseCount();
-                }}
-              />
-              <Amount>{count}</Amount>
-              <AddIconItem
-                onClick={() => {
-                  increaseCount();
-                }}
-              />
-            </ProductAmountContainer>
-            <ProductPrice>${item.price * count}</ProductPrice>
-          </PriceDetail>
-        </Container>
-        <DeleteContainer onClick={ClearItem}>
-          <RedDeleteIcon />
-        </DeleteContainer>
-      </ItemContainer>
-    </>
+    <ItemContainer>
+      <Container>
+        <Image src={item.img} alt="Product" />
+        <ProductDetail>
+          <Details>
+            <ProductName>{item.brand}</ProductName>
+            <ProductId>ID: {item.id}</ProductId>
+            <ProductSize>Size: {item.size}</ProductSize>
+          </Details>
+        </ProductDetail>
+        <PriceDetail>
+          <ProductPrice>${item.price}</ProductPrice>
+          <ProductAmountContainer>
+            <RemoveIconItem onClick={decreaseCount} />
+            <Amount>{item.orderedItem}</Amount>
+            <AddIconItem onClick={increaseCount} />
+          </ProductAmountContainer>
+          <ProductPrice>${item.price * item.orderedItem}</ProductPrice>
+        </PriceDetail>
+      </Container>
+      <DeleteContainer onClick={removeFromCart}>
+        <RedDeleteIcon />
+      </DeleteContainer>
+    </ItemContainer>
   );
 };
 

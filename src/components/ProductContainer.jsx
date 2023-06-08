@@ -88,8 +88,6 @@ const ProductContainer = () => {
     }
   };
 
-  console.log(cart[0]);
-
   return (
     <Container>
       <ImgContainer>
