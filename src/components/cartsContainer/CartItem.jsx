@@ -51,9 +51,15 @@ const Container = styled.div`
   border-bottom-left-radius: 0.5em;
 `;
 
+const ImageContainer = styled.div`
+  flex: 1;
+`;
+
 const ProductDetail = styled.div`
   display: flex;
+  flex: 2;
   align-items: center;
+  margin-left: 0.5em;
 `;
 
 const Image = styled.img`
@@ -63,12 +69,11 @@ const Image = styled.img`
 
 const Details = styled.div`
   display: flex;
-
   flex-direction: column;
 `;
 
 const ProductName = styled.span`
-  font-weight: 500;
+  font-weight: 700;
   margin-left: 0;
 `;
 
@@ -84,6 +89,7 @@ const ProductSize = styled.span`
 
 const PriceDetail = styled.div`
   display: flex;
+  flex: 2;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -163,7 +169,9 @@ const CartItem = ({ item }) => {
   return (
     <ItemContainer>
       <Container>
-        <Image src={item.img} alt="Product" />
+        <ImageContainer>
+          <Image src={item.img} alt="Product" />
+        </ImageContainer>
         <ProductDetail>
           <Details>
             <ProductName>{item.brand}</ProductName>
