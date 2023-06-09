@@ -169,6 +169,12 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const navigate = useNavigate();
 
+  const orderCountArray = cart.map((item) => item.orderedItem);
+  const totalOrderCount = orderCountArray.reduce(
+    (partialSum, a) => partialSum + a,
+    0
+  );
+
   return (
     <Container>
       <Wrapper>
@@ -207,7 +213,7 @@ const Navbar = () => {
           <MenuItem onClick={() => navigate("/login")}>LOG IN</MenuItem>
           <MenuItem>
             <Badge
-              badgeContent={cart.length}
+              badgeContent={totalOrderCount}
               color="error"
               onClick={() => navigate("/cart")}
             >
