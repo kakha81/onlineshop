@@ -181,7 +181,7 @@ const Navbar = () => {
       item.brand.includes(searchField)
     );
     setProduct(filteredProduct);
-  }, [searchField, setProduct]);
+  }, [searchField, setProduct, product]);
 
   const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
 
