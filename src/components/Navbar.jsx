@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
-import { DataContext } from "../App";
-import styled from "styled-components";
-import SearchIcon from "@mui/icons-material/Search";
+import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import { DataContext } from "../App";
+import styled from "styled-components";
 import { tablet, minScreen, midScreen, maxScreen } from "../responsive";
-import { useNavigate } from "react-router-dom";
 
 const UsFlag = require("../Images/flags/united-states-flag.png");
 const GeoFlag = require("../Images/flags/georgian-flag.png");
@@ -163,18 +163,29 @@ const ListItem = styled.li`
 `;
 
 const Navbar = () => {
-  const { cart } = useContext(DataContext);
+  const { cart, product, setProduct } = useContext(DataContext);
   const [activeFlag, setActiveFlag] = useState("US");
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  const [searchField, setSearchField] = useState("");
+
   const navigate = useNavigate();
 
-  const orderCountArray = cart.map((item) => item.orderedItem);
-  const totalOrderCount = orderCountArray.reduce(
-    (partialSum, a) => partialSum + a,
-    0
-  );
+  const handleClick = () => setClick(!click);
 
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredProduct = product.filter((item) =>
+      item.brand.includes(searchField)
+    );
+    setProduct(filteredProduct);
+  }, [searchField, setProduct]);
+
+  const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
+
+  console.log(searchField);
   return (
     <Container>
       <Wrapper>
@@ -195,7 +206,12 @@ const Navbar = () => {
             />
           </FlagsContainer>
           <SearchContainer>
-            <Input placeholder="SEARCH" />
+            <Input
+              placeholder="SEARCH"
+              type="search"
+              value={searchField}
+              onChange={handleChange}
+            />
             <SearchIcon
               style={{
                 color: "white",
