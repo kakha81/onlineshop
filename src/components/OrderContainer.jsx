@@ -25,13 +25,15 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "1.5em"};
+  font-weight: ${(props) => props.type === "total" && "700"};
+  font-size: 1em;
 `;
 
 const SummaryItemText = styled.span``;
 
-const SummaryItemPrice = styled.span``;
+const SummaryItemPrice = styled.span`
+  font-size: 1.5em;
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -73,11 +75,7 @@ const OrderContainer = () => {
 
   const shippingDiscount = 5.9;
 
-  const totalPrice = (
-    totalOrderPrice +
-    shippingPrice -
-    shippingDiscount
-  ).toFixed(2);
+  const totalPrice = totalOrderPrice + shippingPrice - shippingDiscount;
 
   return (
     <Summary>
@@ -86,19 +84,19 @@ const OrderContainer = () => {
       </SummaryTitleContainer>
       <SummaryItem>
         <SummaryItemText>Subtotal</SummaryItemText>
-        <SummaryItemPrice>{totalOrderPrice}</SummaryItemPrice>
+        <SummaryItemPrice>{totalOrderPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Estimated Shipping</SummaryItemText>
-        <SummaryItemPrice>$ {shippingPrice}</SummaryItemPrice>
+        <SummaryItemPrice>{shippingPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Shipping Discount</SummaryItemText>
-        <SummaryItemPrice>$ -{shippingDiscount}</SummaryItemPrice>
+        <SummaryItemPrice>{shippingDiscount.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem type="total">
         <SummaryItemText>Total</SummaryItemText>
-        <SummaryItemPrice>${totalPrice}</SummaryItemPrice>
+        <SummaryItemPrice>{totalPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <ButtonContainer>
         <Button>CHECKOUT NOW</Button>
