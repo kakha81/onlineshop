@@ -11,7 +11,6 @@ const Container = styled.div`
 
 const CartItems = () => {
   const { cart } = useContext(DataContext);
-  console.log(cart);
   return (
     <Container>
       {cart.map((item) => (

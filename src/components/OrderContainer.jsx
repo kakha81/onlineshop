@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { DataContext } from "../App";
 import styled from "styled-components";
 
 const Summary = styled.div`
@@ -51,6 +53,32 @@ const Button = styled.button`
 `;
 
 const OrderContainer = () => {
+  const { cart } = useContext(DataContext);
+
+  const orderPriceArray = [];
+
+  if (cart.length > 0) {
+    for (let i = 0; i < cart.length; i++) {
+      orderPriceArray.push(cart[i].price * cart[i].orderedItem);
+    }
+  } else {
+    return orderPriceArray;
+  }
+
+  const totalOrderPrice = orderPriceArray.reduce(
+    (partialSum, a) => partialSum + a
+  );
+
+  const shippingPrice = 5.9;
+
+  const shippingDiscount = 5.9;
+
+  const totalPrice = (
+    totalOrderPrice +
+    shippingPrice -
+    shippingDiscount
+  ).toFixed(2);
+
   return (
     <Summary>
       <SummaryTitleContainer>
@@ -58,19 +86,19 @@ const OrderContainer = () => {
       </SummaryTitleContainer>
       <SummaryItem>
         <SummaryItemText>Subtotal</SummaryItemText>
-        <SummaryItemPrice>$ 80</SummaryItemPrice>
+        <SummaryItemPrice>{totalOrderPrice}</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Estimated Shipping</SummaryItemText>
-        <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+        <SummaryItemPrice>$ {shippingPrice}</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Shipping Discount</SummaryItemText>
-        <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+        <SummaryItemPrice>$ -{shippingDiscount}</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem type="total">
         <SummaryItemText>Total</SummaryItemText>
-        <SummaryItemPrice>$ 80</SummaryItemPrice>
+        <SummaryItemPrice>${totalPrice}</SummaryItemPrice>
       </SummaryItem>
       <ButtonContainer>
         <Button>CHECKOUT NOW</Button>

@@ -13,7 +13,7 @@ export const DataContext = createContext();
 const App = () => {
   const [product, setProduct] = useState(productsArray);
   const [cart, setCart] = useState([]);
-
+  console.log(cart);
   return (
     <HashRouter>
       <DataContext.Provider value={{ product, setProduct, cart, setCart }}>
