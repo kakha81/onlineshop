@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import CartItems from '../components/cartsContainer/CartItemsContainer';
-import OrderContainer from '../components/OrderContainer';
-import Footer from '../components/Footer';
-import MenuContent from '../components/MenuContent';
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import CartItems from "../components/cartsContainer/CartItemsContainer";
+import OrderContainer from "../components/OrderContainer";
+import Footer from "../components/Footer";
+import MenuContent from "../components/MenuContent";
 
 const Container = styled.div``;
 
@@ -79,7 +79,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Button onClick={() => navigate('/')}>CONTINUE SHOPPING</Button>
+          <Button onClick={() => navigate("/")}>CONTINUE SHOPPING</Button>
           <Button>CHECKOUT NOW</Button>
         </Top>
         <TopTexts>
