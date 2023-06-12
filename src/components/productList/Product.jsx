@@ -120,7 +120,7 @@ const Product = ({ item }) => {
         <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
           <Image src={item.img} />
           <ItemInfo>
-            <ItemName>{item.name}</ItemName>
+            <ItemName>{item.brand}</ItemName>
             <ItemPrice>{item.price}$</ItemPrice>
           </ItemInfo>
         </ItemContainer>

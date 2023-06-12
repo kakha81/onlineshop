@@ -64,6 +64,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 6em;
+  height: 100%;
   border-radius: 0.5em;
 `;
 
