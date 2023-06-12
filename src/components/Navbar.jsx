@@ -176,12 +176,14 @@ const Navbar = () => {
     setSearchField(e.target.value);
   };
 
+  const getFilteredProduct = (product, searchField) => {
+    return product.filter((item) => item.brand.includes(searchField));
+  };
+
   useEffect(() => {
-    const filteredProduct = product.filter((item) =>
-      item.brand.includes(searchField)
-    );
+    const filteredProduct = getFilteredProduct(product, searchField);
     setProduct(filteredProduct);
-  }, [searchField, setProduct]);
+  }, [searchField]);
 
   const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
 
