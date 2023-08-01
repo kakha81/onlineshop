@@ -24,7 +24,7 @@ const Container = styled.div`
 const ItemContainer = styled.div`
   position: relative;
   border: 0.2em solid teal;
-  z-index: 1;
+  z-index: 0;
   cursor: pointer;
 `;
 
