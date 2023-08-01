@@ -84,7 +84,7 @@ const Button = styled.button`
 const Product = ({ item }) => {
   const navigate = useNavigate();
   const [starFilled, setStarFilled] = useState(false);
-  const { cart, setCart } = useContext(DataContext);
+  const { cart, setCart, wishlist, setWishlist } = useContext(DataContext);
 
   const specifiedProduct = productsArray.find(
     (product) => product.id === item.id
@@ -105,6 +105,28 @@ const Product = ({ item }) => {
       setCart(updatedCart);
     }
   };
+
+  const addToWishlist = () => {
+    const itemInWishlist = wishlist.find(
+      (item) => item.id === specifiedProduct.id
+    );
+
+    if (itemInWishlist) {
+      const updatedWishlist = wishlist.map((item) =>
+        item.id === specifiedProduct.id
+          ? { ...item, orderedItem: item.orderedItem + 1 }
+          : item
+      );
+      setWishlist(updatedWishlist);
+    } else {
+      const updatedWishlist = [
+        ...wishlist,
+        { ...specifiedProduct, orderedItem: 1 },
+      ];
+      setWishlist(updatedWishlist);
+    }
+  };
+
   return (
     <motion.div
       layout
@@ -114,7 +136,12 @@ const Product = ({ item }) => {
       transition={{ duration: 0.7 }}
     >
       <Container>
-        <FavoriteIcon onClick={() => setStarFilled(!starFilled)}>
+        <FavoriteIcon
+          onClick={() => {
+            setStarFilled(!starFilled);
+            addToWishlist();
+          }}
+        >
           {starFilled ? <StarIcon /> : <StarBorderIcon />}
         </FavoriteIcon>
         <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
