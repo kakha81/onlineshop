@@ -72,28 +72,30 @@ const Button = styled.button`
 
 const WishlistItem = ({ item }) => {
   const navigate = useNavigate();
-  const { wishlist, setWishlist } = useContext(DataContext);
+  const { cart, setCart, wishlist, setWishlist } = useContext(DataContext);
 
   const specifiedProduct = productsArray.find(
     (product) => product.id === item.id
   );
 
   const addToCart = () => {
-    const itemInCart = wishlist.find((item) => item.id === specifiedProduct.id);
+    const itemInCart = cart.find((item) => item.id === specifiedProduct.id);
 
     if (itemInCart) {
-      const updatedCart = wishlist.map((item) =>
+      const updatedCart = cart.map((item) =>
         item.id === specifiedProduct.id
           ? { ...item, orderedItem: item.orderedItem + 1 }
           : item
       );
-      setWishlist(updatedCart);
+      const updatedWishlist = wishlist.filter(
+        (wishlistItem) => wishlistItem.id !== item.id
+      );
+
+      setCart(updatedCart);
+      setWishlist(updatedWishlist);
     } else {
-      const updatedCart = [
-        ...wishlist,
-        { ...specifiedProduct, orderedItem: 1 },
-      ];
-      setWishlist(updatedCart);
+      const updatedCart = [...cart, { ...specifiedProduct, orderedItem: 1 }];
+      setCart(updatedCart);
     }
   };
 
