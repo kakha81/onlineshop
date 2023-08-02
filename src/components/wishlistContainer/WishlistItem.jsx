@@ -80,6 +80,10 @@ const WishlistItem = ({ item }) => {
 
   const addToCart = () => {
     const itemInCart = cart.find((item) => item.id === specifiedProduct.id);
+    const updatedWishlist = wishlist.filter(
+      (wishlistItem) => wishlistItem.id !== item.id
+    );
+    setWishlist(updatedWishlist);
 
     if (itemInCart) {
       const updatedCart = cart.map((item) =>
@@ -87,12 +91,8 @@ const WishlistItem = ({ item }) => {
           ? { ...item, orderedItem: item.orderedItem + 1 }
           : item
       );
-      const updatedWishlist = wishlist.filter(
-        (wishlistItem) => wishlistItem.id !== item.id
-      );
 
       setCart(updatedCart);
-      setWishlist(updatedWishlist);
     } else {
       const updatedCart = [...cart, { ...specifiedProduct, orderedItem: 1 }];
       setCart(updatedCart);
