@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
-import { DataContext } from '../../App';
-import styled from 'styled-components';
+import { useState, useEffect, useContext } from "react";
+import { DataContext } from "../../App";
+import styled from "styled-components";
 
 const Select = styled.select`
   max-width: 7em;
@@ -15,7 +15,8 @@ const Option = styled.option`
 
 const FilterByGender = () => {
   const { product, setProduct } = useContext(DataContext);
-  const [selectedGender, setSelectedGender] = useState('gender');
+
+  const [selectedGender, setSelectedGender] = useState("gender");
 
   const handleGenderChange = (event) => {
     const value = event.target.value;
@@ -23,19 +24,19 @@ const FilterByGender = () => {
   };
 
   useEffect(() => {
-    if (selectedGender === 'gender') {
+    if (selectedGender === "gender") {
       setProduct(product);
     } else {
       const filtered = product.filter((item) => item.gender === selectedGender);
       setProduct(filtered);
     }
-  }, [selectedGender, setProduct, product]);
+  }, [product, setProduct, selectedGender]);
 
   return (
     <Select value={selectedGender} onChange={handleGenderChange}>
-      <Option value='gender'>GENDER</Option>
-      <Option value='men'>FOR MEN</Option>
-      <Option value='women'>FOR WOMEN</Option>
+      <Option value="gender">GENDER</Option>
+      <Option value="men">FOR MEN</Option>
+      <Option value="women">FOR WOMEN</Option>
     </Select>
   );
 };

@@ -170,22 +170,26 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
+  // Active language function
   const handleClick = () => setClick(!click);
+  // Active language function
 
+  // Input function
   const handleChange = (e) => {
     setSearchField(e.target.value);
   };
-
   const getFilteredProduct = (product, searchField) => {
     return product.filter((item) => item.brand.includes(searchField));
   };
-
   useEffect(() => {
     const filteredProduct = getFilteredProduct(product, searchField);
     setProduct(filteredProduct);
   }, [searchField]);
+  // Input function
 
+  // Cart badge quantity function
   const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
+  // Cart badge quantity function
 
   return (
     <Container>
@@ -194,6 +198,7 @@ const Navbar = () => {
           <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
             <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
+          {/* Languages */}
           <FlagsContainer>
             <Flag
               src={UsFlag}
@@ -206,6 +211,7 @@ const Navbar = () => {
               onClick={() => setActiveFlag("GEO")}
             />
           </FlagsContainer>
+          {/* Languages */}
           <SearchContainer>
             <Input
               placeholder="SEARCH"

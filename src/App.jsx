@@ -12,10 +12,11 @@ import Wishlist from "./pages/Wishlist";
 export const DataContext = createContext();
 
 const App = () => {
+  // global states
   const [product, setProduct] = useState(productsArray);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-
+  // global states
   return (
     <HashRouter>
       <DataContext.Provider
