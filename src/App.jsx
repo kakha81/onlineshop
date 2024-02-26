@@ -17,8 +17,6 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
-  console.log(cart);
-
   return (
     <HashRouter>
       <DataContext.Provider
