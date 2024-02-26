@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { DataContext } from '../../App';
-import styled from 'styled-components';
-import { productsArray } from '../../data';
+import { useContext } from "react";
+import { DataContext } from "../../App";
+import styled from "styled-components";
+import { productsArray } from "../../data";
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +28,7 @@ const Button = styled.button`
 
 const FilterByPrice = () => {
   const { product, setProduct } = useContext(DataContext);
+
   const handleButtonClick = (sortedArray) => {
     setProduct(sortedArray);
   };

@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { DataContext } from "../App";
 import styled from "styled-components";
 
 const Summary = styled.div`
@@ -23,13 +25,15 @@ const SummaryItem = styled.div`
   margin: 1em auto;
   display: flex;
   justify-content: space-between;
-  font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "1.5em"};
+  font-weight: ${(props) => props.type === "total" && "700"};
+  font-size: 1em;
 `;
 
 const SummaryItemText = styled.span``;
 
-const SummaryItemPrice = styled.span``;
+const SummaryItemPrice = styled.span`
+  font-size: 1.5em;
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -51,6 +55,28 @@ const Button = styled.button`
 `;
 
 const OrderContainer = () => {
+  const { cart } = useContext(DataContext);
+
+  const orderPriceArray = [];
+
+  if (cart.length > 0) {
+    for (let i = 0; i < cart.length; i++) {
+      orderPriceArray.push(cart[i].price * cart[i].orderedItem);
+    }
+  } else {
+    return orderPriceArray;
+  }
+
+  const totalOrderPrice = orderPriceArray.reduce(
+    (partialSum, a) => partialSum + a
+  );
+
+  const shippingPrice = 5.9;
+
+  const shippingDiscount = 5.9;
+
+  const totalPrice = totalOrderPrice + shippingPrice - shippingDiscount;
+
   return (
     <Summary>
       <SummaryTitleContainer>
@@ -58,19 +84,19 @@ const OrderContainer = () => {
       </SummaryTitleContainer>
       <SummaryItem>
         <SummaryItemText>Subtotal</SummaryItemText>
-        <SummaryItemPrice>$ 80</SummaryItemPrice>
+        <SummaryItemPrice>{totalOrderPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Estimated Shipping</SummaryItemText>
-        <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+        <SummaryItemPrice>{shippingPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem>
         <SummaryItemText>Shipping Discount</SummaryItemText>
-        <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+        <SummaryItemPrice>{shippingDiscount.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <SummaryItem type="total">
         <SummaryItemText>Total</SummaryItemText>
-        <SummaryItemPrice>$ 80</SummaryItemPrice>
+        <SummaryItemPrice>{totalPrice.toFixed(2)}$</SummaryItemPrice>
       </SummaryItem>
       <ButtonContainer>
         <Button>CHECKOUT NOW</Button>

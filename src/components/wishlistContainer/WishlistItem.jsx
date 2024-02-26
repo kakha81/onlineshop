@@ -1,11 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { tablet, minScreen, midScreen, maxScreen } from "../../responsive";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import StarIcon from "@mui/icons-material/Star";
-import { motion } from "framer-motion";
 import { productsArray } from "../../data";
 
 const Container = styled.div`
@@ -27,15 +24,7 @@ const Container = styled.div`
 const ItemContainer = styled.div`
   position: relative;
   border: 0.2em solid teal;
-  z-index: 1;
-  cursor: pointer;
-`;
-
-const FavoriteIcon = styled.div`
-  position: absolute;
-  margin: 0.4em;
-  color: #ffa200;
-  z-index: 2;
+  z-index: 0;
   cursor: pointer;
 `;
 
@@ -81,9 +70,8 @@ const Button = styled.button`
   }
 `;
 
-const Product = ({ item }) => {
+const WishlistItem = ({ item }) => {
   const navigate = useNavigate();
-  const [starFilled, setStarFilled] = useState(false);
   const { cart, setCart, wishlist, setWishlist } = useContext(DataContext);
 
   const specifiedProduct = productsArray.find(
@@ -92,6 +80,10 @@ const Product = ({ item }) => {
 
   const addToCart = () => {
     const itemInCart = cart.find((item) => item.id === specifiedProduct.id);
+    const updatedWishlist = wishlist.filter(
+      (wishlistItem) => wishlistItem.id !== item.id
+    );
+    setWishlist(updatedWishlist);
 
     if (itemInCart) {
       const updatedCart = cart.map((item) =>
@@ -99,6 +91,7 @@ const Product = ({ item }) => {
           ? { ...item, orderedItem: item.orderedItem + 1 }
           : item
       );
+
       setCart(updatedCart);
     } else {
       const updatedCart = [...cart, { ...specifiedProduct, orderedItem: 1 }];
@@ -106,55 +99,28 @@ const Product = ({ item }) => {
     }
   };
 
-  const addToWishlist = () => {
-    const itemInWishlist = wishlist.find(
-      (item) => item.id === specifiedProduct.id
+  const removeFromWishlist = () => {
+    const updatedWishlist = wishlist.filter(
+      (wishlistItem) => wishlistItem.id !== item.id
     );
-
-    if (itemInWishlist) {
-      const updatedWishlist = wishlist.map((item) =>
-        item.id === specifiedProduct.id
-          ? { ...item, orderedItem: item.orderedItem + 1 }
-          : item
-      );
-      setWishlist(updatedWishlist);
-    } else {
-      const updatedWishlist = [
-        ...wishlist,
-        { ...specifiedProduct, orderedItem: 1 },
-      ];
-      setWishlist(updatedWishlist);
-    }
+    setWishlist(updatedWishlist);
   };
 
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0 }}
-      transition={{ duration: 0.7 }}
-    >
-      <Container>
-        <FavoriteIcon
-          onClick={() => {
-            setStarFilled(!starFilled);
-            addToWishlist();
-          }}
-        >
-          {starFilled ? <StarIcon /> : <StarBorderIcon />}
-        </FavoriteIcon>
-        <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
-          <Image src={item.img} />
-          <ItemInfo>
-            <ItemName>{item.brand}</ItemName>
-            <ItemPrice>{item.price}$</ItemPrice>
-          </ItemInfo>
-        </ItemContainer>
-        <Button onClick={() => addToCart()}>Add To Cart</Button>
-      </Container>
-    </motion.div>
+    <Container>
+      <ItemContainer onClick={() => navigate(`/product/${item.id}`)}>
+        <Image src={item.img} />
+        <ItemInfo>
+          <ItemName>{item.brand}</ItemName>
+          <ItemPrice>{item.price}$</ItemPrice>
+        </ItemInfo>
+      </ItemContainer>
+      <Button onClick={() => addToCart()}>Add To Cart</Button>
+      <Button style={{ backgroundColor: "red" }} onClick={removeFromWishlist}>
+        Remove
+      </Button>
+    </Container>
   );
 };
 
-export default Product;
+export default WishlistItem;

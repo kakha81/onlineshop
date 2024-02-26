@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { DataContext } from "../App";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import CartItems from "../components/cartsContainer/CartItemsContainer";
-import OrderContainer from "../components/OrderContainer";
+import WishlistItems from "../components/wishlistContainer/WishlistItems";
 import Footer from "../components/Footer";
 import MenuContent from "../components/MenuContent";
 
@@ -69,11 +68,14 @@ const Button = styled.button`
   }
 `;
 
-const Cart = () => {
+const Wishlist = () => {
   const navigate = useNavigate();
-  const { cart } = useContext(DataContext);
+  const { cart, wishlist } = useContext(DataContext);
   const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
-  console.log(totalOrderCount);
+  const totalWishlistCount = wishlist.reduce(
+    (sum, item) => sum + item.orderedItem,
+    0
+  );
 
   return (
     <Container>
@@ -82,7 +84,7 @@ const Cart = () => {
         <MenuContent />
       </Header>
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>YOUR WISHLIST</Title>
         <Top>
           <Button onClick={() => navigate("/")}>CONTINUE SHOPPING</Button>
           <Button>CHECKOUT NOW</Button>
@@ -92,12 +94,11 @@ const Cart = () => {
             Shopping Bag ({totalOrderCount})
           </TopText>
           <TopText onClick={() => navigate("/wishlist")}>
-            Your Wishlist (0)
+            Your Wishlist ({totalWishlistCount})
           </TopText>
         </TopTexts>
         <Bottom>
-          <CartItems />
-          <OrderContainer />
+          <WishlistItems />
         </Bottom>
       </Wrapper>
       <Footer />
@@ -105,4 +106,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Wishlist;

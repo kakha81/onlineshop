@@ -4,7 +4,7 @@ import FilterByCategory from "./FilterByCategory";
 import FilterByColor from "./FilterByColor";
 import FilterByGender from "./FilterByGender";
 import FilterByPrice from "./FilterByPrice";
-import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
+import { tablet, minScreen, midScreen, maxScreen } from "../../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +24,7 @@ const Filter = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0em auto;
+
   flex-wrap: wrap;
   ${tablet({ gridTemplateColumns: "repeat(2, 1fr)" })};
   ${minScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
@@ -31,7 +32,7 @@ const Filter = styled.div`
   ${maxScreen({ gridTemplateColumns: "repeat(4, 1fr)" })};
 `;
 
-const FilterProducts = () => {
+const FilterProductsContainer = () => {
   return (
     <Container>
       <FilterText>Filter Products:</FilterText>
@@ -46,4 +47,4 @@ const FilterProducts = () => {
   );
 };
 
-export default FilterProducts;
+export default FilterProductsContainer;

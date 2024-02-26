@@ -1,15 +1,15 @@
-import styled from 'styled-components';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import FmdGoodIcon from '@mui/icons-material/FmdGood';
-import PhoneIcon from '@mui/icons-material/Phone';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import styled from "styled-components";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import FmdGoodIcon from "@mui/icons-material/FmdGood";
+import PhoneIcon from "@mui/icons-material/Phone";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-const bankOfGeorgia: string = require('../Images/bank/bankOfGeorgia.jpg');
-const libertyBank: string = require('../Images/bank/libertyBank.png');
-const tbcBank: string = require('../Images/bank/tbcBank.jpeg');
+const bankOfGeorgia: string = require("../Images/bank/bankOfGeorgia.jpg");
+const libertyBank: string = require("../Images/bank/libertyBank.png");
+const tbcBank: string = require("../Images/bank/tbcBank.jpeg");
 
 const Container = styled.div`
   display: flex;
@@ -111,17 +111,17 @@ const Footer = () => {
           repellendus possimus temporibus similique ipsum voluptatibus!
         </Desc>
         <SocialContainer>
-          <SocialIcon color='3B5999'>
-            <FacebookIcon style={{ width: '2em', height: '2em' }} />
+          <SocialIcon color="3B5999">
+            <FacebookIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
-          <SocialIcon color='E4405F'>
-            <InstagramIcon style={{ width: '2em', height: '2em' }} />
+          <SocialIcon color="E4405F">
+            <InstagramIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
-          <SocialIcon color='55ACEE'>
-            <TwitterIcon style={{ width: '2em', height: '2em' }} />
+          <SocialIcon color="55ACEE">
+            <TwitterIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
-          <SocialIcon color='E60023'>
-            <PinterestIcon style={{ width: '2em', height: '2em' }} />
+          <SocialIcon color="E60023">
+            <PinterestIcon style={{ width: "2em", height: "2em" }} />
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -142,15 +142,15 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <FmdGoodIcon style={{ marginRight: '5%' }} />
+          <FmdGoodIcon style={{ marginRight: "5%" }} />
           21 district, Rustavi, 3700
         </ContactItem>
         <ContactItem>
-          <PhoneIcon style={{ marginRight: '5%' }} />
+          <PhoneIcon style={{ marginRight: "5%" }} />
           (+995) 599614190
         </ContactItem>
         <ContactItem>
-          <MailOutlineIcon style={{ marginRight: '5%' }} />
+          <MailOutlineIcon style={{ marginRight: "5%" }} />
           kakha81@gmail.com
         </ContactItem>
         <BankImg>

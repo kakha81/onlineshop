@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { DataContext } from '../../App';
-import styled from 'styled-components';
-import Product from './Product';
+import { useContext } from "react";
+import { DataContext } from "../../App";
+import styled from "styled-components";
+import Product from "./Product";
 
 const Container = styled.div`
   margin: 1em;

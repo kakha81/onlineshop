@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import { maxScreen, midScreen, minScreen, tablet } from '../../responsive';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import { useContext } from "react";
+import styled from "styled-components";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import { maxScreen, midScreen, minScreen, tablet } from "../../responsive";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import { DataContext } from "../../App";
 
 const ItemContainer = styled.div`
   display: flex;
@@ -15,16 +16,17 @@ const ItemContainer = styled.div`
   &:active {
     box-shadow: 5px 5px 10px lightgray;
   }
-  ${tablet({ width: '100%' })}
-  ${minScreen({ width: '40em' })}
-  ${midScreen({ width: '40em' })}
-  ${maxScreen({ width: '40em' })}
+  ${tablet({ width: "100%" })}
+  ${minScreen({ width: "40em" })}
+  ${midScreen({ width: "40em" })}
+  ${maxScreen({ width: "40em" })}
 `;
 
 const DeleteContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 3em;
+  min-width: 3em;
   align-items: center;
   justify-content: center;
   background-color: red;
@@ -41,6 +43,7 @@ const RedDeleteIcon = styled(DeleteForeverOutlinedIcon)`
 
 const Container = styled.div`
   display: flex;
+  justify-content: space-around;
   width: 100%;
   border: 0.1em solid lightgray;
   border-right-color: red;
@@ -48,44 +51,49 @@ const Container = styled.div`
   border-bottom-left-radius: 0.5em;
 `;
 
+const ImageContainer = styled.div`
+  flex: 1;
+`;
+
 const ProductDetail = styled.div`
   display: flex;
+  flex: 2;
   align-items: center;
-  margin: auto;
+  margin-left: 0.5em;
 `;
 
 const Image = styled.img`
   width: 6em;
+  height: 100%;
   border-radius: 0.5em;
 `;
 
 const Details = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.2em;
 `;
 
 const ProductName = styled.span`
-  font-weight: 500;
-  margin: 0.1em;
+  font-weight: 700;
+  margin-left: 0;
 `;
 
 const ProductId = styled.span`
   font-weight: 500;
-  margin: 0.1em;
+  margin-left: 0;
 `;
 
 const ProductSize = styled.span`
   font-weight: 500;
-  margin: 0.1em;
+  margin-left: 0;
 `;
 
 const PriceDetail = styled.div`
   display: flex;
+  flex: 2;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: auto;
+  justify-content: center;
 `;
 
 const ProductAmountContainer = styled.div`
@@ -114,10 +122,10 @@ const Amount = styled.span`
   border-radius: 0.5em;
   margin: auto;
   font-weight: 700;
-  ${tablet({ width: '1.7em', height: '1.7em' })}
-  ${minScreen({ width: '2em', height: '2em' })}
-  ${midScreen({ width: '2.2em', height: '2.2em' })}
-  ${maxScreen({ width: '2.2em', height: '2.2em' })}
+  ${tablet({ width: "1.7em", height: "1.7em" })}
+  ${minScreen({ width: "2em", height: "2em" })}
+  ${midScreen({ width: "2.2em", height: "2.2em" })}
+  ${maxScreen({ width: "2.2em", height: "2.2em" })}
 `;
 
 const ProductPrice = styled.div`
@@ -125,58 +133,67 @@ const ProductPrice = styled.div`
   font-weight: 700;
   color: teal;
   margin: auto;
-  ${minScreen({ fontSize: '1.2em' })}
-  ${minScreen({ fontSize: '1.5em' })}
-  ${midScreen({ fontSize: '1.5em' })}
-  ${maxScreen({ fontSize: '1.5em' })}
+  ${minScreen({ fontSize: "1.2em" })}
+  ${minScreen({ fontSize: "1.5em" })}
+  ${midScreen({ fontSize: "1.5em" })}
+  ${maxScreen({ fontSize: "1.5em" })}
 `;
 
 const CartItem = ({ item }) => {
-  const [count, setCount] = useState(1);
+  const { cart, setCart } = useContext(DataContext);
 
   const decreaseCount = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 1));
+    if (item.orderedItem > 1) {
+      const updatedCart = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, orderedItem: cartItem.orderedItem - 1 }
+          : cartItem
+      );
+      setCart(updatedCart);
+    }
   };
 
   const increaseCount = () => {
-    setCount((prevCount) => Math.min(prevCount + 1, 10));
+    const updatedCart = cart.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...cartItem, orderedItem: cartItem.orderedItem + 1 }
+        : cartItem
+    );
+    setCart(updatedCart);
+  };
+
+  const removeFromCart = () => {
+    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
+    setCart(updatedCart);
   };
 
   return (
-    <>
-      <ItemContainer>
-        <Container>
-          <ProductDetail>
-            <Image src={item.img} />
-            <Details>
-              <ProductName>{item.brand}</ProductName>
-              <ProductId>ID: {item.id}</ProductId>
-              <ProductSize>Size: {item.size}</ProductSize>
-            </Details>
-          </ProductDetail>
-          <PriceDetail>
-            <ProductPrice>${item.price}</ProductPrice>
-            <ProductAmountContainer>
-              <RemoveIconItem
-                onClick={() => {
-                  decreaseCount();
-                }}
-              />
-              <Amount>{count}</Amount>
-              <AddIconItem
-                onClick={() => {
-                  increaseCount();
-                }}
-              />
-            </ProductAmountContainer>
-            <ProductPrice>${item.price * count}</ProductPrice>
-          </PriceDetail>
-        </Container>
-        <DeleteContainer>
-          <RedDeleteIcon />
-        </DeleteContainer>
-      </ItemContainer>
-    </>
+    <ItemContainer>
+      <Container>
+        <ImageContainer>
+          <Image src={item.img} alt="Product" />
+        </ImageContainer>
+        <ProductDetail>
+          <Details>
+            <ProductName>{item.brand}</ProductName>
+            <ProductId>ID: {item.id}</ProductId>
+            <ProductSize>Size: {item.size}</ProductSize>
+          </Details>
+        </ProductDetail>
+        <PriceDetail>
+          <ProductPrice>${item.price}</ProductPrice>
+          <ProductAmountContainer>
+            <RemoveIconItem onClick={decreaseCount} />
+            <Amount>{item.orderedItem}</Amount>
+            <AddIconItem onClick={increaseCount} />
+          </ProductAmountContainer>
+          <ProductPrice>${item.price * item.orderedItem}</ProductPrice>
+        </PriceDetail>
+      </Container>
+      <DeleteContainer onClick={removeFromCart}>
+        <RedDeleteIcon />
+      </DeleteContainer>
+    </ItemContainer>
   );
 };
 

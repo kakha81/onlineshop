@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import { productsArray } from '../data';
-import { DataContext } from '../App';
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+import { productsArray } from "../data";
+import { DataContext } from "../App";
 
 const Container = styled.div`
   padding: 0.5em;
@@ -70,16 +70,28 @@ const Button = styled.button`
 const ProductContainer = () => {
   const { itemId } = useParams();
   const specifiedProduct = productsArray[itemId - 1];
-  const { setCart } = useContext(DataContext);
+  const { cart, setCart } = useContext(DataContext);
 
-  const addProductToCart = () => {
-    setCart((prevCart) => [...prevCart, specifiedProduct]);
+  const addToCart = () => {
+    const itemInCart = cart.find((item) => item.id === specifiedProduct.id);
+
+    if (itemInCart) {
+      const updatedCart = cart.map((item) =>
+        item.id === specifiedProduct.id
+          ? { ...item, orderedItem: item.orderedItem + 1 }
+          : item
+      );
+      setCart(updatedCart);
+    } else {
+      const updatedCart = [...cart, { ...specifiedProduct, orderedItem: 1 }];
+      setCart(updatedCart);
+    }
   };
 
   return (
     <Container>
       <ImgContainer>
-        <Image src={specifiedProduct.img} alt='Product' />
+        <Image src={specifiedProduct.img} alt="Product" />
       </ImgContainer>
       <InfoContainer>
         <TitleContainer>
@@ -89,7 +101,7 @@ const ProductContainer = () => {
         </TitleContainer>
       </InfoContainer>
       <ButtonContainer>
-        <Button onClick={() => addProductToCart()}>ADD TO CART</Button>
+        <Button onClick={() => addToCart()}>ADD TO CART</Button>
       </ButtonContainer>
     </Container>
   );

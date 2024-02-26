@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import CartItems from "./CartItems";
-import CartEmpty from "./CartEmpty";
+import WishlistItems from "./WishlistItems";
+import WishlistEmpty from "./WishlistEmpty";
 import { DataContext } from "../../App";
 
 const ClearButtonContainer = styled.div`
@@ -24,21 +24,21 @@ const ClearButton = styled.button`
   }
 `;
 
-const CartItemsContainer = () => {
-  const { cart, setCart } = useContext(DataContext);
+const WishlistItemsContainer = () => {
+  const { wishlist, setWishlist } = useContext(DataContext);
 
-  const ClearCart = () => {
-    setCart([]);
+  const ClearWishlist = () => {
+    setWishlist([]);
   };
 
   return (
     <>
-      {cart.length === 0 ? <CartEmpty /> : <CartItems />}
+      {wishlist.length === 0 ? <WishlistEmpty /> : <WishlistItems />}
       <ClearButtonContainer>
-        <ClearButton onClick={ClearCart}>CLEAR CART</ClearButton>
+        <ClearButton onClick={ClearWishlist}>CLEAR WISHLIST</ClearButton>
       </ClearButtonContainer>
     </>
   );
 };
 
-export default CartItemsContainer;
+export default WishlistItemsContainer;
