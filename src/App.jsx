@@ -15,6 +15,7 @@ const App = () => {
   // global states
   const [product, setProduct] = useState(productsArray);
   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   console.log(cart);
 
