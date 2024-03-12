@@ -43,7 +43,14 @@ const App = () => {
   return (
     <HashRouter>
       <DataContext.Provider
-        value={{ product, setProduct, cart, setCart, wishlist, setWishlist }}
+        value={{
+          product,
+          setProduct,
+          cart,
+          setCart,
+          wishlist,
+          setWishlist,
+        }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
