@@ -7,9 +7,9 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-const bankOfGeorgia: string = require("../Images/bank/bankOfGeorgia.jpg");
-const libertyBank: string = require("../Images/bank/libertyBank.png");
-const tbcBank: string = require("../Images/bank/tbcBank.jpeg");
+const bankOfGeorgia = require("../Images/bank/bankOfGeorgia.jpg");
+const libertyBank = require("../Images/bank/libertyBank.png");
+const tbcBank = require("../Images/bank/tbcBank.jpeg");
 
 const Container = styled.div`
   display: flex;
@@ -24,18 +24,16 @@ const Left = styled.div`
 `;
 
 const Logo = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
 `;
 
 const Desc = styled.p`
   margin: 1.5em 0em;
+  align-self: center;
 `;
 
 const SocialContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
 `;
 
@@ -44,16 +42,12 @@ const SocialIcon = styled.div`
   height: 3em;
   border-radius: 50%;
   color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-right: 5%;
   cursor: pointer;
 `;
 
 const Center = styled.div`
   display: none;
-  flex: 1;
   padding: 1.5em;
 `;
 

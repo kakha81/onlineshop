@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
@@ -163,10 +163,17 @@ const ListItem = styled.li`
 `;
 
 const Navbar = () => {
-  const { cart, product, setProduct } = useContext(DataContext);
-  const [activeFlag, setActiveFlag] = useState("US");
-  const [click, setClick] = useState(false);
-  const [searchField, setSearchField] = useState("");
+  const {
+    cart,
+    product,
+    setProduct,
+    activeFlag,
+    setActiveFlag,
+    click,
+    setClick,
+    searchField,
+    setSearchField,
+  } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -248,8 +255,10 @@ const Navbar = () => {
       <SideNav clicked={click}>
         <MenuContainer>
           <ListItem onClick={() => navigate("/")}>HOME</ListItem>
-          <ListItem onClick={() => navigate("/cart")}>MY CART</ListItem>
+          <ListItem onClick={() => navigate("/cart")}>MY BASKET</ListItem>
+          <ListItem onClick={() => navigate("/wishlist")}>MY WISHLIST</ListItem>
           <ListItem onClick={() => navigate("/profile")}>MY ACCOUNT</ListItem>
+          <ListItem onClick={() => navigate("/signOut")}>SIGN OUT</ListItem>
         </MenuContainer>
       </SideNav>
     </Container>

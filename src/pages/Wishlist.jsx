@@ -51,7 +51,10 @@ const TopText = styled.span`
   }
 `;
 
-const Bottom = styled.div``;
+const Bottom = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Button = styled.button`
   width: 14em;

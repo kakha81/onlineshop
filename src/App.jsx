@@ -16,10 +16,24 @@ const App = () => {
   const [product, setProduct] = useState(productsArray);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [activeFlag, setActiveFlag] = useState("GEO");
+  const [click, setClick] = useState(false);
+  const [searchField, setSearchField] = useState([]);
+
+  //Load flag from localStorage on initial render
+  useEffect(() => {
+    const initialFlagMemo = localStorage.getItem("flagMemo");
+    setActiveFlag(initialFlagMemo);
+  }, []);
+
+  //Update localStorage whenever flag changes
+  useEffect(() => {
+    localStorage.setItem("flagMemo", activeFlag);
+  }, [activeFlag]);
 
   // Load cart from localStorage on initial render
   useEffect(() => {
-    const initialCartMemo = JSON.parse(localStorage.getItem("cartMemo")) || [];
+    const initialCartMemo = JSON.parse(localStorage.getItem("cartMemo"));
     setCart(initialCartMemo);
   }, []);
 
@@ -50,6 +64,12 @@ const App = () => {
           setCart,
           wishlist,
           setWishlist,
+          activeFlag,
+          setActiveFlag,
+          click,
+          setClick,
+          searchField,
+          setSearchField,
         }}
       >
         <Routes>

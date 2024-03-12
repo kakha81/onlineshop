@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { tablet } from '../responsive';
-import { useNavigate } from 'react-router-dom';
+import styled from "styled-components";
+import { tablet } from "../responsive";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: teal;
-  ${tablet({ display: 'none' })};
+  ${tablet({ display: "none" })};
 `;
 const MenuContainer = styled.li`
   list-style: none;
@@ -31,9 +31,12 @@ const MenuContent = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <MenuContainer onClick={() => navigate('/')}>HOME</MenuContainer>
-      <MenuContainer onClick={() => navigate('/Cart')}>MY BASKET</MenuContainer>
-      <MenuContainer onClick={() => navigate('/profile')}>
+      <MenuContainer onClick={() => navigate("/")}>HOME</MenuContainer>
+      <MenuContainer onClick={() => navigate("/Cart")}>MY BASKET</MenuContainer>
+      <MenuContainer onClick={() => navigate("/wishlist")}>
+        MY WISHLIST
+      </MenuContainer>
+      <MenuContainer onClick={() => navigate("/profile")}>
         MY ACCOUNT
       </MenuContainer>
     </Container>
