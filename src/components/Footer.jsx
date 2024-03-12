@@ -42,7 +42,9 @@ const SocialIcon = styled.div`
   height: 3em;
   border-radius: 50%;
   color: #${(props) => props.color};
-  margin-right: 5%;
+  margin-right: 0.5%;
+  justify-content: center;
+
   cursor: pointer;
 `;
 

@@ -258,7 +258,7 @@ const Navbar = () => {
           <ListItem onClick={() => navigate("/cart")}>MY BASKET</ListItem>
           <ListItem onClick={() => navigate("/wishlist")}>MY WISHLIST</ListItem>
           <ListItem onClick={() => navigate("/profile")}>MY ACCOUNT</ListItem>
-          <ListItem onClick={() => navigate("/signOut")}>SIGN OUT</ListItem>
+          <ListItem onClick={() => navigate("/login")}>SIGN OUT</ListItem>
         </MenuContainer>
       </SideNav>
     </Container>
