@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import Wishlist from "./pages/Wishlist";
+import TabulatorTest from "./pages/TabulatorTest";
 
 export const DataContext = createContext();
 
@@ -80,6 +81,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/tabulatorTest" element={<TabulatorTest />} />
         </Routes>
       </DataContext.Provider>
     </HashRouter>
