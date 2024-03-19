@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
@@ -185,17 +185,21 @@ const Navbar = () => {
   const handleChange = (e) => {
     setSearchField(e.target.value);
   };
+
   const getFilteredProduct = (product, searchField) => {
     return product.filter((item) => item.brand.includes(searchField));
   };
   useEffect(() => {
     const filteredProduct = getFilteredProduct(product, searchField);
     setProduct(filteredProduct);
-  }, [searchField]);
+  }, [product, setProduct, searchField]);
   // Input function
 
   // Cart badge quantity function
-  const totalOrderCount = cart.reduce((sum, item) => sum + item.orderedItem, 0);
+  const totalOrderCount = useMemo(
+    () => cart.reduce((sum, item) => sum + item.orderedItem, 0),
+    [cart]
+  );
   // Cart badge quantity function
 
   return (
