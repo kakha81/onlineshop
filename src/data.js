@@ -5,7 +5,7 @@ export const productsArray = [
     category: "runners",
     brand: "new balance",
     color: "white",
-    size: 35,
+    size: 36,
     price: 23,
     img: require("./Images/1.png"),
     availableItem: 5,
