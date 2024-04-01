@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.js": "/onlineshop/static/js/main.b5dd9e67.js",
+    "static/media/14.png": "/onlineshop/static/media/14.a342558d1ffc7a888897.png",
+    "static/media/cover.jpg": "/onlineshop/static/media/cover.5f8f3de892facf29d219.jpg",
+    "static/media/5.png": "/onlineshop/static/media/5.7b9bcad19d3106cb4d7b.png",
+    "static/media/8.png": "/onlineshop/static/media/8.120146ba7ae07bd86321.png",
+    "static/media/17.png": "/onlineshop/static/media/17.dc2bcab57a5a0503cf61.png",
+    "static/media/13.png": "/onlineshop/static/media/13.2c7284493757936eeb89.png",
+    "static/media/4.png": "/onlineshop/static/media/4.333fe41368cd46c6cb7e.png",
+    "static/media/tbcBank.jpeg": "/onlineshop/static/media/tbcBank.ca449e8f6219d0b594b9.jpeg",
+    "static/media/16.png": "/onlineshop/static/media/16.47dfc23d15fb75ca993b.png",
+    "static/media/18.jpg": "/onlineshop/static/media/18.747d460df64901e4f25a.jpg",
+    "static/media/11.png": "/onlineshop/static/media/11.6669d21c81a38a8c7066.png",
+    "static/media/9.png": "/onlineshop/static/media/9.29592246d3dc0dd0ec85.png",
+    "static/media/19.jpg": "/onlineshop/static/media/19.dba2b02213e89aafbb25.jpg",
+    "static/media/21.png": "/onlineshop/static/media/21.c645c3ce38426e813d99.png",
+    "static/media/1.png": "/onlineshop/static/media/1.d6e2520c78e93a52b825.png",
+    "static/media/22.jpg": "/onlineshop/static/media/22.67a25dda19d10ea8102e.jpg",
+    "static/media/bankOfGeorgia.jpg": "/onlineshop/static/media/bankOfGeorgia.0deef25728dd11fee2f2.jpg",
+    "static/media/2.png": "/onlineshop/static/media/2.eb30880af8ca5ee5d393.png",
+    "static/media/23.png": "/onlineshop/static/media/23.3549f7eb8a88610c2f1c.png",
+    "static/media/united-states-flag.png": "/onlineshop/static/media/united-states-flag.348322a7eb6fa906d005.png",
+    "static/media/20.jpg": "/onlineshop/static/media/20.318003158d8392014f2e.jpg",
+    "index.html": "/onlineshop/index.html",
+    "main.b5dd9e67.js.map": "/onlineshop/static/js/main.b5dd9e67.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b5dd9e67.js"
+  ]
+}
